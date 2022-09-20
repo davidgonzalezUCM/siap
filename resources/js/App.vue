@@ -1,6 +1,6 @@
 <template>
     <main>
         <h3>hola mundo</h3>
-        <button class=" btn btn-primary"> boton</button>
+        <button class=" btn btn-primary">boton</button>
     </main>
 </template>
