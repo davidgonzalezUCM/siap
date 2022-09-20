@@ -1,6 +1,22 @@
 <template>
     <main>
-        <h3>hola mundo</h3>
-        <button class=" btn btn-primary">boton</button>
+        <Header />
+
+        <div id="layoutSidenav">
+            <router-view></router-view>
+        </div>
+
+        <Footer />
     </main>
 </template>
+
+<script>
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
+export default {
+    components: {
+        Header,
+        Footer,
+    },
+};
+</script>
