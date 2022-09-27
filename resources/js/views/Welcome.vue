@@ -1,104 +1,81 @@
 <template>
-    <div id="layoutSidenav_content">
-        <div class="container-fluid px-4">
-            <h1 class="mt-4">Dashboard</h1>
-            <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Dashboard</li>
-            </ol>
+    <section class="our-services">
+        <div class="container">
             <div class="row">
-                <div class="col-xl-3 col-md-6">
-                    <div class="card bg-primary text-white mb-4">
-                        <div class="card-body">Primary Card</div>
-                        <div
-                            class="card-footer d-flex align-items-center justify-content-between"
-                        >
-                            <a class="small text-white stretched-link" href="#"
-                                >View Details</a
-                            >
-                            <div class="small text-white">
-                                <i class="fas fa-angle-right"></i>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-md-4">
+                    <img
+                        id="imgpsicologa"
+                        src="../../../resources/images/psicologa.jpg"
+                        alt=""
+                    />
                 </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="card bg-warning text-white mb-4">
-                        <div class="card-body">Warning Card</div>
-                        <div
-                            class="card-footer d-flex align-items-center justify-content-between"
-                        >
-                            <a class="small text-white stretched-link" href="#"
-                                >View Details</a
-                            >
-                            <div class="small text-white">
-                                <i class="fas fa-angle-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="card bg-success text-white mb-4">
-                        <div class="card-body">Success Card</div>
-                        <div
-                            class="card-footer d-flex align-items-center justify-content-between"
-                        >
-                            <a class="small text-white stretched-link" href="#"
-                                >View Details</a
-                            >
-                            <div class="small text-white">
-                                <i class="fas fa-angle-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="card bg-danger text-white mb-4">
-                        <div class="card-body">Danger Card</div>
-                        <div
-                            class="card-footer d-flex align-items-center justify-content-between"
-                        >
-                            <a class="small text-white stretched-link" href="#"
-                                >View Details</a
-                            >
-                            <div class="small text-white">
-                                <i class="fas fa-angle-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-6">
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            <i class="fas fa-chart-area me-1"></i>
-                            Area Chart Example
-                        </div>
-                        <div class="card-body">
-                            <canvas
-                                id="myAreaChart"
-                                width="100%"
-                                height="40"
-                            ></canvas>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6">
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            <i class="fas fa-chart-bar me-1"></i>
-                            Bar Chart Example
-                        </div>
-                        <div class="card-body">
-                            <canvas
-                                id="myBarChart"
-                                width="100%"
-                                height="40"
-                            ></canvas>
-                        </div>
+                <div class="col-md-7">
+                    <div class="right-content">
+                        <br />
+                        <h4>Sobre mí:</h4>
+                        <p>
+                            Decidir comenzar un proceso de terapia no es fácil,
+                            pero a la vez es una de las decisiones más
+                            importantes que se pueden tomar por uno mismo.
+                            Implica mirarse y entrar en aspectos que por lo
+                            general evitamos hasta que nos empieza a generar
+                            malestar, reclamando nuestra atención. Pero con un
+                            buen acompañamiento, este proceso logra tener frutos
+                            que resultan ser maravillosos para nuestras vidas.
+                            <br />
+                            <br />
+                            Si en este momento hay algún aspecto de tu vida que
+                            quisieras mejorar, algo que sientas que te está
+                            aproblemando, que ya te está generando agotamiento y
+                            una sensación de que tienes que "lidiar" con eso,
+                            sin poder fluir como quisieras, tal vez sería bueno
+                            considerar el tiempo de iniciar una terapia. Si
+                            tienes dudas acerca de si puedo ayudarte, estaré
+                            feliz de que me contactes y me cuentes más acerca de
+                            tu problema
+                            <br />
+                            <br />
+                            María José Caroca
+                        </p>
+                        <br />
+                        <h4>Servicios:</h4>
+                        <p>
+                            •Psicología Clínica.
+                            <br />
+                            •Psicología Clínica de Adultos.
+                            <br />
+                            •Psicoterapia.
+                            <br />
+                            •Psicoterapia en adolescentes y adultos.
+                        </p>
+                        <br />
+                        <h4>Enfermedades tratadas:</h4>
+                        <p>
+                            •Estrés.
+                            <br />
+                            •Violencia intrafamiliar.
+                            <br />
+                            •Trastorno de estrés postraumático.
+                            <br />
+                            •Trastornos del ánimo.
+                            <br />
+                            •Maltrato grave.
+                            <br />
+                            •Trastorno de control de impulsos.
+                            <br />
+                            •Problemas de autoestima.
+                            <br />
+                            •Depresión.
+                            <br />
+                            •Duelos Patológicos.
+                            <br />
+                            •Trastornos adaptativos.
+                            <br />
+                            •Trastornos de ansiedad.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>

@@ -4,6 +4,32 @@ body {
   height: 100%;
 }
 
+section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-heading span {
+  font-size: 17px;
+  display: block;
+  margin: 0px;
+  color: #4883ff;
+}
+
+.section-heading h2 {
+  margin-bottom: 0px;
+  margin-top: 14px;
+  font-size: 23px;
+  font-weight: 600;
+  color: #232323;
+  letter-spacing: 0.5px;
+}
+
 #layoutAuthentication {
   display: flex;
   flex-direction: column;
@@ -17,10 +43,6 @@ body {
 
 #layoutAuthentication #layoutAuthentication_footer {
   min-width: 0;
-}
-
-#layoutSidenav {
-  display: flex;
 }
 
 #layoutSidenav #layoutSidenav_nav {
@@ -118,11 +140,6 @@ body {
 
 .img-error {
   max-width: 20rem;
-}
-
-.nav .nav-link .sb-nav-link-icon,
-.sb-sidenav-menu .nav-link .sb-nav-link-icon {
-  margin-right: 0.5rem;
 }
 
 .sb-topnav {
@@ -433,6 +450,32 @@ body {
   width: 20px !important;
   font-size: 0.75rem;
   border-radius: 0.25rem !important;
+}
+
+section {
+  background: #fcc440;
+}
+
+section:nth-child(even) {
+  background: #f8f8f8;
+}
+
+.modal-btn {
+  display: inline-block;
+  background-color: #cff145;
+  color: black;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 16px;
+  text-decoration: none;
+  border: 2px solid #36945c;
+  transition: all 0.5s;
+  border-radius: 5px;
+}
+
+.modal-btn:hover {
+  background-color: #36945c;
+  color: #fff;
 }
 
 #header {
@@ -843,6 +886,7 @@ main > section:nth-child(even) {
 }
 
 #imgpsicologa {
+  width: 90%;
   border-radius: 10px;
   border: solid;
   border-color: white;

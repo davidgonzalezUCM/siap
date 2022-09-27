@@ -20986,11 +20986,7 @@ var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#"
-}, "Contacto")], -1
-/* HOISTED */
-);
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Contacto");
 
 function render(_ctx, _cache) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
@@ -21013,7 +21009,16 @@ function render(_ctx, _cache) {
     _: 1
     /* STABLE */
 
-  })]), _hoisted_9, _hoisted_10, _hoisted_11])])])])])]);
+  })]), _hoisted_9, _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/contacto"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_11];
+    }),
+    _: 1
+    /* STABLE */
+
+  })])])])])])])]);
 }
 
 /***/ }),
@@ -21029,16 +21034,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _resources_images_psicologa_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../resources/images/psicologa.jpg */ "./resources/images/psicologa.jpg");
+
 
 var _hoisted_1 = {
-  id: "layoutSidenav_content"
+  "class": "our-services"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container-fluid px-4\"><h1 class=\"mt-4\">Dashboard</h1><ol class=\"breadcrumb mb-4\"><li class=\"breadcrumb-item active\">Dashboard</li></ol><div class=\"row\"><div class=\"col-xl-3 col-md-6\"><div class=\"card bg-primary text-white mb-4\"><div class=\"card-body\">Primary Card</div><div class=\"card-footer d-flex align-items-center justify-content-between\"><a class=\"small text-white stretched-link\" href=\"#\">View Details</a><div class=\"small text-white\"><i class=\"fas fa-angle-right\"></i></div></div></div></div><div class=\"col-xl-3 col-md-6\"><div class=\"card bg-warning text-white mb-4\"><div class=\"card-body\">Warning Card</div><div class=\"card-footer d-flex align-items-center justify-content-between\"><a class=\"small text-white stretched-link\" href=\"#\">View Details</a><div class=\"small text-white\"><i class=\"fas fa-angle-right\"></i></div></div></div></div><div class=\"col-xl-3 col-md-6\"><div class=\"card bg-success text-white mb-4\"><div class=\"card-body\">Success Card</div><div class=\"card-footer d-flex align-items-center justify-content-between\"><a class=\"small text-white stretched-link\" href=\"#\">View Details</a><div class=\"small text-white\"><i class=\"fas fa-angle-right\"></i></div></div></div></div><div class=\"col-xl-3 col-md-6\"><div class=\"card bg-danger text-white mb-4\"><div class=\"card-body\">Danger Card</div><div class=\"card-footer d-flex align-items-center justify-content-between\"><a class=\"small text-white stretched-link\" href=\"#\">View Details</a><div class=\"small text-white\"><i class=\"fas fa-angle-right\"></i></div></div></div></div></div><div class=\"row\"><div class=\"col-xl-6\"><div class=\"card mb-4\"><div class=\"card-header\"><i class=\"fas fa-chart-area me-1\"></i> Area Chart Example </div><div class=\"card-body\"><canvas id=\"myAreaChart\" width=\"100%\" height=\"40\"></canvas></div></div></div><div class=\"col-xl-6\"><div class=\"card mb-4\"><div class=\"card-header\"><i class=\"fas fa-chart-bar me-1\"></i> Bar Chart Example </div><div class=\"card-body\"><canvas id=\"myBarChart\" width=\"100%\" height=\"40\"></canvas></div></div></div></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container\"><div class=\"row\"><div class=\"col-md-4\"><img id=\"imgpsicologa\" src=\"" + _resources_images_psicologa_jpg__WEBPACK_IMPORTED_MODULE_1__["default"] + "\" alt=\"\"></div><div class=\"col-md-7\"><div class=\"right-content\"><br><h4>Sobre mí:</h4><p> Decidir comenzar un proceso de terapia no es fácil, pero a la vez es una de las decisiones más importantes que se pueden tomar por uno mismo. Implica mirarse y entrar en aspectos que por lo general evitamos hasta que nos empieza a generar malestar, reclamando nuestra atención. Pero con un buen acompañamiento, este proceso logra tener frutos que resultan ser maravillosos para nuestras vidas. <br><br> Si en este momento hay algún aspecto de tu vida que quisieras mejorar, algo que sientas que te está aproblemando, que ya te está generando agotamiento y una sensación de que tienes que &quot;lidiar&quot; con eso, sin poder fluir como quisieras, tal vez sería bueno considerar el tiempo de iniciar una terapia. Si tienes dudas acerca de si puedo ayudarte, estaré feliz de que me contactes y me cuentes más acerca de tu problema <br><br> María José Caroca </p><br><h4>Servicios:</h4><p> •Psicología Clínica. <br> •Psicología Clínica de Adultos. <br> •Psicoterapia. <br> •Psicoterapia en adolescentes y adultos. </p><br><h4>Enfermedades tratadas:</h4><p> •Estrés. <br> •Violencia intrafamiliar. <br> •Trastorno de estrés postraumático. <br> •Trastornos del ánimo. <br> •Maltrato grave. <br> •Trastorno de control de impulsos. <br> •Problemas de autoestima. <br> •Depresión. <br> •Duelos Patológicos. <br> •Trastornos adaptativos. <br> •Trastornos de ansiedad. </p></div></div></div></div>", 1);
 
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, _hoisted_3);
 }
 
 /***/ }),
@@ -21086,13 +21093,21 @@ var Welcome = function Welcome() {
   return Promise.resolve(/*! import() */).then(__webpack_require__.bind(__webpack_require__, /*! ./views/Welcome */ "./resources/js/views/Welcome.vue"));
 };
 
+var Contacto = function Contacto() {
+  return __webpack_require__.e(/*! import() */ "resources_js_views_Contacto_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/Contacto */ "./resources/js/views/Contacto.vue"));
+};
+
 var routes = [{
   path: "/",
   name: "welcome",
   component: Welcome
+}, {
+  path: "/contacto",
+  name: "contacto",
+  component: Contacto
 }];
 var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({
-  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createWebHistory)(),
+  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createWebHashHistory)(),
   routes: routes
 });
 
@@ -26455,6 +26470,20 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/images/psicologa.jpg":
+/*!****************************************!*\
+  !*** ./resources/images/psicologa.jpg ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/psicologa.jpg?5f75cf021ac9cb0e507ff36a6a7f2703");
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -30917,6 +30946,39 @@ function useRoute() {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/ensure chunk */
+/******/ 	(() => {
+/******/ 		__webpack_require__.f = {};
+/******/ 		// This file contains only the entry chunk.
+/******/ 		// The chunk loading function for additional chunks
+/******/ 		__webpack_require__.e = (chunkId) => {
+/******/ 			return Promise.all(Object.keys(__webpack_require__.f).reduce((promises, key) => {
+/******/ 				__webpack_require__.f[key](chunkId, promises);
+/******/ 				return promises;
+/******/ 			}, []));
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get javascript chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.u = (chunkId) => {
+/******/ 			// return url for filenames not based on template
+/******/ 			if (chunkId === "resources_js_views_Contacto_vue") return "js/" + chunkId + ".js";
+/******/ 			// return url for filenames based on template
+/******/ 			return undefined;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get mini-css chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference all chunks
+/******/ 		__webpack_require__.miniCssF = (chunkId) => {
+/******/ 			// return url for filenames based on template
+/******/ 			return "" + chunkId + ".css";
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -30934,6 +30996,52 @@ function useRoute() {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/load script */
+/******/ 	(() => {
+/******/ 		var inProgress = {};
+/******/ 		// data-webpack is not used as build has no uniqueName
+/******/ 		// loadScript function to load a script via script tag
+/******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
+/******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
+/******/ 			var script, needAttach;
+/******/ 			if(key !== undefined) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				for(var i = 0; i < scripts.length; i++) {
+/******/ 					var s = scripts[i];
+/******/ 					if(s.getAttribute("src") == url) { script = s; break; }
+/******/ 				}
+/******/ 			}
+/******/ 			if(!script) {
+/******/ 				needAttach = true;
+/******/ 				script = document.createElement('script');
+/******/ 		
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120;
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 		
+/******/ 				script.src = url;
+/******/ 			}
+/******/ 			inProgress[url] = [done];
+/******/ 			var onScriptComplete = (prev, event) => {
+/******/ 				// avoid mem leaks in IE.
+/******/ 				script.onerror = script.onload = null;
+/******/ 				clearTimeout(timeout);
+/******/ 				var doneFns = inProgress[url];
+/******/ 				delete inProgress[url];
+/******/ 				script.parentNode && script.parentNode.removeChild(script);
+/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
+/******/ 				if(prev) return prev(event);
+/******/ 			}
+/******/ 			;
+/******/ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
+/******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
+/******/ 			script.onload = onScriptComplete.bind(null, script.onload);
+/******/ 			needAttach && document.head.appendChild(script);
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -30943,6 +31051,11 @@ function useRoute() {
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
@@ -30957,7 +31070,44 @@ function useRoute() {
 /******/ 			"css/app": 0
 /******/ 		};
 /******/ 		
-/******/ 		// no chunk on demand loading
+/******/ 		__webpack_require__.f.j = (chunkId, promises) => {
+/******/ 				// JSONP chunk loading for javascript
+/******/ 				var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
+/******/ 				if(installedChunkData !== 0) { // 0 means "already installed".
+/******/ 		
+/******/ 					// a Promise means "currently loading".
+/******/ 					if(installedChunkData) {
+/******/ 						promises.push(installedChunkData[2]);
+/******/ 					} else {
+/******/ 						if("css/app" != chunkId) {
+/******/ 							// setup Promise in chunk cache
+/******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
+/******/ 							promises.push(installedChunkData[2] = promise);
+/******/ 		
+/******/ 							// start chunk loading
+/******/ 							var url = __webpack_require__.p + __webpack_require__.u(chunkId);
+/******/ 							// create error before stack unwound to get useful stacktrace later
+/******/ 							var error = new Error();
+/******/ 							var loadingEnded = (event) => {
+/******/ 								if(__webpack_require__.o(installedChunks, chunkId)) {
+/******/ 									installedChunkData = installedChunks[chunkId];
+/******/ 									if(installedChunkData !== 0) installedChunks[chunkId] = undefined;
+/******/ 									if(installedChunkData) {
+/******/ 										var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 										var realSrc = event && event.target && event.target.src;
+/******/ 										error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 										error.name = 'ChunkLoadError';
+/******/ 										error.type = errorType;
+/******/ 										error.request = realSrc;
+/******/ 										installedChunkData[1](error);
+/******/ 									}
+/******/ 								}
+/******/ 							};
+/******/ 							__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
+/******/ 						} else installedChunks[chunkId] = 0;
+/******/ 					}
+/******/ 				}
+/******/ 		};
 /******/ 		
 /******/ 		// no prefetching
 /******/ 		

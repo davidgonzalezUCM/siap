@@ -20,7 +20,7 @@
                                 <a href="#">Agenda tu hora</a>
                             </li>
 
-                            <li><a href="#">Contacto</a></li>
+                            <li><router-link to="/contacto">Contacto</router-link></li>
                         </ul>
                     </nav>
                 </div>
