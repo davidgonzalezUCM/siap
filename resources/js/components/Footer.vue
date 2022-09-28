@@ -13,8 +13,8 @@
                             <h4>Redes sociales:</h4>
                             <ul class="social-icons">
                                 <li class="socialmargin">
-                                    <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+                                    <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                                    <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                                     <a href="#" target="_blank"><i class="fa fa-book"></i></a>
                                 </li>
                             </ul>

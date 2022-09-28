@@ -14,6 +14,8 @@
                         <ul class="dropdown menu">
                             <li><router-link to="/">Inicio</router-link></li>
 
+                            <li><router-link to="/servicios">Servicios</router-link></li>
+
                             <li><a href="#">Contenido</a></li>
 
                             <li>

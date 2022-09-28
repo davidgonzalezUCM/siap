@@ -3,11 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img
-                        id="imgpsicologa"
-                        src="../../../resources/images/psicologa.jpg"
-                        alt=""
-                    />
+                    <img id="imgpsicologa" src="../../../resources/images/psicologa.jpg" alt="" />
                 </div>
                 <div class="col-md-7">
                     <div class="right-content">
@@ -32,46 +28,33 @@
                             considerar el tiempo de iniciar una terapia. Si
                             tienes dudas acerca de si puedo ayudarte, estaré
                             feliz de que me contactes y me cuentes más acerca de
-                            tu problema
+                            tu problema.
                             <br />
                             <br />
-                            María José Caroca
+                            María José Caroca.
                         </p>
-                        <br />
-                        <h4>Servicios:</h4>
+                        <br>
+                        <h4>Formación:</h4>
                         <p>
-                            •Psicología Clínica.
-                            <br />
-                            •Psicología Clínica de Adultos.
-                            <br />
-                            •Psicoterapia.
-                            <br />
-                            •Psicoterapia en adolescentes y adultos.
-                        </p>
-                        <br />
-                        <h4>Enfermedades tratadas:</h4>
-                        <p>
-                            •Estrés.
-                            <br />
-                            •Violencia intrafamiliar.
-                            <br />
-                            •Trastorno de estrés postraumático.
-                            <br />
-                            •Trastornos del ánimo.
-                            <br />
-                            •Maltrato grave.
-                            <br />
-                            •Trastorno de control de impulsos.
-                            <br />
-                            •Problemas de autoestima.
-                            <br />
-                            •Depresión.
-                            <br />
-                            •Duelos Patológicos.
-                            <br />
-                            •Trastornos adaptativos.
-                            <br />
-                            •Trastornos de ansiedad.
+                            •Psicóloga, Universidad de La Frontera, 2011
+                            <br>
+                            •Diplomado en Abuso Sexual Infantil, Universidad Academia de Humanismo Cristiano, 2012
+                            <br>
+                            •Postítulo Intervención en Abuso Sexual Infantojuvenil, Universidad de La Frontera, 2013
+                            <br>
+                            •Curso Superación del Trauma (II versión), Human Business, 2014
+                            <br>
+                            •Curso Affective Bonding Therapy ABT, CETEPO Chile, 2015
+                            <br>
+                            •Curso Terapia breve del duelo, Mentores Group, 2017
+                            <br>
+                            •Diplomado Trastornos de Personalidad. ADIPA, 2021
+                            <br>
+                            •Curso Riesgo suicida en adolescencia y adultez emergente. ADIPA, 2022
+                            <br>
+                            •Curso Evaluación y estrategias para trastornos de la conducta alimentaria. CESIST Chile,
+                            2022
+                            <br>
                         </p>
                     </div>
                 </div>

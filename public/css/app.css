@@ -893,6 +893,13 @@ main > section:nth-child(even) {
   margin-top: 30px;
 }
 
+#imgatencion {
+  width: 100%;
+  border-radius: 10px;
+  border: solid;
+  border-color: white;
+}
+
 .imgsec {
   border-radius: 10px;
   border: solid;

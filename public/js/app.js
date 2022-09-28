@@ -20919,7 +20919,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container\"><div class=\"row\"><div class=\"col-md-4\"><div class=\"about-veno\"><div class=\"logo\"><img src=\"" + _resources_images_logo_footer_png__WEBPACK_IMPORTED_MODULE_1__["default"] + "\" alt=\"Logo Psicóloga\"></div><h4>Redes sociales:</h4><ul class=\"social-icons\"><li class=\"socialmargin\"><a href=\"#\" target=\"_blank\"><i class=\"fa fa-facebook\"></i></a><a href=\"#\" target=\"_blank\"><i class=\"fa fa-instagram\"></i></a><a href=\"#\" target=\"_blank\"><i class=\"fa fa-book\"></i></a></li></ul></div></div><div class=\"col-md-5\"><div class=\"useful-links\"><div class=\"footer-heading\"><h4>Preguntas frecuentes</h4></div><div class=\"row\"><div class=\"col-md-5\"><ul><li><a href=\"#\"><i class=\"fa fa-stop\"></i>Métodos de pago</a></li><li><a href=\"#\"><i class=\"fa fa-stop\"></i>¿Cómo agendar una hora?</a></li></ul></div><div class=\"col-md-5\"><ul><li><a href=\"#\"><i class=\"fa fa-stop\"></i>Método de atención</a></li><li><a href=\"#\"><i class=\"fa fa-stop\"></i>¿Cómo ingresar a una sesión?</a></li></ul></div></div></div></div><div class=\"col-md-3\"><div class=\"contact-info\"><div class=\"footer-heading\"><h4>Información de contacto</h4></div><ul><li><span>Teléfono: </span>+56 9 3391 4571</li><li><span>Correo:</span>mjcaroca.araya@gmail.com</li></ul></div></div></div></div>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container\"><div class=\"row\"><div class=\"col-md-4\"><div class=\"about-veno\"><div class=\"logo\"><img src=\"" + _resources_images_logo_footer_png__WEBPACK_IMPORTED_MODULE_1__["default"] + "\" alt=\"Logo Psicóloga\"></div><h4>Redes sociales:</h4><ul class=\"social-icons\"><li class=\"socialmargin\"><a href=\"#\" target=\"_blank\"><i class=\"fa-brands fa-facebook\"></i></a><a href=\"#\" target=\"_blank\"><i class=\"fa-brands fa-instagram\"></i></a><a href=\"#\" target=\"_blank\"><i class=\"fa fa-book\"></i></a></li></ul></div></div><div class=\"col-md-5\"><div class=\"useful-links\"><div class=\"footer-heading\"><h4>Preguntas frecuentes</h4></div><div class=\"row\"><div class=\"col-md-5\"><ul><li><a href=\"#\"><i class=\"fa fa-stop\"></i>Métodos de pago</a></li><li><a href=\"#\"><i class=\"fa fa-stop\"></i>¿Cómo agendar una hora?</a></li></ul></div><div class=\"col-md-5\"><ul><li><a href=\"#\"><i class=\"fa fa-stop\"></i>Método de atención</a></li><li><a href=\"#\"><i class=\"fa fa-stop\"></i>¿Cómo ingresar a una sesión?</a></li></ul></div></div></div></div><div class=\"col-md-3\"><div class=\"contact-info\"><div class=\"footer-heading\"><h4>Información de contacto</h4></div><ul><li><span>Teléfono: </span>+56 9 3391 4571</li><li><span>Correo:</span>mjcaroca.araya@gmail.com</li></ul></div></div></div></div>", 1);
 
 var _hoisted_2 = [_hoisted_1];
 function render(_ctx, _cache) {
@@ -20974,19 +20974,21 @@ var _hoisted_7 = {
 
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Inicio");
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Servicios");
+
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "#"
 }, "Contenido")], -1
 /* HOISTED */
 );
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "#"
 }, "Agenda tu hora")], -1
 /* HOISTED */
 );
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Contacto");
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Contacto");
 
 function render(_ctx, _cache) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
@@ -21009,11 +21011,20 @@ function render(_ctx, _cache) {
     _: 1
     /* STABLE */
 
-  })]), _hoisted_9, _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/servicios"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_9];
+    }),
+    _: 1
+    /* STABLE */
+
+  })]), _hoisted_10, _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/contacto"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_11];
+      return [_hoisted_12];
     }),
     _: 1
     /* STABLE */
@@ -21041,7 +21052,7 @@ var _hoisted_1 = {
   "class": "our-services"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container\"><div class=\"row\"><div class=\"col-md-4\"><img id=\"imgpsicologa\" src=\"" + _resources_images_psicologa_jpg__WEBPACK_IMPORTED_MODULE_1__["default"] + "\" alt=\"\"></div><div class=\"col-md-7\"><div class=\"right-content\"><br><h4>Sobre mí:</h4><p> Decidir comenzar un proceso de terapia no es fácil, pero a la vez es una de las decisiones más importantes que se pueden tomar por uno mismo. Implica mirarse y entrar en aspectos que por lo general evitamos hasta que nos empieza a generar malestar, reclamando nuestra atención. Pero con un buen acompañamiento, este proceso logra tener frutos que resultan ser maravillosos para nuestras vidas. <br><br> Si en este momento hay algún aspecto de tu vida que quisieras mejorar, algo que sientas que te está aproblemando, que ya te está generando agotamiento y una sensación de que tienes que &quot;lidiar&quot; con eso, sin poder fluir como quisieras, tal vez sería bueno considerar el tiempo de iniciar una terapia. Si tienes dudas acerca de si puedo ayudarte, estaré feliz de que me contactes y me cuentes más acerca de tu problema <br><br> María José Caroca </p><br><h4>Servicios:</h4><p> •Psicología Clínica. <br> •Psicología Clínica de Adultos. <br> •Psicoterapia. <br> •Psicoterapia en adolescentes y adultos. </p><br><h4>Enfermedades tratadas:</h4><p> •Estrés. <br> •Violencia intrafamiliar. <br> •Trastorno de estrés postraumático. <br> •Trastornos del ánimo. <br> •Maltrato grave. <br> •Trastorno de control de impulsos. <br> •Problemas de autoestima. <br> •Depresión. <br> •Duelos Patológicos. <br> •Trastornos adaptativos. <br> •Trastornos de ansiedad. </p></div></div></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container\"><div class=\"row\"><div class=\"col-md-4\"><img id=\"imgpsicologa\" src=\"" + _resources_images_psicologa_jpg__WEBPACK_IMPORTED_MODULE_1__["default"] + "\" alt=\"\"></div><div class=\"col-md-7\"><div class=\"right-content\"><br><h4>Sobre mí:</h4><p> Decidir comenzar un proceso de terapia no es fácil, pero a la vez es una de las decisiones más importantes que se pueden tomar por uno mismo. Implica mirarse y entrar en aspectos que por lo general evitamos hasta que nos empieza a generar malestar, reclamando nuestra atención. Pero con un buen acompañamiento, este proceso logra tener frutos que resultan ser maravillosos para nuestras vidas. <br><br> Si en este momento hay algún aspecto de tu vida que quisieras mejorar, algo que sientas que te está aproblemando, que ya te está generando agotamiento y una sensación de que tienes que &quot;lidiar&quot; con eso, sin poder fluir como quisieras, tal vez sería bueno considerar el tiempo de iniciar una terapia. Si tienes dudas acerca de si puedo ayudarte, estaré feliz de que me contactes y me cuentes más acerca de tu problema. <br><br> María José Caroca. </p><br><h4>Formación:</h4><p> •Psicóloga, Universidad de La Frontera, 2011 <br> •Diplomado en Abuso Sexual Infantil, Universidad Academia de Humanismo Cristiano, 2012 <br> •Postítulo Intervención en Abuso Sexual Infantojuvenil, Universidad de La Frontera, 2013 <br> •Curso Superación del Trauma (II versión), Human Business, 2014 <br> •Curso Affective Bonding Therapy ABT, CETEPO Chile, 2015 <br> •Curso Terapia breve del duelo, Mentores Group, 2017 <br> •Diplomado Trastornos de Personalidad. ADIPA, 2021 <br> •Curso Riesgo suicida en adolescencia y adultez emergente. ADIPA, 2022 <br> •Curso Evaluación y estrategias para trastornos de la conducta alimentaria. CESIST Chile, 2022 <br></p></div></div></div></div>", 1);
 
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache) {
@@ -21097,6 +21108,10 @@ var Contacto = function Contacto() {
   return __webpack_require__.e(/*! import() */ "resources_js_views_Contacto_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/Contacto */ "./resources/js/views/Contacto.vue"));
 };
 
+var Servicios = function Servicios() {
+  return __webpack_require__.e(/*! import() */ "resources_js_views_Servicios_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/Servicios */ "./resources/js/views/Servicios.vue"));
+};
+
 var routes = [{
   path: "/",
   name: "welcome",
@@ -21105,6 +21120,10 @@ var routes = [{
   path: "/contacto",
   name: "contacto",
   component: Contacto
+}, {
+  path: "/servicios",
+  name: "servicios",
+  component: Servicios
 }];
 var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({
   history: (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createWebHashHistory)(),
@@ -26836,13 +26855,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _App_vue_vue_type_template_id_f348271a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.vue?vue&type=template&id=f348271a */ "./resources/js/App.vue?vue&type=template&id=f348271a");
 /* harmony import */ var _App_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.vue?vue&type=script&lang=js */ "./resources/js/App.vue?vue&type=script&lang=js");
-/* harmony import */ var D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_App_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_App_vue_vue_type_template_id_f348271a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/App.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_App_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_App_vue_vue_type_template_id_f348271a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/App.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -26862,12 +26881,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Footer_vue_vue_type_template_id_61a7c374__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Footer.vue?vue&type=template&id=61a7c374 */ "./resources/js/components/Footer.vue?vue&type=template&id=61a7c374");
-/* harmony import */ var D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_Footer_vue_vue_type_template_id_61a7c374__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Footer.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_Footer_vue_vue_type_template_id_61a7c374__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Footer.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -26887,12 +26906,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Header_vue_vue_type_template_id_1f42fb90__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Header.vue?vue&type=template&id=1f42fb90 */ "./resources/js/components/Header.vue?vue&type=template&id=1f42fb90");
-/* harmony import */ var D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_Header_vue_vue_type_template_id_1f42fb90__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Header.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_Header_vue_vue_type_template_id_1f42fb90__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Header.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -26912,12 +26931,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Welcome_vue_vue_type_template_id_1ae8ae93__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Welcome.vue?vue&type=template&id=1ae8ae93 */ "./resources/js/views/Welcome.vue?vue&type=template&id=1ae8ae93");
-/* harmony import */ var D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_Welcome_vue_vue_type_template_id_1ae8ae93__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/Welcome.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_Welcome_vue_vue_type_template_id_1ae8ae93__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/Welcome.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -30964,7 +30983,7 @@ function useRoute() {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if (chunkId === "resources_js_views_Contacto_vue") return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_views_Contacto_vue":1,"resources_js_views_Servicios_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
