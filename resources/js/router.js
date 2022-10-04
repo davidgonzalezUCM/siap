@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const Welcome = () => import("./views/Welcome");
 const Contacto = () => import("./views/Contacto");
 const Servicios = () => import("./views/Servicios");
+const AgendarHora = () => import("./views/AgendarHora");
 
 const routes = [
     {
@@ -17,6 +18,11 @@ const routes = [
         path: "/servicios",
         name: "servicios",
         component: Servicios,
+    },
+    {
+        path: "/agendarhora",
+        name: "agendarhora",
+        component: AgendarHora,
     },
 ];
 

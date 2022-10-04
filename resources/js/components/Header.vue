@@ -18,9 +18,7 @@
 
                             <li><a href="#">Contenido</a></li>
 
-                            <li>
-                                <a href="#">Agenda tu hora</a>
-                            </li>
+                            <li><router-link to="/agendarhora">Agenda tu hora</router-link></li>
 
                             <li><router-link to="/contacto">Contacto</router-link></li>
                         </ul>
