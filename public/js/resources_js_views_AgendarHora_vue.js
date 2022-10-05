@@ -20,6 +20,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      fechaN: null,
       date: new Date(),
       hours: Array.from({
         length: 9
@@ -52,14 +53,67 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
+  "class": "our-services"
+};
+var _hoisted_2 = {
+  "class": "container"
+};
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row mb-3\"><label class=\"form-label\">Nombre Completo</label><div class=\"col-sm-3\"><input type=\"text\" class=\"form-control\" placeholder=\"Nombres\" id=\"inputEmail3\"></div><div class=\"col-sm-2\"><input type=\"text\" class=\"form-control\" placeholder=\"Apellido Paterno\" id=\"inputEmail3\"></div><div class=\"col-sm-2\"><input type=\"text\" class=\"form-control\" placeholder=\"Apellio Materno\" id=\"inputEmail3\"></div></div><div class=\"row mb-3\"><label class=\"form-label\">Rut:</label><div class=\"col-sm-3\"><input class=\"form-control\" type=\"text\" name=\"Rut\" id=\"\"></div></div>", 2);
+
+var _hoisted_5 = {
+  "class": "mb-3"
+};
+
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "class": "form-label"
+}, "Fecha de nacimento:", -1
+/* HOISTED */
+);
+
+var _hoisted_7 = {
   id: "calendario"
 };
+
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mb-3\"><label>Correo Electronico:</label><div class=\"col-sm-3\"><input class=\"form-control\" type=\"email\" name=\"correo\" id=\"\"></div></div><div class=\"mb-3\"><label class=\"form-label\">telefono:</label><div class=\"col-sm-3\"><input class=\"form-control\" type=\"text\" name=\"telefono\" id=\"\"></div></div><div class=\"mb-3\"><label class=\"form-label\">ciudad:</label><div class=\"col-sm-3\"><input class=\"form-control\" type=\"text\" name=\"ciudad\" id=\"\"></div></div><div class=\"mb-3\"><label class=\"form-label\">Motivo de Consulta:</label><div class=\"col-sm-3\"><textarea class=\"form-control\" name=\"motivo\" id=\"\" rows=\"3\"></textarea></div></div>", 4);
+
+var _hoisted_12 = {
+  "class": "mb-3"
+};
+
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "class": "form-label"
+}, "Agendar Hora:", -1
+/* HOISTED */
+);
+
+var _hoisted_14 = {
+  id: "calendario"
+};
+
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  type: "submit",
+  value: "Agendar",
+  "class": "modal-btn"
+}, null, -1
+/* HOISTED */
+);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_datepicker = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("datepicker");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_datepicker, {
-    value: $data.date,
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_datepicker, {
+    value: $data.fechaN,
     "onUpdate:value": _cache[0] || (_cache[0] = function ($event) {
+      return $data.fechaN = $event;
+    }),
+    type: "date",
+    format: "DD-MM-YYYY"
+  }, null, 8
+  /* PROPS */
+  , ["value"])])]), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_datepicker, {
+    value: $data.date,
+    "onUpdate:value": _cache[1] || (_cache[1] = function ($event) {
       return $data.date = $event;
     }),
     "minute-step": 10,
@@ -70,7 +124,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     format: "DD-MM-YYYY HH:mm"
   }, null, 8
   /* PROPS */
-  , ["value", "hour-options", "default-value", "disabled-date"])]);
+  , ["value", "hour-options", "default-value", "disabled-date"])])]), _hoisted_15])])]);
 }
 
 /***/ }),

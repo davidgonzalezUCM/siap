@@ -3,9 +3,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img id="imgatencion" src="../../../resources/images/atencion.jpg" alt="Logo Psicóloga"/>
+                    <img id="imgatencion" src="../../../resources/images/atencion.jpg" alt="Logo Psicóloga" />
                 </div>
-                <div class="col-md-4" >
+                <div class="col-md-4">
                     <div class="right-content">
                         <h4>Enfermedades tratadas:</h4>
                         <p>
@@ -35,15 +35,15 @@
                 </div>
                 <div class="col-md-4">
                     <h4>Servicios:</h4>
-                        <p>
-                            •Psicología Clínica.
-                            <br />
-                            •Psicología Clínica de Adultos.
-                            <br />
-                            •Psicoterapia.
-                            <br />
-                            •Psicoterapia en adolescentes y adultos.
-                        </p>
+                    <p>
+                        •Psicología Clínica.
+                        <br />
+                        •Psicología Clínica de Adultos.
+                        <br />
+                        •Psicoterapia.
+                        <br />
+                        •Psicoterapia en adolescentes y adultos.
+                    </p>
                 </div>
             </div>
         </div>
