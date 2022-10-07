@@ -14,14 +14,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_datepicker_next__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-datepicker-next */ "./node_modules/vue-datepicker-next/index.es.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'calendario',
+  name: "calendario",
   components: {
     Datepicker: vue_datepicker_next__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
     return {
-      fechaN: null,
-      date: 'new Date()',
+      fechaN: "",
+      date: "",
       hours: Array.from({
         length: 9
       }).map(function (_, i) {
@@ -51,7 +51,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var _resources_images_views_atencion_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../resources/images/views/atencion.jpg */ "./resources/images/views/atencion.jpg");
+/* harmony import */ var _resources_images_views_calendario_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../resources/images/views/calendario.png */ "./resources/images/views/calendario.png");
 
 
 var _hoisted_1 = {
@@ -64,7 +64,7 @@ var _hoisted_3 = {
   "class": "row"
 };
 var _hoisted_4 = {
-  "class": "col"
+  "class": "col-md-6"
 };
 
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row mb-3\"><label class=\"form-label\">Nombre Completo</label><div class=\"col\"><input type=\"text\" class=\"form-control\" placeholder=\"Nombres\" id=\"inputEmail3\"></div><div class=\"col\"><input type=\"text\" class=\"form-control\" placeholder=\"Apellido Paterno\" id=\"inputEmail3\"></div><div class=\"col\"><input type=\"text\" class=\"form-control\" placeholder=\"Apellio Materno\" id=\"inputEmail3\"></div></div><div class=\"row mb-3\"><div class=\"col\"><label class=\"form-label\">Rut:</label><input class=\"form-control\" type=\"text\" name=\"Rut\" id=\"\"></div><div class=\"col\"><label class=\"form-label\">telefono:</label><input class=\"form-control\" type=\"text\" name=\"telefono\" id=\"\"></div></div>", 2);
@@ -74,7 +74,7 @@ var _hoisted_7 = {
 };
 
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-sm-5"
+  "class": "col"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "form-label"
 }, "Correo Electronico:"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -88,7 +88,7 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_9 = {
   id: "calendario",
-  "class": "col-sm-5"
+  "class": "col"
 };
 
 var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
@@ -102,10 +102,10 @@ var _hoisted_11 = {
 };
 
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-sm-5"
+  "class": "col"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "form-label"
-}, "Ciudad:"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+}, "ciudad:"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   "class": "form-control",
   type: "text",
   name: "ciudad",
@@ -116,7 +116,7 @@ var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 
 var _hoisted_13 = {
   id: "calendario",
-  "class": "col-sm-5"
+  "class": "col"
 };
 
 var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
@@ -128,11 +128,15 @@ var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row mb-3\"><label class=\"form-label\">Motivo de Consulta:</label><div class=\"col\"><textarea class=\"form-control\" style=\"resize:none;\" name=\"motivo\" id=\"\" rows=\"3\"></textarea></div></div><input type=\"submit\" value=\"Agendar\" class=\"modal-btn\">", 2);
 
 var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-md-4"
+  "class": "col-md-5"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  id: "imgatencion",
-  src: _resources_images_views_atencion_jpg__WEBPACK_IMPORTED_MODULE_1__["default"],
-  alt: "Logo Psicóloga"
+  style: {
+    "width": "90%",
+    "display": "block",
+    "margin": "auto"
+  },
+  src: _resources_images_views_calendario_png__WEBPACK_IMPORTED_MODULE_1__["default"],
+  alt: ""
 })], -1
 /* HOISTED */
 );
@@ -145,6 +149,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:value": _cache[0] || (_cache[0] = function ($event) {
       return $data.fechaN = $event;
     }),
+    editable: false,
+    clearable: false,
     type: "date",
     format: "DD-MM-YYYY"
   }, null, 8
@@ -156,28 +162,28 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     "minute-step": 10,
     "hour-options": $data.hours,
-    "default-value": new Date(),
     "disabled-date": $options.disabledBeforeTodayAndAfterAWeek,
+    editable: false,
     type: "datetime",
     format: "DD-MM-YYYY HH:mm"
   }, null, 8
   /* PROPS */
-  , ["value", "hour-options", "default-value", "disabled-date"])])]), _hoisted_15]), _hoisted_17])])]);
+  , ["value", "hour-options", "disabled-date"])])]), _hoisted_15]), _hoisted_17])])]);
 }
 
 /***/ }),
 
-/***/ "./resources/images/views/atencion.jpg":
-/*!*********************************************!*\
-  !*** ./resources/images/views/atencion.jpg ***!
-  \*********************************************/
+/***/ "./resources/images/views/calendario.png":
+/*!***********************************************!*\
+  !*** ./resources/images/views/calendario.png ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/atencion.jpg?f1d65d157034745049d1d0e6fd183500");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/calendario.png?d0093ef4ca2a8fd115932faa4a6934a3");
 
 /***/ }),
 
