@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img id="imgpsicologa" src="../../../resources/images/psicologa.jpg" alt="" />
+                    <img id="imgpsicologa" src="../../../resources/images/views/psicologa.jpg" alt="" />
                 </div>
                 <div class="col-md-7">
                     <div class="right-content">

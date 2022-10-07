@@ -6,16 +6,16 @@
                         <div class="about-veno">
                             <div class="logo">
                                 <img
-                                src="../../../resources/images/logo_footer.png"
-                                alt="Logo Psicóloga"
+                                src="../../../resources/images/componentes/logo_footer.png"
+                                alt="Logo Footer"
                             />
                             </div>
                             <h4>Redes sociales:</h4>
                             <ul class="social-icons">
                                 <li class="socialmargin">
-                                    <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                                    <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                                    <a href="#" target="_blank"><i class="fa fa-book"></i></a>
+                                    <a href="https://www.facebook.com/psicologa.linares" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                                    <a href="https://www.instagram.com/ps.mariajose.caroca/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                    <a href="https://www.doctoralia.cl/maria-jose-caroca-araya/psicologo/linares" target="_blank"><i class="fa fa-book"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -28,15 +28,15 @@
                             <div class="row">
                                 <div class="col-md-5">
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-stop"></i>Métodos de pago</a></li>
-                                        <li><a href="#"><i class="fa fa-stop"></i>¿Cómo agendar una hora?</a></li>
+                                        <li><router-link to="/metodo_pago"><i class="fa fa-stop"></i>Métodos de pago</router-link></li>
+                                        <li><router-link to="/como_agendar_hora"><i class="fa fa-stop"></i>¿Cómo agendar una hora?</router-link></li>
                                         
                                     </ul>
                                 </div>
                                 <div class="col-md-5">
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-stop"></i>Método de atención</a></li>
-                                        <li><a href="#"><i class="fa fa-stop"></i>¿Cómo ingresar a una sesión?</a></li>
+                                        <li><router-link to="/metodo_atencion"><i class="fa fa-stop"></i>Método de atención</router-link></li>
+                                        <li><router-link to="/como_ingresar_sesion"><i class="fa fa-stop"></i>¿Cómo ingresar a una sesión?</router-link></li>
                                         
                                     </ul>
                                 </div>

@@ -6,7 +6,7 @@
                     <router-link to="/"
                         ><div class="logo">
                             <img
-                                src="../../../resources/images/logo.png"
+                                src="../../../resources/images/componentes/logo.png"
                                 alt="Logo Psicóloga"
                             /></div
                     ></router-link>
@@ -16,11 +16,11 @@
 
                             <li><router-link to="/servicios">Servicios</router-link></li>
 
-                            <li><a href="#">Contenido</a></li>
-
-                            <li><router-link to="/agendarhora">Agenda tu hora</router-link></li>
+                            <li><router-link to="/agendar_hora">Agenda tu hora</router-link></li>
 
                             <li><router-link to="/contacto">Contacto</router-link></li>
+
+                            <li><router-link to="/iniciar_sesion">Iniciar sesión</router-link></li>
                         </ul>
                     </nav>
                 </div>

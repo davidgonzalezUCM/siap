@@ -2,7 +2,7 @@
   <section class="our-services">
     <div class="container">
     <div class="row">
-      <form class="col-md-6">
+      <form class="col">
 
         <div class="row mb-3">
           <label class="form-label">Nombre Completo</label>
@@ -31,27 +31,25 @@
 
 
         <div class="row mb-3">
-          <div class="col">
+          <div class="col-sm-5">
             <label class="form-label">Correo Electronico:</label>
             <input class="form-control" type="email" name="correo" id="" />
           </div>
-          <div id="calendario" class="col">
+          <div id="calendario" class="col-sm-5">
             <label class="form-label">Fecha de nacimento:</label>
-            <datepicker v-model:value="fechaN" :editable="false" :clearable="false" type="date" format="DD-MM-YYYY"></datepicker>
+            <datepicker v-model:value="fechaN" type="date" format="DD-MM-YYYY" ></datepicker>
           </div>
-
         </div>
 
         <div class="row mb-3">
-          <div class="col">
-            <label class="form-label">ciudad:</label>
+          <div class="col-sm-5">
+            <label class="form-label">Ciudad:</label>
             <input class="form-control" type="text" name="ciudad" id="" />
           </div>
-
-          <div id="calendario" class="col">
+          <div id="calendario" class="col-sm-5">
             <label class="form-label">Agendar Hora:</label>
-            <datepicker v-model:value="date" :minute-step="10" :hour-options="hours" 
-              :disabled-date="disabledBeforeTodayAndAfterAWeek" :editable="false"  type="datetime"  format="DD-MM-YYYY HH:mm"></datepicker>
+            <datepicker v-model:value="date" :minute-step="10" :hour-options="hours" :default-value="new Date()"
+              :disabled-date="disabledBeforeTodayAndAfterAWeek" type="datetime" format="DD-MM-YYYY HH:mm"></datepicker>
           </div>
         </div>
 
@@ -65,7 +63,7 @@
         <input type="submit" value="Agendar" class="modal-btn" />
       </form>
       <div class="col-md-4">
-        <img id="imgatencion" src="../../../resources/images/atencion.jpg" alt="Logo Psicóloga" />
+        <img id="imgatencion" src="../../../resources/images/views/atencion.jpg" alt="Logo Psicóloga" />
       </div>
     </div>
     </div>
@@ -81,8 +79,8 @@ export default {
   },
   data() {
     return {
-      fechaN: '',
-      date: '',
+      fechaN: null,
+      date: 'new Date()',
       hours: Array.from({ length: 9 }).map((_, i) => i + 9),
     }
   },

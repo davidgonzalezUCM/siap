@@ -20,8 +20,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      fechaN: '',
-      date: '',
+      fechaN: null,
+      date: 'new Date()',
       hours: Array.from({
         length: 9
       }).map(function (_, i) {
@@ -51,7 +51,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var _resources_images_atencion_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../resources/images/atencion.jpg */ "./resources/images/atencion.jpg");
+/* harmony import */ var _resources_images_views_atencion_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../resources/images/views/atencion.jpg */ "./resources/images/views/atencion.jpg");
 
 
 var _hoisted_1 = {
@@ -64,7 +64,7 @@ var _hoisted_3 = {
   "class": "row"
 };
 var _hoisted_4 = {
-  "class": "col-md-6"
+  "class": "col"
 };
 
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row mb-3\"><label class=\"form-label\">Nombre Completo</label><div class=\"col\"><input type=\"text\" class=\"form-control\" placeholder=\"Nombres\" id=\"inputEmail3\"></div><div class=\"col\"><input type=\"text\" class=\"form-control\" placeholder=\"Apellido Paterno\" id=\"inputEmail3\"></div><div class=\"col\"><input type=\"text\" class=\"form-control\" placeholder=\"Apellio Materno\" id=\"inputEmail3\"></div></div><div class=\"row mb-3\"><div class=\"col\"><label class=\"form-label\">Rut:</label><input class=\"form-control\" type=\"text\" name=\"Rut\" id=\"\"></div><div class=\"col\"><label class=\"form-label\">telefono:</label><input class=\"form-control\" type=\"text\" name=\"telefono\" id=\"\"></div></div>", 2);
@@ -74,7 +74,7 @@ var _hoisted_7 = {
 };
 
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col"
+  "class": "col-sm-5"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "form-label"
 }, "Correo Electronico:"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -88,7 +88,7 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_9 = {
   id: "calendario",
-  "class": "col"
+  "class": "col-sm-5"
 };
 
 var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
@@ -102,10 +102,10 @@ var _hoisted_11 = {
 };
 
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col"
+  "class": "col-sm-5"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "form-label"
-}, "ciudad:"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+}, "Ciudad:"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   "class": "form-control",
   type: "text",
   name: "ciudad",
@@ -116,7 +116,7 @@ var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 
 var _hoisted_13 = {
   id: "calendario",
-  "class": "col"
+  "class": "col-sm-5"
 };
 
 var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
@@ -131,7 +131,7 @@ var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "col-md-4"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   id: "imgatencion",
-  src: _resources_images_atencion_jpg__WEBPACK_IMPORTED_MODULE_1__["default"],
+  src: _resources_images_views_atencion_jpg__WEBPACK_IMPORTED_MODULE_1__["default"],
   alt: "Logo Psicóloga"
 })], -1
 /* HOISTED */
@@ -145,8 +145,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:value": _cache[0] || (_cache[0] = function ($event) {
       return $data.fechaN = $event;
     }),
-    editable: false,
-    clearable: false,
     type: "date",
     format: "DD-MM-YYYY"
   }, null, 8
@@ -158,21 +156,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     "minute-step": 10,
     "hour-options": $data.hours,
+    "default-value": new Date(),
     "disabled-date": $options.disabledBeforeTodayAndAfterAWeek,
-    editable: false,
     type: "datetime",
     format: "DD-MM-YYYY HH:mm"
   }, null, 8
   /* PROPS */
-  , ["value", "hour-options", "disabled-date"])])]), _hoisted_15]), _hoisted_17])])]);
+  , ["value", "hour-options", "default-value", "disabled-date"])])]), _hoisted_15]), _hoisted_17])])]);
 }
 
 /***/ }),
 
-/***/ "./resources/images/atencion.jpg":
-/*!***************************************!*\
-  !*** ./resources/images/atencion.jpg ***!
-  \***************************************/
+/***/ "./resources/images/views/atencion.jpg":
+/*!*********************************************!*\
+  !*** ./resources/images/views/atencion.jpg ***!
+  \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -195,13 +193,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _AgendarHora_vue_vue_type_template_id_bf2423a6__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AgendarHora.vue?vue&type=template&id=bf2423a6 */ "./resources/js/views/AgendarHora.vue?vue&type=template&id=bf2423a6");
 /* harmony import */ var _AgendarHora_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AgendarHora.vue?vue&type=script&lang=js */ "./resources/js/views/AgendarHora.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AgendarHora_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AgendarHora_vue_vue_type_template_id_bf2423a6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/AgendarHora.vue"]])
+const __exports__ = /*#__PURE__*/(0,D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AgendarHora_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AgendarHora_vue_vue_type_template_id_bf2423a6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/AgendarHora.vue"]])
 /* hot reload */
 if (false) {}
 
