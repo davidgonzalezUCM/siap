@@ -1,7 +1,7 @@
 <template>
     <section class="popular-places">
         <div class="container">
-            <div class="row">
+            <div class="row mb-3">
                 <div class="col">
                     <div class="left-content">
                         <h3>
@@ -31,6 +31,7 @@
                                     class="form-control"
                                     style="resize: none"
                                     placeholder="Comentario"
+                                    rows="3"
                                 ></textarea>
                             </div>
                             <input
@@ -39,7 +40,22 @@
                                 class="modal-btn"
                             />
                         </form>
-                        <br />
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="right-content">
+                        <img class="mb-5"
+                            style="width: 45%; display: block; margin: auto"
+                            src="../../../resources/images/views/contacto.png"
+                            alt=""
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="left-content">
                         <h3>
                             <strong>Suscríbete</strong>
                         </h3>
@@ -66,19 +82,10 @@
                                 />
                             </div>
                         </form>
-                        
-                        
-                        
                     </div>
                 </div>
-
                 <div class="col">
                     <div class="right-content">
-                        <img class="mb-5"
-                            style="width: 45%; display: block; margin: auto"
-                            src="../../../resources/images/views/contacto.png"
-                            alt=""
-                        />
                         <h3>
                             <strong
                                 >También puedes ver mis datos de
