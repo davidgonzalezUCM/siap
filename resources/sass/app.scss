@@ -445,7 +445,11 @@ section:nth-child(even) {
   border: 2px solid #36945c;
   transition: all 0.5s;
   border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
+
 .modal-btn:hover {
   background-color: #36945c;
   color: #fff;

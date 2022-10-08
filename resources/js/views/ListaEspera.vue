@@ -10,8 +10,7 @@
                                 type="text"
                                 class="form-control"
                                 placeholder="Nombres"
-                                name="Nombre"
-                                id=""
+                                id="inputEmail3"
                             />
                         </div>
                         <div class="col">
@@ -19,8 +18,7 @@
                                 type="text"
                                 class="form-control"
                                 placeholder="Apellido Paterno"
-                                name="Apellido Paterno"
-                                id=""
+                                id="inputEmail3"
                             />
                         </div>
                         <div class="col">
@@ -28,32 +26,7 @@
                                 type="text"
                                 class="form-control"
                                 placeholder="Apellio Materno"
-                                name="Apellido Materno"
-                                id=""
-                            />
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="form-label">Contraseña:</label>
-                            <input
-                                class="form-control"
-                                type="text"
-                                name="Contraseña"
-                                placeholder="Contraseña"
-                                id=""
-                            />
-                        </div>
-
-                        <div class="col">
-                            <label class="form-label">Confirmar contraseña:</label>
-                            <input
-                                class="form-control"
-                                type="text"
-                                name="ConfContraseña"
-                                placeholder="Vuelva a ingresar su contraseña"
-                                id=""
+                                id="inputEmail3"
                             />
                         </div>
                     </div>
@@ -64,8 +37,8 @@
                             <input
                                 class="form-control"
                                 type="text"
-                                placeholder="Rut"
                                 name="Rut"
+                                placeholder="Rut"
                                 id=""
                             />
                         </div>
@@ -75,8 +48,8 @@
                             <input
                                 class="form-control"
                                 type="text"
-                                placeholder="Teléfono"
                                 name="telefono"
+                                placeholder="Teléfono"
                                 id=""
                             />
                         </div>
@@ -90,8 +63,8 @@
                             <input
                                 class="form-control"
                                 type="email"
-                                placeholder="Correo electrónico"
                                 name="correo"
+                                placeholder="Correo electrónico"
                                 id=""
                             />
                         </div>
@@ -111,20 +84,21 @@
                     </div>
 
                     <div class="row mb-3">
-                        <div class="col">
+                        <div class="col-md-6">
                             <label class="form-label">Ciudad:</label>
                             <input
                                 class="form-control"
                                 type="text"
-                                placeholder="Ciudad"
                                 name="ciudad"
+                                placeholder="Ciudad"
                                 id=""
                             />
                         </div>
+
                     </div>
 
                     <div class="row mb-3">
-                        <label class="form-label">Motivo de Consulta:</label>
+                        <label class="form-label">Motivo de espera:</label>
                         <div class="col">
                             <textarea
                                 class="form-control"
@@ -132,16 +106,17 @@
                                 name="motivo"
                                 id=""
                                 rows="3"
-                                placeholder="Motivo de consulta"
+                                placeholder="Motivo de espera"
                             ></textarea>
                         </div>
                     </div>
 
-                    <input type="submit" value="Registrarme" class="modal-btn" data-bs-toggle="modal" data-bs-target="#hola" />
+                    <input type="submit" value="Agregar a lista de espera" class="modal-btn" data-bs-toggle="modal" data-bs-target="#hola" />
                 </form>
                 <div class="col-md-5">
-                    <img style="width: 80%; display:block; margin:auto;"
-                    src="../../../resources/images/views/registro.png"
+                    <img
+                        style="width: 70%; display: block; margin: auto"
+                        src="../../../resources/images/views/lista.png"
                         alt=""
                     />
                 </div>
@@ -157,7 +132,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Registro exitóso.</p>
+        <p>Agregado exitósamente a lista de espera.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
@@ -165,20 +140,33 @@
     </div>
   </div>
 </div>
-
 </template>
 
 <script>
-import Datepicker from "vue-datepicker-next";
-export default {
-    name: "calendario",
-    components: {
-        Datepicker,
-    },
-    data() {
-        return {
-            fechaN: "",
-        };
-    },
-};
-</script>
+    import Datepicker from "vue-datepicker-next";
+    
+    export default {
+        name: "calendario",
+        components: {
+            Datepicker,
+        },
+        data() {
+            return {
+                fechaN: "",
+                date: "",
+                hours: Array.from({ length: 9 }).map((_, i) => i + 9),
+            };
+        },
+        methods: {
+            disabledBeforeTodayAndAfterAWeek(date) {
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+    
+                return (
+                    date < today ||
+                    date > new Date(today.getTime() + 14 * 24 * 3600 * 1000)
+                );
+            },
+        },
+    };
+    </script>

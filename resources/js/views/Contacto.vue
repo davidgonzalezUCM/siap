@@ -13,37 +13,72 @@
                             method="post"
                             enctype="text/plain"
                         >
-                            <li>
-                                <label>Nombre:</label>
+                            <div class="mb-3">
+                                <label class="form-label">Nombre:</label>
                                 <input
                                     type="text"
                                     name="Nombre"
-                                    id="textnombre"
+                                    class="form-control"
+                                    placeholder="Nombre"
                                 />
-                            </li>
-                            <br />
-                            <li>
-                                <label id="labelcomentario"
+                            </div>
+                            <div class="mb-3">
+                                <label id="labelcomentario" class="form-label"
                                     >Deja tu comentario:</label
                                 >
                                 <textarea
                                     name="Comentario"
-                                    id="textcomentario"
+                                    class="form-control"
+                                    style="resize: none"
+                                    placeholder="Comentario"
                                 ></textarea>
-                            </li>
-                            <br />
+                            </div>
                             <input
                                 type="submit"
                                 value="Enviar"
                                 class="modal-btn"
-                                style="margin-left: 29%"
                             />
                         </form>
+                        <br />
+                        <h3>
+                            <strong>Suscríbete</strong>
+                        </h3>
+                        <p>
+                            También puedes suscribirte con tu correo electrónico
+                            y podrás recibir distintas noticias e información
+                            para cuidar tu salud mental.
+                        </p>
+                        <form>
+                            <div>
+                                <div class="mb-3"><label class="form-label">Ingresa acá tu correo:</label>
+                                <input
+                                    type="text"
+                                    name="Correosub"
+                                    id="textcorreosub"
+                                    class="form-control"
+                                    placeholder="Correo electrónico"
+                                /></div>
+                                
+                                <input
+                                    type="submit"
+                                    value="Suscríbete"
+                                    class="modal-btn"
+                                />
+                            </div>
+                        </form>
+                        
+                        
+                        
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="right-content">
+                        <img class="mb-5"
+                            style="width: 45%; display: block; margin: auto"
+                            src="../../../resources/images/views/contacto.png"
+                            alt=""
+                        />
                         <h3>
                             <strong
                                 >También puedes ver mis datos de
@@ -51,27 +86,22 @@
                             >
                         </h3>
                         <br />
-                        <h5 class="text-contact">
+                        <p>
                             <strong>Correo:</strong> mjcaroca.araya@gmail.com
-                        </h5>
 
-                        <br />
+                            <br />
+                            <br />
 
-                        <h5 class="text-contact">
                             <strong>Número de teléfono:</strong> +56 9 3391 4571
-                        </h5>
-                        <br />
+                        </p>
                         <a
                             href="https://api.whatsapp.com/send?phone=56933914571"
-                            class="fa-brands fa-whatsapp"
                             target="_blank"
-                        >
-                            Da clic aquí para comunicarnos vía WhatsApp
-                            directamente.</a
+                            ><i class="fa-brands fa-whatsapp"></i>Da clic aquí
+                            para comunicarnos vía WhatsApp directamente.</a
                         >
                     </div>
                 </div>
-                <br />
             </div>
         </div>
     </section>

@@ -12,6 +12,7 @@ const ComoAgendarHora = () => import("./views/ComoAgendarHora");
 
 const Registro = () => import("./views/Registro");
 const RecuperarPass = () => import("./views/RecuperarPass");
+const ListaEspera = () => import("./views/ListaEspera");
 
 
 const routes = [
@@ -69,7 +70,11 @@ const routes = [
         name: "recuperarpass",
         component: RecuperarPass,
     },
-
+    {
+        path: "/lista_espera",
+        name: "listaespera",
+        component: ListaEspera,
+    },
 ];
 
 export const router = createRouter({

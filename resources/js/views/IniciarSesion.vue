@@ -8,7 +8,7 @@
                             type="text" 
                             class="form-control" 
                             placeholder="Rut: 
-                            111111111-1" 
+                            xx.xxx.xxx-x" 
                             name="Rut" 
                             id="" 
                         />
@@ -19,7 +19,7 @@
                         <input 
                             type="text" 
                             class="form-control" 
-                            placeholder="contraseña" 
+                            placeholder="Contraseña" 
                             name="Contraseña" 
                             id="" 
                         />
@@ -27,10 +27,10 @@
                 
                 <ul>
                     <li><router-link to="/registro">Registrarme</router-link></li>
-                    <li><router-link to="/recuperar_pass">¿olvidaste tu contraseña?</router-link></li>
+                    <li><router-link to="/recuperar_pass">Olvidé mi contraseña</router-link></li>
                 </ul>
                     
-                <input type="submit" value="Iniciar Sesión" class="modal-btn" />
+                <input type="submit" value="Iniciar sesión" class="modal-btn" />
             </form>
         </div>
     </section>

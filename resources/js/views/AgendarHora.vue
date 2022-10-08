@@ -40,16 +40,18 @@
                             <input
                                 class="form-control"
                                 type="text"
+                                placeholder="Rut"
                                 name="Rut"
                                 id=""
                             />
                         </div>
 
                         <div class="col">
-                            <label class="form-label">telefono:</label>
+                            <label class="form-label">Teléfono:</label>
                             <input
                                 class="form-control"
                                 type="text"
+                                placeholder="Teléfono"
                                 name="telefono"
                                 id=""
                             />
@@ -59,11 +61,12 @@
                     <div class="row mb-3">
                         <div class="col">
                             <label class="form-label"
-                                >Correo Electronico:</label
+                                >Correo electrónico:</label
                             >
                             <input
                                 class="form-control"
                                 type="email"
+                                placeholder="Correo electrónico"
                                 name="correo"
                                 id=""
                             />
@@ -78,16 +81,18 @@
                                 :clearable="false"
                                 type="date"
                                 format="DD-MM-YYYY"
+                                placeholder="Fecha de nacimiento"
                             ></datepicker>
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <div class="col">
-                            <label class="form-label">ciudad:</label>
+                            <label class="form-label">Ciudad:</label>
                             <input
                                 class="form-control"
                                 type="text"
+                                placeholder="Ciudad"
                                 name="ciudad"
                                 id=""
                             />
@@ -105,6 +110,7 @@
                                 :editable="false"
                                 type="datetime"
                                 format="DD-MM-YYYY HH:mm"
+                                placeholder="Fecha de atención"
                             ></datepicker>
                         </div>
                     </div>
@@ -117,6 +123,7 @@
                                 style="resize: none"
                                 name="motivo"
                                 id=""
+                                placeholder="Motivo de consulta"
                                 rows="3"
                             ></textarea>
                         </div>
@@ -125,12 +132,19 @@
                     <input type="submit" value="Agendar" class="modal-btn" data-bs-toggle="modal" data-bs-target="#hola" />
                 </form>
                 <div class="col-md-5">
-                    <img style="width: 90%; display:block; margin:auto;"
+                    <img
+                        style="width: 90%; display: block; margin: auto"
                         src="../../../resources/images/views/calendario.png"
                         alt=""
                     />
                 </div>
             </div>
+            <p class="mt-3">
+                En caso de no haber horas disponibles, pero que sientas que
+                requieres atención con urgencia, puedes añadirte a la
+                <router-link to="/lista_espera">lista de espera</router-link>
+                detallando tu caso.
+            </p>
         </div>
     </section>
 
@@ -142,7 +156,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Hora Agendada Correctamente</p>
+        <p>Hora agendada correctamente.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
@@ -155,6 +169,7 @@
 
 <script>
 import Datepicker from "vue-datepicker-next";
+
 export default {
     name: "calendario",
     components: {
