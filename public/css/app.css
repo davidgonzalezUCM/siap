@@ -824,10 +824,6 @@ footer .logo img {
   overflow: hidden;
 }
 
-form {
-  width: 600px;
-}
-
 @media (max-width: 992px) {
   .banner .banner-caption {
     padding: 200px 30px;
@@ -902,6 +898,14 @@ main > section:nth-child(even) {
   border-radius: 10px;
   border: solid;
   border-color: white;
+}
+
+#formsesion {
+  width: 400px;
+  border-radius: 20px;
+  border: solid;
+  border-color: #36945c;
+  padding: 50px;
 }
 
 .imgsec {

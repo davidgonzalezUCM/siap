@@ -4,7 +4,7 @@
             <div class="row">
                 <form class="col-md-6">
                     <div class="row mb-3">
-                        <label class="form-label">Nombre Completo:</label>
+                        <label class="form-label">Nombre Completo</label>
                         <div class="col">
                             <input
                                 type="text"
@@ -29,6 +29,28 @@
                                 class="form-control"
                                 placeholder="Apellio Materno"
                                 name="Apellido Materno"
+                                id=""
+                            />
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="form-label">Contraseña:</label>
+                            <input
+                                class="form-control"
+                                type="text"
+                                name="contraseña"
+                                id=""
+                            />
+                        </div>
+
+                        <div class="col">
+                            <label class="form-label">Confirmar contraseña:</label>
+                            <input
+                                class="form-control"
+                                type="text"
+                                name="ConfContraseña"
                                 id=""
                             />
                         </div>
@@ -92,21 +114,6 @@
                                 id=""
                             />
                         </div>
-
-                        <div id="calendario" class="col">
-                            <label class="form-label">Agendar Hora:</label>
-                            <datepicker
-                                v-model:value="date"
-                                :minute-step="10"
-                                :hour-options="hours"
-                                :disabled-date="
-                                    disabledBeforeTodayAndAfterAWeek
-                                "
-                                :editable="false"
-                                type="datetime"
-                                format="DD-MM-YYYY HH:mm"
-                            ></datepicker>
-                        </div>
                     </div>
 
                     <div class="row mb-3">
@@ -122,11 +129,11 @@
                         </div>
                     </div>
 
-                    <input type="submit" value="Agendar" class="modal-btn" data-bs-toggle="modal" data-bs-target="#hola" />
+                    <input type="submit" value="Registrarme" class="modal-btn" data-bs-toggle="modal" data-bs-target="#hola" />
                 </form>
                 <div class="col-md-5">
                     <img style="width: 90%; display:block; margin:auto;"
-                        src="../../../resources/images/views/calendario.png"
+                        src=""
                         alt=""
                     />
                 </div>
@@ -163,20 +170,7 @@ export default {
     data() {
         return {
             fechaN: "",
-            date: "",
-            hours: Array.from({ length: 9 }).map((_, i) => i + 9),
         };
-    },
-    methods: {
-        disabledBeforeTodayAndAfterAWeek(date) {
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-
-            return (
-                date < today ||
-                date > new Date(today.getTime() + 14 * 24 * 3600 * 1000)
-            );
-        },
     },
 };
 </script>

@@ -810,9 +810,7 @@ footer .logo img {
 // END FOOTER STYLE
 
 // form
-form{
-  width: 600px;
-}
+
 
 
 //
@@ -907,6 +905,14 @@ main > section:nth-child(even) {
   border-radius: 10px;
   border: solid;
   border-color: white;
+}
+
+#formsesion{
+  width: 400px;
+  border-radius: 20px;
+  border: solid;
+  border-color: #36945c;
+  padding: 50px;
 }
 
 .imgsec{
