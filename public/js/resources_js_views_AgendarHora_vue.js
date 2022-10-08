@@ -147,13 +147,7 @@ var _hoisted_18 = {
   "class": "mt-3"
 };
 
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" En caso de no haber horas disponibles, pero que sientas que requieres atención con urgencia, puedes añadirte a la ");
-
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("lista de espera");
-
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" detallando tu caso. ");
-
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"modal\" tabindex=\"-1\" id=\"hola\"><div class=\"modal-dialog modal-dialog-centered\"><div class=\"modal-content\"><div class=\"modal-header\" style=\"background-color:#ced4da;\"><h5 class=\"modal-title\">Aviso</h5><button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button></div><div class=\"modal-body\"><p>Hora agendada correctamente.</p></div><div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-primary\" data-bs-dismiss=\"modal\">Aceptar</button></div></div></div></div>", 1);
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"modal\" tabindex=\"-1\" id=\"hola\"><div class=\"modal-dialog modal-dialog-centered\"><div class=\"modal-content\"><div class=\"modal-header\" style=\"background-color:#ced4da;\"><h5 class=\"modal-title\">Aviso</h5><button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button></div><div class=\"modal-body\"><p>Hora agendada correctamente.</p></div><div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-primary\" data-bs-dismiss=\"modal\">Aceptar</button></div></div></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_datepicker = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("datepicker");
@@ -186,16 +180,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "Fecha de atención"
   }, null, 8
   /* PROPS */
-  , ["value", "hour-options", "disabled-date"])])]), _hoisted_15]), _hoisted_17]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_18, [_hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  , ["value", "hour-options", "disabled-date"])])]), _hoisted_15]), _hoisted_17]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" En caso de no haber horas disponibles, pero que sientas que requieres atención con urgencia, puedes añadirte a la "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/lista_espera"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_20];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("lista de espera")];
     }),
     _: 1
     /* STABLE */
 
-  }), _hoisted_21])])]), _hoisted_22], 64
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" detallando tu caso. ")])])]), _hoisted_19], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -228,13 +222,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _AgendarHora_vue_vue_type_template_id_bf2423a6__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AgendarHora.vue?vue&type=template&id=bf2423a6 */ "./resources/js/views/AgendarHora.vue?vue&type=template&id=bf2423a6");
 /* harmony import */ var _AgendarHora_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AgendarHora.vue?vue&type=script&lang=js */ "./resources/js/views/AgendarHora.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AgendarHora_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AgendarHora_vue_vue_type_template_id_bf2423a6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/AgendarHora.vue"]])
+const __exports__ = /*#__PURE__*/(0,D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AgendarHora_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AgendarHora_vue_vue_type_template_id_bf2423a6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/AgendarHora.vue"]])
 /* hot reload */
 if (false) {}
 

@@ -33,7 +33,7 @@
                         <img
                             class="imgsec"
                             style="margin-left: 160px; width: 100%"
-                            src="../../../resources/images/ingresar_sesion/01.png"
+                            src="../../../resources/images/ingresar_sesion/01_ingresar_sesion.png"
                             alt=""
                         />
                     </div>
@@ -62,7 +62,7 @@
                         <img
                             class="imgsec"
                             style="margin-left: 160px; width: 100%"
-                            src="../../../resources/images/ingresar_sesion/02.png"
+                            src="../../../resources/images/ingresar_sesion/02_ingresar_sesion.png"
                             alt=""
                         />
                     </div>
@@ -91,7 +91,7 @@
                         <img
                             class="imgsec"
                             style="margin-left: 160px; width: 100%"
-                            src="../../../resources/images/ingresar_sesion/03.png"
+                            src="../../../resources/images/ingresar_sesion/03_ingresar_sesion.png"
                             alt=""
                         />
                     </div>
@@ -131,7 +131,7 @@
                         <img
                             class="imgsec"
                             style="margin-left: 160px; width: 100%"
-                            src="../../../resources/images/ingresar_sesion/04.png"
+                            src="../../../resources/images/ingresar_sesion/04_ingresar_sesion.png"
                             alt=""
                         />
                     </div>
