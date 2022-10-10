@@ -2,38 +2,7 @@
     <section class="our-services">
         <div class="container">
             <div class="row">
-                <form class="col-md-6">
-                    <div class="row mb-3">
-                        <label class="form-label">Nombre Completo:</label>
-                        <div class="col">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Nombres"
-                                name="Nombre"
-                                id=""
-                            />
-                        </div>
-                        <div class="col">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Apellido Paterno"
-                                name="Apellido Paterno"
-                                id=""
-                            />
-                        </div>
-                        <div class="col">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Apellio Materno"
-                                name="Apellido Materno"
-                                id=""
-                            />
-                        </div>
-                    </div>
-
+                <form class="col-md-6 " style="display: block; margin: auto" @submit.prevent="agregaragenda">
                     <div class="row mb-3">
                         <div class="col">
                             <label class="form-label">Rut:</label>
@@ -43,62 +12,13 @@
                                 placeholder="Rut"
                                 name="Rut"
                                 id=""
-                            />
-                        </div>
-
-                        <div class="col">
-                            <label class="form-label">Teléfono:</label>
-                            <input
-                                class="form-control"
-                                type="text"
-                                placeholder="Teléfono"
-                                name="telefono"
-                                id=""
+                                v-model="agenda.rut_usuario_fk"
                             />
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <div class="col">
-                            <label class="form-label"
-                                >Correo electrónico:</label
-                            >
-                            <input
-                                class="form-control"
-                                type="email"
-                                placeholder="Correo electrónico"
-                                name="correo"
-                                id=""
-                            />
-                        </div>
-                        <div id="calendario" class="col">
-                            <label class="form-label"
-                                >Fecha de nacimento:</label
-                            >
-                            <datepicker
-                                v-model:value="fechaN"
-                                :editable="false"
-                                :clearable="false"
-                                type="date"
-                                format="DD-MM-YYYY"
-                                placeholder="Fecha de nacimiento"
-                            ></datepicker>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="form-label">Ciudad:</label>
-                            <input
-                                class="form-control"
-                                type="text"
-                                placeholder="Ciudad"
-                                name="ciudad"
-                                id=""
-                            />
-                        </div>
-
-                        <div id="calendario" class="col">
                             <label class="form-label">Agendar Hora:</label>
                             <datepicker
                                 v-model:value="date"
@@ -106,37 +26,25 @@
                                     disabledBeforeTodayAndAfterAWeek
                                 "
                                 :editable="false"
+                                value-type="format"
                                 type="date"
                                 format="DD-MMM-YYYY"
                                 placeholder="Fecha de atención"
                             ></datepicker>
                         </div>
 
-                        <div id="calendario" class="col">
+                        <div class="col mb-4">
                             <label class="form-label">Agendar Hora:</label>
                             <datepicker
-                                v-model:value="date"
+                                v-model:value="hora"
                                 :minute-step="10"
                                 :hour-options="hours"
                                 :editable="false"
+                                value-type="format"
                                 type="time"
                                 format="HH:mm"
                                 placeholder="Fecha de atención"
                             ></datepicker>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label class="form-label">Motivo de Consulta:</label>
-                        <div class="col">
-                            <textarea
-                                class="form-control"
-                                style="resize: none"
-                                name="motivo"
-                                id=""
-                                placeholder="Motivo de consulta"
-                                rows="3"
-                            ></textarea>
                         </div>
                     </div>
 
@@ -182,16 +90,17 @@
 import Datepicker from "vue-datepicker-next";
 
 export default {
-    name: "calendario",
     components: {
         Datepicker,
     },
     data() {
         return {
-            fechaN: "",
             date: "",
             hora: "",
             hours: Array.from({ length: 9 }).map((_, i) => i + 9),
+            agenda:{
+
+            }
         };
     },
     methods: {
@@ -204,6 +113,14 @@ export default {
                 date > new Date(today.getTime() + 14 * 24 * 3600 * 1000)
             );
         },
+        agregaragenda(){
+            this.agenda.fecha = this.date;
+            this.agenda.hora = this.hora;
+            this.axios
+            .post('api/agenda',this.agenda)
+            .catch(err=>console.log(err))
+            .finally(() => this.loading = false)
+        }
     },
 };
 </script>

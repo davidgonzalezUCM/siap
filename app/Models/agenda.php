@@ -11,12 +11,16 @@ class agenda extends Model
     protected $table = 'agenda';
     public $timestamps = false;
     protected $fillable =[
-        'rut_admin_fk',
         'rut_usuario_fk',
         'fecha',
-        'hora',
-        'disponibilidad'
+        'hora'
     ];
+
+    protected $attributes = [
+        'rut_admin_fk'=> 'admin123',
+        'disponibilidad' => 'no disponible'
+    ];
+
     public function administrador(){
         return $this->belongsTo(administrador::class);
     }

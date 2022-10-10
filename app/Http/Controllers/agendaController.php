@@ -37,11 +37,9 @@ class agendaController extends Controller
     public function store(Request $request)
     {
         $agenda = new agenda([
-            'rut_admin_fk' ->input('admin123'),
             'rut_usuario_fk'=> $request->input('rut_usuario_fk'),
             'fecha'=> $request->input('fecha'),
-            'hora'=> $request->input('hora'),
-            'disponibilidad'=> $request->input('disponibilidad')
+            'hora'=> $request->input('hora')
         ]);
         $agenda->save();
         return response()->json('agenda creada');
