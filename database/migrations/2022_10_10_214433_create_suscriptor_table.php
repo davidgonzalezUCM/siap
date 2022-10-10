@@ -14,7 +14,7 @@ class CreateSuscriptorTable extends Migration
     public function up()
     {
         Schema::create('suscriptor', function (Blueprint $table) {
-            $table->bigInteger('id_suscriptor', true)->unique('id_suscriptor');
+            $table->bigInteger('id_suscriptor', true);
             $table->string('correo', 30)->unique('UNIQUE');
         });
     }

@@ -14,11 +14,12 @@ class CreateAgendaTable extends Migration
     public function up()
     {
         Schema::create('agenda', function (Blueprint $table) {
-            $table->bigInteger('id_agenda', true)->unique('id_agenda');
+            $table->bigInteger('id_agenda', true);
             $table->string('rut_admin_fk', 12)->index('rut_admin_fk');
-            $table->date('fecha');
+            $table->string('fecha', 20);
             $table->time('hora');
             $table->string('disponibilidad', 13);
+            $table->string('rut_usuario_fk', 12)->index('agenda_ibfk_2');
         });
     }
 
