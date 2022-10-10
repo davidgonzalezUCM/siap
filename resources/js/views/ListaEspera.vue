@@ -2,7 +2,7 @@
     <section class="our-services">
         <div class="container">
             <div class="row">
-                <form class="col-md-6">
+                <form class="col-md-6" @submit.prevent="agregarfila">
                     <div class="row mb-3">
                         <label class="form-label">Nombre Completo:</label>
                         <div class="col">
@@ -11,6 +11,7 @@
                                 class="form-control"
                                 placeholder="Nombres"
                                 id="inputEmail3"
+                                v-model="fila_espera.nombre"
                             />
                         </div>
                         <div class="col">
@@ -19,6 +20,7 @@
                                 class="form-control"
                                 placeholder="Apellido Paterno"
                                 id="inputEmail3"
+                                v-model="fila_espera.apellido_pat"
                             />
                         </div>
                         <div class="col">
@@ -27,6 +29,7 @@
                                 class="form-control"
                                 placeholder="Apellio Materno"
                                 id="inputEmail3"
+                                v-model="fila_espera.apellido_mat"
                             />
                         </div>
                     </div>
@@ -40,6 +43,7 @@
                                 name="Rut"
                                 placeholder="Rut"
                                 id=""
+                                v-model="fila_espera.rut_usuario_fk"
                             />
                         </div>
 
@@ -51,6 +55,7 @@
                                 name="telefono"
                                 placeholder="Teléfono"
                                 id=""
+                                v-model="fila_espera.telefono"
                             />
                         </div>
                     </div>
@@ -66,13 +71,22 @@
                                 name="correo"
                                 placeholder="Correo electrónico"
                                 id=""
+                                v-model="fila_espera.correo"
                             />
                         </div>
                         <div id="calendario" class="col">
                             <label class="form-label"
                                 >Fecha de nacimento:</label
                             >
-                            <input type="text" class="form-control" placeholder="selecione fecha"  onfocus="(this.type='date')">
+                            <datepicker
+                                v-model:value="fechaN"
+                                :editable="false"
+                                :clearable="false"
+                                value-type="format"
+                                type="date"
+                                format="DD-MMM-YYYY"
+                                placeholder="Fecha de nacimiento"
+                            />
                         </div>
                     </div>
 
@@ -85,6 +99,7 @@
                                 name="ciudad"
                                 placeholder="Ciudad"
                                 id=""
+                                v-model="fila_espera.ciudad"
                             />
                         </div>
 
@@ -100,6 +115,7 @@
                                 id=""
                                 rows="3"
                                 placeholder="Motivo de espera"
+                                v-model="fila_espera.motivo_espera"
                             ></textarea>
                         </div>
                     </div>
@@ -135,16 +151,29 @@
 </div>
 </template>
 
-<script>    
+<script>
+    import Datepicker from "vue-datepicker-next";
+    
     export default {
         components: {
-
+            Datepicker,
         },
         data() {
-            
+            return {
+              fechaN: '',  
+              fila_espera:{
+
+              },
+            };
         },
         methods: {
-            
-        },
+            agregarfila(){
+            this.fila_espera.fecha_nacimiento = this.fechaN;
+            this.axios
+            .post('api/fila_espera',this.fila_espera)
+            .catch(err=>console.log(err))
+            .finally(() => this.loading = false)
+            },
+        }
     };
     </script>

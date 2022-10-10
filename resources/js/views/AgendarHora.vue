@@ -71,11 +71,18 @@
                                 id=""
                             />
                         </div>
-                        <div class="col">
+                        <div id="calendario" class="col">
                             <label class="form-label"
                                 >Fecha de nacimento:</label
                             >
-                            <input type="text" class="form-control" placeholder="selecione fecha"  onfocus="(this.type='date')">
+                            <datepicker
+                                v-model:value="fechaN"
+                                :editable="false"
+                                :clearable="false"
+                                type="date"
+                                format="DD-MM-YYYY"
+                                placeholder="Fecha de nacimiento"
+                            ></datepicker>
                         </div>
                     </div>
 
@@ -91,14 +98,31 @@
                             />
                         </div>
 
-                        <div class="col">
-                            <label class="form-label">Agendar Fecha:</label>
-                            <input type="text" class="form-control" placeholder="seleccione fecha" onfocus="(this.type='date')">
+                        <div id="calendario" class="col">
+                            <label class="form-label">Agendar Hora:</label>
+                            <datepicker
+                                v-model:value="date"
+                                :disabled-date="
+                                    disabledBeforeTodayAndAfterAWeek
+                                "
+                                :editable="false"
+                                type="date"
+                                format="DD-MMM-YYYY"
+                                placeholder="Fecha de atención"
+                            ></datepicker>
                         </div>
 
-                        <div class="col">
-                            <label class="form-label">Hora:</label>
-                            <input type="text" class="form-control" placeholder="seleccione hora" onfocus="(this.type='time')">
+                        <div id="calendario" class="col">
+                            <label class="form-label">Agendar Hora:</label>
+                            <datepicker
+                                v-model:value="date"
+                                :minute-step="10"
+                                :hour-options="hours"
+                                :editable="false"
+                                type="time"
+                                format="HH:mm"
+                                placeholder="Fecha de atención"
+                            ></datepicker>
                         </div>
                     </div>
 
@@ -158,16 +182,28 @@
 import Datepicker from "vue-datepicker-next";
 
 export default {
+    name: "calendario",
     components: {
-        
+        Datepicker,
     },
     data() {
         return {
-            
+            fechaN: "",
+            date: "",
+            hora: "",
+            hours: Array.from({ length: 9 }).map((_, i) => i + 9),
         };
     },
     methods: {
-        
+        disabledBeforeTodayAndAfterAWeek(date) {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            return (
+                date < today ||
+                date > new Date(today.getTime() + 14 * 24 * 3600 * 1000)
+            );
+        },
     },
 };
 </script>

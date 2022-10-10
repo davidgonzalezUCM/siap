@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class usuarios extends Model
+class fila_espera extends Model
 {
     use HasFactory;
+    protected $table = 'fila_espera';
     public $timestamps = false;
-    protected $table = 'usuario';
     protected $fillable = [
-        'rut_usuario',
-        'contrasena',
+        'rut_usuario_fk',
         'nombre',
         'apellido_pat',
         'apellido_mat',
@@ -20,12 +19,9 @@ class usuarios extends Model
         'correo',
         'telefono',
         'ciudad',
-        'motivo_consulta'
+        'motivo_espera'
     ];
-    public function filas(){
-        return $this->hasMany(fila_espera::class);
-    }
-    public function agenda(){
-        return $this->hasMany(agenda::class);
+    public function usuarios(){
+        return $this->belongsTo(usuarios::class);
     }
 }

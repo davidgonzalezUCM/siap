@@ -95,11 +95,18 @@
                                 id=""
                             />
                         </div>
-                        <div class="col">
+                        <div id="calendario" class="col">
                             <label class="form-label"
                                 >Fecha de nacimento:</label
                             >
-                            <input type="text" class="form-control" placeholder="selecione fecha"  onfocus="(this.type='date')">
+                            <datepicker
+                                v-model:value="fechaN"
+                                :editable="false"
+                                :clearable="false"
+                                type="date"
+                                format="DD-MM-YYYY"
+                                placeholder="Fecha de nacimiento"
+                            ></datepicker>
                         </div>
                     </div>
 
@@ -162,11 +169,15 @@
 </template>
 
 <script>
+import Datepicker from "vue-datepicker-next";
 export default {
+    name: "calendario",
     components: {
+        Datepicker,
     },
     data() {
         return {
+            fechaN: "",
         };
     },
 };

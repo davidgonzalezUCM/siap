@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\agenda;
 
 class agendaController extends Controller
 {
@@ -13,7 +14,8 @@ class agendaController extends Controller
      */
     public function index()
     {
-        //
+        $agenda = agenda::all()->toArray();
+        return array_reverse($agenda);
     }
 
     /**
@@ -34,7 +36,15 @@ class agendaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $agenda = new agenda([
+            'rut_admin_fk' ->input('admin123'),
+            'rut_usuario_fk'=> $request->input('rut_usuario_fk'),
+            'fecha'=> $request->input('fecha'),
+            'hora'=> $request->input('hora'),
+            'disponibilidad'=> $request->input('disponibilidad')
+        ]);
+        $agenda->save();
+        return response()->json('agenda creada');
     }
 
     /**
@@ -43,9 +53,10 @@ class agendaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_agenda)
     {
-        //
+        $agenda = agenda::find($id_agenda);
+        return response()->json($agenda);
     }
 
     /**
@@ -66,9 +77,11 @@ class agendaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_agenda)
     {
-        //
+        $agenda = agenda::find($id_agenda);
+        $agenda -> update($request->all());
+        return response()->json('agenda modificada');
     }
 
     /**
@@ -77,8 +90,10 @@ class agendaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_agenda)
     {
-        //
+        $agenda = agenda::find($id_agenda);
+        $agenda -> delete();
+        return response()->json('agenda borrada');
     }
 }

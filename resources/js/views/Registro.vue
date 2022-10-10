@@ -106,7 +106,15 @@
                             <label class="form-label"
                                 >Fecha de nacimento:</label
                             >
-                            <input type="text" class="form-control" placeholder="selecione fecha"  onfocus="(this.type='date')" v-model="usuarios.fecha_nacimiento">
+                            <datepicker
+                                v-model:value="fechaN"
+                                :editable="false"
+                                :clearable="false"
+                                value-type="format"
+                                type="date"
+                                format="DD-MMM-YYYY"
+                                placeholder="Fecha de nacimiento"
+                            />
                         </div>
                     </div>
 
@@ -171,20 +179,25 @@
 </template>
 
 <script>
-
+import Datepicker from "vue-datepicker-next";
 export default {
+    
     components: {
+        Datepicker,
     },
     data() {
         return {
+            fechaN: '',
             usuarios:{
 
-            }
+            },
+
         };
     },
 
     methods:{
         crearusuario(){
+            this.usuarios.fecha_nacimiento = this.fechaN;
             this.axios
             .post('api/usuarios',this.usuarios)
             .catch(err=>console.log(err))
