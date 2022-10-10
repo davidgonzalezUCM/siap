@@ -64,7 +64,7 @@
                             y podrás recibir distintas noticias e información
                             para cuidar tu salud mental.
                         </p>
-                        <form>
+                        <form @submit.prevent="agregarsuscriptor">
                             <div>
                                 <div class="mb-3"><label class="form-label">Ingresa acá tu correo:</label>
                                 <input
@@ -73,12 +73,15 @@
                                     id="textcorreosub"
                                     class="form-control"
                                     placeholder="Correo electrónico"
+                                    v-model="suscriptor.correo"
                                 /></div>
                                 
                                 <input
                                     type="submit"
                                     value="Suscríbete"
                                     class="modal-btn"
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#hola"
                                 />
                             </div>
                         </form>
@@ -112,4 +115,41 @@
             </div>
         </div>
     </section>
+
+    <div class="modal" tabindex="-1" id="hola">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #ced4da;">
+        <h5 class="modal-title">Aviso</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Suscriptor agregado correctamente.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
 </template>
+
+
+
+<script>
+    export default{
+        data(){
+            return{
+                suscriptor:{}
+            }
+        },
+        methods:{
+            agregarsuscriptor(){
+                this.axios
+                .post('api/suscriptor',this.suscriptor)
+                .catch(err=>console.log(err))
+                .finally(() => this.loading = false)
+            }
+        }
+    }
+</script>

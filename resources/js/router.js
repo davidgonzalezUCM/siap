@@ -13,6 +13,9 @@ const ComoAgendarHora = () => import("./views/ComoAgendarHora");
 const Registro = () => import("./views/Registro");
 const RecuperarPass = () => import("./views/RecuperarPass");
 const ListaEspera = () => import("./views/ListaEspera");
+const Perfil = () => import("./views/Perfil");
+
+const Admin = () => import("./views/Admin");
 
 
 const routes = [
@@ -75,6 +78,17 @@ const routes = [
         name: "listaespera",
         component: ListaEspera,
     },
+    {
+        path: "/perfil",
+        name: "perfil",
+        component: Perfil,
+    },
+    {
+        path: "/admin",
+        name: "admin",
+        component: Admin,
+    },
+
 ];
 
 export const router = createRouter({

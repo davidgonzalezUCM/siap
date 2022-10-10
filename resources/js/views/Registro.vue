@@ -2,7 +2,7 @@
     <section class="our-services">
         <div class="container">
             <div class="row">
-                <form class="col-md-6">
+                <form class="col-md-6" @submit.prevent="crearusuario">
                     <div class="row mb-3">
                         <label class="form-label">Nombre Completo:</label>
                         <div class="col">
@@ -12,6 +12,7 @@
                                 placeholder="Nombres"
                                 name="Nombre"
                                 id=""
+                                v-model="usuarios.nombre"
                             />
                         </div>
                         <div class="col">
@@ -21,6 +22,7 @@
                                 placeholder="Apellido Paterno"
                                 name="Apellido Paterno"
                                 id=""
+                                v-model="usuarios.apellido_pat"
                             />
                         </div>
                         <div class="col">
@@ -30,6 +32,7 @@
                                 placeholder="Apellio Materno"
                                 name="Apellido Materno"
                                 id=""
+                                v-model="usuarios.apellido_mat"
                             />
                         </div>
                     </div>
@@ -43,6 +46,7 @@
                                 name="Contraseña"
                                 placeholder="Contraseña"
                                 id=""
+                                v-model="usuarios.contrasena"
                             />
                         </div>
 
@@ -67,6 +71,7 @@
                                 placeholder="Rut"
                                 name="Rut"
                                 id=""
+                                v-model="usuarios.rut_usuario"
                             />
                         </div>
 
@@ -78,6 +83,7 @@
                                 placeholder="Teléfono"
                                 name="telefono"
                                 id=""
+                                v-model="usuarios.telefono"
                             />
                         </div>
                     </div>
@@ -93,20 +99,14 @@
                                 placeholder="Correo electrónico"
                                 name="correo"
                                 id=""
+                                v-model="usuarios.correo"
                             />
                         </div>
-                        <div id="calendario" class="col">
+                        <div class="col">
                             <label class="form-label"
                                 >Fecha de nacimento:</label
                             >
-                            <datepicker
-                                v-model:value="fechaN"
-                                :editable="false"
-                                :clearable="false"
-                                type="date"
-                                format="DD-MM-YYYY"
-                                placeholder="Fecha de nacimiento"
-                            ></datepicker>
+                            <input type="text" class="form-control" placeholder="selecione fecha"  onfocus="(this.type='date')" v-model="usuarios.fecha_nacimiento">
                         </div>
                     </div>
 
@@ -119,6 +119,7 @@
                                 placeholder="Ciudad"
                                 name="ciudad"
                                 id=""
+                                v-model="usuarios.ciudad"
                             />
                         </div>
                     </div>
@@ -133,6 +134,7 @@
                                 id=""
                                 rows="3"
                                 placeholder="Motivo de consulta"
+                                v-model="usuarios.motivo_consulta"
                             ></textarea>
                         </div>
                     </div>
@@ -169,16 +171,25 @@
 </template>
 
 <script>
-import Datepicker from "vue-datepicker-next";
+
 export default {
-    name: "calendario",
     components: {
-        Datepicker,
     },
     data() {
         return {
-            fechaN: "",
+            usuarios:{
+
+            }
         };
     },
+
+    methods:{
+        crearusuario(){
+            this.axios
+            .post('api/usuarios',this.usuarios)
+            .catch(err=>console.log(err))
+            .finally(() => this.loading = false)
+        }
+    }
 };
 </script>

@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.7.10"
     },
     "dependencies": {
+        "vue-axios": "^3.4.1",
         "vue-datepicker-next": "^1.0.2",
         "vue-router": "^4.1.5"
     }
