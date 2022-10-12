@@ -66,18 +66,18 @@ function render(_ctx, _cache) {
     "class": "btn btn-success btn-lg"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("REPORTE DE USUARIOS ")];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Reporte de Usuarios ")];
     }),
     _: 1
     /* STABLE */
 
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RouterLink, {
-    to: "/reportes_uscriptor",
+    to: "/reporte_suscriptor",
     type: "button",
     "class": "btn btn-success btn-lg"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("REPORTE DE SUSCRIPTORES")];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Reporte de Suscriptores")];
     }),
     _: 1
     /* STABLE */
@@ -88,7 +88,7 @@ function render(_ctx, _cache) {
     "class": "btn btn-success btn-lg"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("REPORTE DE AGENDA")];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Reporte de Agenda")];
     }),
     _: 1
     /* STABLE */
@@ -99,7 +99,7 @@ function render(_ctx, _cache) {
     "class": "btn btn-success btn-lg"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("REPORTE DE ADMINISTRADORES")];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Reporte de Administradores")];
     }),
     _: 1
     /* STABLE */
@@ -110,7 +110,7 @@ function render(_ctx, _cache) {
     "class": "btn btn-success btn-lg"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("REPORTE DE LISTAS DE ESPERA")];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Reporte de Listas de espera")];
     }),
     _: 1
     /* STABLE */
@@ -145,12 +145,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _OpcionesAdministrador_vue_vue_type_template_id_e2a8448c__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./OpcionesAdministrador.vue?vue&type=template&id=e2a8448c */ "./resources/js/views/OpcionesAdministrador.vue?vue&type=template&id=e2a8448c");
-/* harmony import */ var C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_OpcionesAdministrador_vue_vue_type_template_id_e2a8448c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/OpcionesAdministrador.vue"]])
+const __exports__ = /*#__PURE__*/(0,D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_OpcionesAdministrador_vue_vue_type_template_id_e2a8448c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/OpcionesAdministrador.vue"]])
 /* hot reload */
 if (false) {}
 

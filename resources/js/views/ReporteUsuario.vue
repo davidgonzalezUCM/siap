@@ -1,19 +1,19 @@
 <template>
     <section class="our-services">
         <div class="container">
-            <RouterLink to="/registro" type="button" class="btn btn-success mb-2" >agragar nuevo usuario</RouterLink>
+            <RouterLink to="/registro" type="button" class="btn btn-success mb-2" >Agregar nuevo usuario</RouterLink>
             <table class="table table-hover table-bordered border-primary">
                 <thead class="table-dark">
                     <tr>
-                        <th scope="col">rut usuario</th>
-                        <th scope="col">nombre</th>
-                        <th scope="col">apellido paterno</th>
-                        <th scope="col">apellide materno</th>
-                        <th scope="col">fecha nacimiento</th>
-                        <th scope="col">correo</th>
-                        <th scope="col">telefono</th>
-                        <th scope="col">ciudad</th>
-                        <th scope="col">acciones</th>
+                        <th scope="col">Rut usuario</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido paterno</th>
+                        <th scope="col">Apellide materno</th>
+                        <th scope="col">Fecha nacimiento</th>
+                        <th scope="col">Correo electrónico</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody class="table-secondary">

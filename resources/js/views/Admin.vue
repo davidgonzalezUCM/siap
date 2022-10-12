@@ -51,12 +51,12 @@
                         </div>
 
                         <div class="col">
-                            <label class="form-label">tipo</label>
+                            <label class="form-label">Tipo:</label>
                             <input
                                 class="form-control"
                                 type="text"
                                 name="ConfContraseña"
-                                placeholder="Vuelva a ingresar su contraseña"
+                                placeholder="Seleccione tipo de administrador"
                                 id=""
                                 v-model="administrador.tipo_admin"
                             />
@@ -77,7 +77,7 @@
                         </div>
                     </div>
 
-                    <input type="submit" value="Registrarme" class="modal-btn" data-bs-toggle="modal" data-bs-target="#hola" />
+                    <input type="submit" value="Registrar" class="modal-btn" data-bs-toggle="modal" data-bs-target="#hola" />
                 </form>
                 <div class="col-md-5">
                     <img style="width: 80%; display:block; margin:auto;"
@@ -97,7 +97,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Registro exitóso.</p>
+        <p>Registro exitoso.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>

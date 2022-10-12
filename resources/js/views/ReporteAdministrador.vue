@@ -1,15 +1,16 @@
 <template>
     <section class="our-services">
         <div class="container">
+            <RouterLink to="/admin" type="button" class="btn btn-success mb-2" >Agregar administrador</RouterLink>
             <table class="table table-hover table-bordered border-primary">
                 <thead class="table-dark">
                     <tr>
-                        <th scope="col">rut administrador</th>
-                        <th scope="col">nombre</th>
-                        <th scope="col">apellido paterno</th>
-                        <th scope="col">apellido materno</th>
-                        <th scope="col">tipo de administrador</th>
-                        <th scope="col">acciones</th>
+                        <th scope="col">Rut administrador</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido paterno</th>
+                        <th scope="col">Apellido materno</th>
+                        <th scope="col">Tipo de administrador</th>
+                        <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody class="table-secondary">

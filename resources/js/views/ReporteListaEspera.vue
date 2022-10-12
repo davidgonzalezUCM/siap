@@ -4,22 +4,20 @@
             <table class="table table-hover table-bordered border-primary">
                 <thead class="table-dark">
                     <tr>
-                        <th scope="col">id</th>
-                        <th scope="col">rut usuario</th>
-                        <th scope="col">nombre</th>
-                        <th scope="col">apellido paterno</th>
-                        <th scope="col">apellide materno</th>
-                        <th scope="col">fecha nacimiento</th>
-                        <th scope="col">correo</th>
-                        <th scope="col">telefono</th>
-                        <th scope="col">ciudad</th>
-                        <th scope="col">acciones</th>
+                        <th scope="col">Rut usuario</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido paterno</th>
+                        <th scope="col">Apellido materno</th>
+                        <th scope="col">Fecha nacimiento</th>
+                        <th scope="col">Correo electrónico</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody class="table-secondary">
                     <tr v-for="data in fila" :key="data.id_espera" >
-                        <th scope="row">{{data.id_espera}}</th>
-                        <th >{{data.rut_usuario_fk}}</th>
+                        <th scope="row">{{data.rut_usuario_fk}}</th>
                         <th >{{data.nombre}}</th>
                         <th >{{data.apellido_pat}}</th>
                         <th >{{data.apellido_mat}}</th>
