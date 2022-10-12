@@ -2,143 +2,170 @@
     <section class="our-services">
         <div class="container">
             <div class="row">
-                <form class="col-md-6">
-                    <div class="row mb-3">
-                        <label class="form-label">Nombre Completo:</label>
-                        <div class="col">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Nombres"
-                                name="Nombre"
-                                id=""
-                            />
+                <div class="col-md-6">
+                    <form >
+                        <div class="row mb-3">
+                            <label class="form-label">Nombre Completo:</label>
+                            <div class="col">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Nombres"
+                                    name="Nombre"
+                                    id=""
+                                />
+                            </div>
+                            <div class="col">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Apellido Paterno"
+                                    name="Apellido Paterno"
+                                    id=""
+                                />
+                            </div>
+                            <div class="col">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Apellio Materno"
+                                    name="Apellido Materno"
+                                    id=""
+                                />
+                            </div>
                         </div>
-                        <div class="col">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Apellido Paterno"
-                                name="Apellido Paterno"
-                                id=""
-                            />
+
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label class="form-label">Contraseña:</label>
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    name="Contraseña"
+                                    placeholder="Contraseña"
+                                    id=""
+                                />
+                            </div>
+
+                            <div class="col">
+                                <label class="form-label">Confirmar contraseña:</label>
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    name="ConfContraseña"
+                                    placeholder="Vuelva a ingresar su contraseña"
+                                    id=""
+                                />
+                            </div>
                         </div>
-                        <div class="col">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Apellio Materno"
-                                name="Apellido Materno"
-                                id=""
-                            />
+
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label class="form-label">Rut:</label>
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    placeholder="Rut"
+                                    name="Rut"
+                                    id=""
+                                />
+                            </div>
+
+                            <div class="col">
+                                <label class="form-label">Teléfono:</label>
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    placeholder="Teléfono"
+                                    name="telefono"
+                                    id=""
+                                />
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label class="form-label"
+                                    >Correo electrónico:</label
+                                >
+                                <input
+                                    class="form-control"
+                                    type="email"
+                                    placeholder="Correo electrónico"
+                                    name="correo"
+                                    id=""
+                                />
+                            </div>
+                            <div id="calendario" class="col">
+                                <label class="form-label"
+                                    >Fecha de nacimento:</label
+                                >
+                                <datepicker
+                                    v-model:value="fechaN"
+                                    :editable="false"
+                                    :clearable="false"
+                                    type="date"
+                                    format="DD-MM-YYYY"
+                                    placeholder="Fecha de nacimiento"
+                                ></datepicker>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label class="form-label">Ciudad:</label>
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    placeholder="Ciudad"
+                                    name="ciudad"
+                                    id=""
+                                />
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label class="form-label">Motivo de Consulta:</label>
+                            <div class="col">
+                                <textarea
+                                    class="form-control"
+                                    style="resize: none"
+                                    name="motivo"
+                                    id=""
+                                    rows="3"
+                                    placeholder="Motivo de consulta"
+                                ></textarea>
+                            </div>
+                        </div>
+
+                        <input type="submit" value="Editar" class="modal-btn" data-bs-toggle="modal" data-bs-target="#hola" />
+                    </form>
+
+                    <div class="row mt-3">
+                        <div class="col" >
+                            <p>Usted tiene una hora agendada para:</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-success" style="margin-right: 10px;"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button type="button" class="btn btn-danger" ><i class="fa-solid fa-trash"></i></button>                        
                         </div>
                     </div>
-
-                    <div class="row mb-3">
+                    <div class="row mt-2">
                         <div class="col">
-                            <label class="form-label">Contraseña:</label>
-                            <input
-                                class="form-control"
-                                type="text"
-                                name="Contraseña"
-                                placeholder="Contraseña"
-                                id=""
-                            />
+                            <p>Usted esta en fila de espera:</p>
                         </div>
-
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-success" style="margin-right: 10px;"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button type="button" class="btn btn-danger" ><i class="fa-solid fa-trash"></i></button>                        </div>
+                        </div>
+                    <div class="row mt-2">
                         <div class="col">
-                            <label class="form-label">Confirmar contraseña:</label>
-                            <input
-                                class="form-control"
-                                type="text"
-                                name="ConfContraseña"
-                                placeholder="Vuelva a ingresar su contraseña"
-                                id=""
-                            />
+                            <p>Usted esta suscrito a nuestro boletin</p>
                         </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="form-label">Rut:</label>
-                            <input
-                                class="form-control"
-                                type="text"
-                                placeholder="Rut"
-                                name="Rut"
-                                id=""
-                            />
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-danger" ><i class="fa-solid fa-trash"></i></button>                        </div>
                         </div>
-
-                        <div class="col">
-                            <label class="form-label">Teléfono:</label>
-                            <input
-                                class="form-control"
-                                type="text"
-                                placeholder="Teléfono"
-                                name="telefono"
-                                id=""
-                            />
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="form-label"
-                                >Correo electrónico:</label
-                            >
-                            <input
-                                class="form-control"
-                                type="email"
-                                placeholder="Correo electrónico"
-                                name="correo"
-                                id=""
-                            />
-                        </div>
-                        <div id="calendario" class="col">
-                            <label class="form-label"
-                                >Fecha de nacimento:</label
-                            >
-                            <datepicker
-                                v-model:value="fechaN"
-                                :editable="false"
-                                :clearable="false"
-                                type="date"
-                                format="DD-MM-YYYY"
-                                placeholder="Fecha de nacimiento"
-                            ></datepicker>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label class="form-label">Ciudad:</label>
-                            <input
-                                class="form-control"
-                                type="text"
-                                placeholder="Ciudad"
-                                name="ciudad"
-                                id=""
-                            />
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label class="form-label">Motivo de Consulta:</label>
-                        <div class="col">
-                            <textarea
-                                class="form-control"
-                                style="resize: none"
-                                name="motivo"
-                                id=""
-                                rows="3"
-                                placeholder="Motivo de consulta"
-                            ></textarea>
-                        </div>
-                    </div>
-
-                    <input type="submit" value="Editar" class="modal-btn" data-bs-toggle="modal" data-bs-target="#hola" />
-                </form>
+                </div>
                 <div class="col-md-5">
                     <img style="width: 80%; display:block; margin:auto;"
                     src="../../../resources/images/views/registro.png"
