@@ -17,6 +17,8 @@ const Perfil = () => import("./views/Perfil");
 
 const Admin = () => import("./views/Admin");
 
+const ReporteUsuario = () => import("./views/ReporteUsuario");
+
 
 const routes = [
     {
@@ -87,6 +89,11 @@ const routes = [
         path: "/admin",
         name: "admin",
         component: Admin,
+    },
+    {
+        path: "/reporteusuario",
+        name: "reporteusuario",
+        component: ReporteUsuario,
     },
 
 ];

@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\usuariosController;
 use App\Http\Controllers\suscriptorController;
 use App\Http\Controllers\administradorController;
 use App\Http\Controllers\fila_esperaController;
@@ -24,9 +23,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::middleware('api')->group(function(){
-    Route::resource('usuarios',usuariosController::class);
     Route::resource('suscriptor',suscriptorController::class);
     Route::resource('administrador',administradorController::class);
     Route::resource('fila_espera',fila_esperaController::class);
     Route::resource('agenda',agendaController::class);
 });
+
+Route::resource('usuarios',App\Http\Controllers\usuariosController::class)->only(['index','store','update','show','destroy']);
+

@@ -23854,6 +23854,10 @@ var Admin = function Admin() {
   return __webpack_require__.e(/*! import() */ "resources_js_views_Admin_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/Admin */ "./resources/js/views/Admin.vue"));
 };
 
+var ReporteUsuario = function ReporteUsuario() {
+  return __webpack_require__.e(/*! import() */ "resources_js_views_ReporteUsuario_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/ReporteUsuario */ "./resources/js/views/ReporteUsuario.vue"));
+};
+
 var routes = [{
   path: "/",
   name: "welcome",
@@ -23910,6 +23914,10 @@ var routes = [{
   path: "/admin",
   name: "admin",
   component: Admin
+}, {
+  path: "/reporteusuario",
+  name: "reporteusuario",
+  component: ReporteUsuario
 }];
 var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({
   history: (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createWebHashHistory)(),
@@ -38883,7 +38891,7 @@ function useRoute() {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_views_Contacto_vue":1,"resources_js_views_Servicios_vue":1,"resources_js_views_AgendarHora_vue":1,"resources_js_views_IniciarSesion_vue":1,"resources_js_views_MetodoPago_vue":1,"resources_js_views_MetodoAtencion_vue":1,"resources_js_views_ComoIngresarSesion_vue":1,"resources_js_views_ComoAgendarHora_vue":1,"resources_js_views_Registro_vue":1,"resources_js_views_RecuperarPass_vue":1,"resources_js_views_ListaEspera_vue":1,"resources_js_views_Perfil_vue":1,"resources_js_views_Admin_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_views_Contacto_vue":1,"resources_js_views_Servicios_vue":1,"resources_js_views_AgendarHora_vue":1,"resources_js_views_IniciarSesion_vue":1,"resources_js_views_MetodoPago_vue":1,"resources_js_views_MetodoAtencion_vue":1,"resources_js_views_ComoIngresarSesion_vue":1,"resources_js_views_ComoAgendarHora_vue":1,"resources_js_views_Registro_vue":1,"resources_js_views_RecuperarPass_vue":1,"resources_js_views_ListaEspera_vue":1,"resources_js_views_Perfil_vue":1,"resources_js_views_Admin_vue":1,"resources_js_views_ReporteUsuario_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
