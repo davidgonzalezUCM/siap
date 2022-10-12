@@ -52,10 +52,10 @@ class suscriptorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_suscriptor)
     {
         $suscriptor = suscriptor::find($id_suscriptor);
-        $suscriptor -> delete();
+        $suscriptor -> delete($id_suscriptor);
         return response()->json('suscriptor borrado');
     }
 }

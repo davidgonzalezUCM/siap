@@ -23854,8 +23854,28 @@ var Admin = function Admin() {
   return __webpack_require__.e(/*! import() */ "resources_js_views_Admin_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/Admin */ "./resources/js/views/Admin.vue"));
 };
 
+var OpcionesAdministrador = function OpcionesAdministrador() {
+  return __webpack_require__.e(/*! import() */ "resources_js_views_OpcionesAdministrador_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/OpcionesAdministrador */ "./resources/js/views/OpcionesAdministrador.vue"));
+};
+
 var ReporteUsuario = function ReporteUsuario() {
   return __webpack_require__.e(/*! import() */ "resources_js_views_ReporteUsuario_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/ReporteUsuario */ "./resources/js/views/ReporteUsuario.vue"));
+};
+
+var ReporteSuscriptor = function ReporteSuscriptor() {
+  return __webpack_require__.e(/*! import() */ "resources_js_views_ReporteSuscriptor_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/ReporteSuscriptor */ "./resources/js/views/ReporteSuscriptor.vue"));
+};
+
+var ReporteAgenda = function ReporteAgenda() {
+  return __webpack_require__.e(/*! import() */ "resources_js_views_ReporteAgenda_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/ReporteAgenda */ "./resources/js/views/ReporteAgenda.vue"));
+};
+
+var ReporteAdministrador = function ReporteAdministrador() {
+  return __webpack_require__.e(/*! import() */ "resources_js_views_ReporteAdministrador_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/ReporteAdministrador */ "./resources/js/views/ReporteAdministrador.vue"));
+};
+
+var ReporteListaEspera = function ReporteListaEspera() {
+  return __webpack_require__.e(/*! import() */ "resources_js_views_ReporteListaEspera_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/ReporteListaEspera */ "./resources/js/views/ReporteListaEspera.vue"));
 };
 
 var routes = [{
@@ -23915,9 +23935,29 @@ var routes = [{
   name: "admin",
   component: Admin
 }, {
-  path: "/reporteusuario",
+  path: "/opciones_administrador",
+  name: "opcionesadministrador",
+  component: OpcionesAdministrador
+}, {
+  path: "/reporte_usuario",
   name: "reporteusuario",
   component: ReporteUsuario
+}, {
+  path: "/reporte_suscriptor",
+  name: "reportesuscriptor",
+  component: ReporteSuscriptor
+}, {
+  path: "/reporte_agenda",
+  name: "reporteagenda",
+  component: ReporteAgenda
+}, {
+  path: "/reporte_administrador",
+  name: "reporteadministrador",
+  component: ReporteAdministrador
+}, {
+  path: "/reporte_fila_de_espera",
+  name: "Reportelistaespera",
+  component: ReporteListaEspera
 }];
 var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({
   history: (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createWebHashHistory)(),
@@ -38891,7 +38931,7 @@ function useRoute() {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_views_Contacto_vue":1,"resources_js_views_Servicios_vue":1,"resources_js_views_AgendarHora_vue":1,"resources_js_views_IniciarSesion_vue":1,"resources_js_views_MetodoPago_vue":1,"resources_js_views_MetodoAtencion_vue":1,"resources_js_views_ComoIngresarSesion_vue":1,"resources_js_views_ComoAgendarHora_vue":1,"resources_js_views_Registro_vue":1,"resources_js_views_RecuperarPass_vue":1,"resources_js_views_ListaEspera_vue":1,"resources_js_views_Perfil_vue":1,"resources_js_views_Admin_vue":1,"resources_js_views_ReporteUsuario_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_views_Contacto_vue":1,"resources_js_views_Servicios_vue":1,"resources_js_views_AgendarHora_vue":1,"resources_js_views_IniciarSesion_vue":1,"resources_js_views_MetodoPago_vue":1,"resources_js_views_MetodoAtencion_vue":1,"resources_js_views_ComoIngresarSesion_vue":1,"resources_js_views_ComoAgendarHora_vue":1,"resources_js_views_Registro_vue":1,"resources_js_views_RecuperarPass_vue":1,"resources_js_views_ListaEspera_vue":1,"resources_js_views_Perfil_vue":1,"resources_js_views_Admin_vue":1,"resources_js_views_OpcionesAdministrador_vue":1,"resources_js_views_ReporteUsuario_vue":1,"resources_js_views_ReporteSuscriptor_vue":1,"resources_js_views_ReporteAgenda_vue":1,"resources_js_views_ReporteAdministrador_vue":1,"resources_js_views_ReporteListaEspera_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

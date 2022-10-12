@@ -17,8 +17,12 @@ const Perfil = () => import("./views/Perfil");
 
 const Admin = () => import("./views/Admin");
 
+const OpcionesAdministrador = () => import("./views/OpcionesAdministrador");
 const ReporteUsuario = () => import("./views/ReporteUsuario");
-
+const ReporteSuscriptor = () => import("./views/ReporteSuscriptor");
+const ReporteAgenda = () => import("./views/ReporteAgenda");
+const ReporteAdministrador = () => import("./views/ReporteAdministrador");
+const ReporteListaEspera = () => import("./views/ReporteListaEspera");
 
 const routes = [
     {
@@ -91,10 +95,36 @@ const routes = [
         component: Admin,
     },
     {
-        path: "/reporteusuario",
+        path: "/opciones_administrador",
+        name: "opcionesadministrador",
+        component: OpcionesAdministrador,
+    },
+    {
+        path: "/reporte_usuario",
         name: "reporteusuario",
         component: ReporteUsuario,
     },
+    {
+        path: "/reporte_suscriptor",
+        name: "reportesuscriptor",
+        component: ReporteSuscriptor,
+    },
+    {
+        path: "/reporte_agenda",
+        name: "reporteagenda",
+        component: ReporteAgenda,
+    },
+    {
+        path: "/reporte_administrador",
+        name: "reporteadministrador",
+        component: ReporteAdministrador,
+    },
+    {
+        path: "/reporte_fila_de_espera",
+        name: "Reportelistaespera",
+        component: ReporteListaEspera,
+    },
+
 
 ];
 

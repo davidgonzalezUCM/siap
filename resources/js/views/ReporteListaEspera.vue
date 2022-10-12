@@ -1,10 +1,10 @@
 <template>
     <section class="our-services">
         <div class="container">
-            <RouterLink to="/registro" type="button" class="btn btn-success mb-2" >agragar nuevo usuario</RouterLink>
             <table class="table table-hover table-bordered border-primary">
                 <thead class="table-dark">
                     <tr>
+                        <th scope="col">id</th>
                         <th scope="col">rut usuario</th>
                         <th scope="col">nombre</th>
                         <th scope="col">apellido paterno</th>
@@ -17,17 +17,18 @@
                     </tr>
                 </thead>
                 <tbody class="table-secondary">
-                    <tr v-for="user in usuario" :key="user.rut_usuario" >
-                        <th scope="row">{{user.rut_usuario}}</th>
-                        <th >{{user.nombre}}</th>
-                        <th >{{user.apellido_pat}}</th>
-                        <th >{{user.apellido_mat}}</th>
-                        <th >{{user.fecha_nacimiento}}</th>
-                        <th >{{user.correo}}</th>
-                        <th >{{user.telefono}}</th>
-                        <th >{{user.ciudad}}</th>
+                    <tr v-for="data in fila" :key="data.id_espera" >
+                        <th scope="row">{{data.id_espera}}</th>
+                        <th >{{data.rut_usuario_fk}}</th>
+                        <th >{{data.nombre}}</th>
+                        <th >{{data.apellido_pat}}</th>
+                        <th >{{data.apellido_mat}}</th>
+                        <th >{{data.fecha_nacimiento}}</th>
+                        <th >{{data.correo}}</th>
+                        <th >{{data.telefono}}</th>
+                        <th >{{data.ciudad}}</th>
                         <th><button type="button" class="btn btn-success" style="margin-right: 10px;"><i class="fa-regular fa-pen-to-square"></i></button>
-                        <button type="button" class="btn btn-danger" @click="borrarusuario(usuario.rut_usuario)"><i class="fa-solid fa-trash"></i></button></th>
+                        <button type="button" class="btn btn-danger" @click="borrarfila(fila.rut_usuario)"><i class="fa-solid fa-trash"></i></button></th>
                     </tr>
                 </tbody>
             </table>
@@ -39,19 +40,19 @@
     export default{
         data(){
             return{
-                usuario:{
+                fila:{
 
                 }
             }
         },
         mounted(){
-            this.listarusuarios()
+            this.listarfilas()
         },
         methods:{
-            listarusuarios(){
-                this.axios.get('/api/usuarios')
+            listarfilas(){
+                this.axios.get('/api/fila_espera')
                 .then(response=>{
-                    this.usuario = response.data
+                    this.fila = response.data
                 })
                 .catch(err=>console.log(err))
             },
