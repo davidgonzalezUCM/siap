@@ -205,7 +205,7 @@ var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"modal\" tabindex=\"-1\" id=\"hola\"><div class=\"modal-dialog modal-dialog-centered\"><div class=\"modal-content\"><div class=\"modal-header\" style=\"background-color:#ced4da;\"><h5 class=\"modal-title\">Aviso</h5><button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button></div><div class=\"modal-body\"><p>Registro exitóso.</p></div><div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-primary\" data-bs-dismiss=\"modal\">Aceptar</button></div></div></div></div>", 1);
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"modal\" tabindex=\"-1\" id=\"hola\"><div class=\"modal-dialog modal-dialog-centered\"><div class=\"modal-content\"><div class=\"modal-header\" style=\"background-color:#ced4da;\"><h5 class=\"modal-title\">Aviso</h5><button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button></div><div class=\"modal-body\"><p>Registro exitoso.</p></div><div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-primary\" data-bs-dismiss=\"modal\">Aceptar</button></div></div></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_datepicker = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("datepicker");
@@ -365,13 +365,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Registro_vue_vue_type_template_id_095a3a5c__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Registro.vue?vue&type=template&id=095a3a5c */ "./resources/js/views/Registro.vue?vue&type=template&id=095a3a5c");
 /* harmony import */ var _Registro_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Registro.vue?vue&type=script&lang=js */ "./resources/js/views/Registro.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Registro_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Registro_vue_vue_type_template_id_095a3a5c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/Registro.vue"]])
+const __exports__ = /*#__PURE__*/(0,D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Registro_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Registro_vue_vue_type_template_id_095a3a5c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/Registro.vue"]])
 /* hot reload */
 if (false) {}
 

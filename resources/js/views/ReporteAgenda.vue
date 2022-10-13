@@ -19,7 +19,7 @@
                         <th >{{data.rut_usuario_fk}}</th>
                         <th >{{data.fecha}}</th>
                         <th >{{data.hora}}</th>
-                        <th >{{data.disponivilidad}}</th>
+                        <th >{{data.disponibilidad}}</th>
                         <th><button type="button" class="btn btn-success" style="margin-right: 10px;"><i class="fa-regular fa-pen-to-square"></i></button>
                         <button type="button" class="btn btn-danger" @click="borraragenda(agenda.id_agenda)"><i class="fa-solid fa-trash"></i></button></th>
                     </tr>

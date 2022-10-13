@@ -42,6 +42,36 @@ Estas son las versiones utilizadas en este proyecto:
 
 Se debe mencionar que, al igual que muchas otras aplicaciones web, SIAP utiliza [Xampp](https://www.apachefriends.org/es/index.html) para montar sus servicios. Además, aprovechando este mismo servicio, utiliza una base de datos **MariaDB**.
 
+## Pasos a realizar después de obtener el repositorio
+
+Debemos realizar una serie de pasos luego de obtener el repositorio. A continuación se presentan los comandos a realizar con la intención de evitar problemas de dependencias de SIAP.
+
+- composer update
+
+Este comando indicará que debe instalar y actualizar los paquetes de composer dentro del proyecto.
+
+- cp .env.example .env
+
+Este comando realizará una copia del archivo .env.example y lo renombrará a .env, esto debido a que el archivo .env es utilizado para las conexiones con la base de datos.
+
+- npm install
+
+Este comando indicará que debe instalar las dependencias que detalladas en el archivo **package.json**.
+
+- npm run dev
+
+Este comando compilará todas nuestras vistas en formato .vue.
+
+## Obtener la libreria Font-Awesome
+
+SIAP se alimenta gracias a la librería de íconos **Font-Awesome**, sin embargo, esta se está trabajando de manera local, obtenida a través de su [repositorio GitHub](https://github.com/FortAwesome/Font-Awesome).
+Es importante clonar este repositorio para la utilización correcta de SIAP, debido a que, en caso de no realizar esto, SIAP perderá el formato de sus íconos presentes.
+Para obtener esta librería debemos ejecutar el siguiente comando:
+
+- git clone https://github.com/FortAwesome/Font-Awesome
+
+Es importante destacar que este comando debe ser ejecutado dentro del directorio **public** de nuestro proyecto.
+
 ## Al momento de montar
 
 Se debe tener en cuenta que al estar trabajando con 2 tecnologías, debemos utilizar los siguientes comandos:
@@ -53,3 +83,7 @@ Con este comando podemos montar SIAP, siempre y cuando **Xampp** tenga sus servi
 - npm run dev
 
 Con este comando podemos compilar todos los cambios que hayamos realizados en nuestras vistas de **Vue.js**.
+
+- npm run watch
+
+Con este comando podemos compilar en tiempo real los cambios que hayamos realizado en nuestas vistas de **Vue.js**, con lo cual no debemos estar corriendo el comando como en el caso de utilizar **npm run dev**

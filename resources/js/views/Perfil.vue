@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <form >
+                    <form>
                         <div class="row mb-3">
                             <label class="form-label">Nombre Completo:</label>
                             <div class="col">
@@ -48,7 +48,9 @@
                             </div>
 
                             <div class="col">
-                                <label class="form-label">Confirmar contraseña:</label>
+                                <label class="form-label"
+                                    >Confirmar contraseña:</label
+                                >
                                 <input
                                     class="form-control"
                                     type="text"
@@ -125,7 +127,9 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label class="form-label">Motivo de Consulta:</label>
+                            <label class="form-label"
+                                >Motivo de Consulta:</label
+                            >
                             <div class="col">
                                 <textarea
                                     class="form-control"
@@ -138,37 +142,64 @@
                             </div>
                         </div>
 
-                        <input type="submit" value="Editar" class="modal-btn" data-bs-toggle="modal" data-bs-target="#hola" />
+                        <input
+                            type="submit"
+                            value="Editar"
+                            class="modal-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#hola"
+                        />
                     </form>
 
                     <div class="row mt-3">
-                        <div class="col" >
+                        <div class="col">
                             <p>Usted tiene una hora agendada para:</p>
                         </div>
                         <div class="col-sm-3">
-                            <button type="button" class="btn btn-success" style="margin-right: 10px;"><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button type="button" class="btn btn-danger" ><i class="fa-solid fa-trash"></i></button>                        
+                            <button
+                                type="button"
+                                class="btn btn-success"
+                                style="margin-right: 10px"
+                            >
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="row mt-2">
                         <div class="col">
-                            <p>Usted esta en fila de espera:</p>
+                            <p>Usted está en fila de espera:</p>
                         </div>
                         <div class="col-sm-3">
-                            <button type="button" class="btn btn-success" style="margin-right: 10px;"><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button type="button" class="btn btn-danger" ><i class="fa-solid fa-trash"></i></button>                        </div>
+                            <button
+                                type="button"
+                                class="btn btn-success"
+                                style="margin-right: 10px"
+                            >
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
                         </div>
+                    </div>
                     <div class="row mt-2">
                         <div class="col">
-                            <p>Usted esta suscrito a nuestro boletin</p>
+                            <p>Usted está suscrito a nuestro boletín:</p>
                         </div>
                         <div class="col-sm-3">
-                            <button type="button" class="btn btn-danger" ><i class="fa-solid fa-trash"></i></button>                        </div>
+                            <button type="button" class="btn btn-danger">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
                         </div>
+                    </div>
                 </div>
                 <div class="col-md-5">
-                    <img style="width: 80%; display:block; margin:auto;"
-                    src="../../../resources/images/views/registro.png"
+                    <img
+                        style="width: 80%; display: block; margin: auto"
+                        src="../../../resources/images/views/registro.png"
                         alt=""
                     />
                 </div>
@@ -177,22 +208,32 @@
     </section>
 
     <div class="modal" tabindex="-1" id="hola">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header" style="background-color: #ced4da;">
-        <h5 class="modal-title">Aviso</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Cambios guardados con exito.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
-      </div>
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #ced4da">
+                    <h5 class="modal-title">Aviso</h5>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="modal-body">
+                    <p>Cambios guardados con exito.</p>
+                </div>
+                <div class="modal-footer">
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-dismiss="modal"
+                    >
+                        Aceptar
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-
 </template>
 
 <script>
