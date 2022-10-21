@@ -6,6 +6,7 @@ use App\Http\Controllers\suscriptorController;
 use App\Http\Controllers\administradorController;
 use App\Http\Controllers\fila_esperaController;
 use App\Http\Controllers\agendaController;
+use App\Http\Controllers\usuariosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,8 @@ Route::middleware('api')->group(function(){
     Route::resource('administrador',administradorController::class);
     Route::resource('fila_espera',fila_esperaController::class);
     Route::resource('agenda',agendaController::class);
+    Route::resource('usuarios',usuariosController::class);
+
 });
 
-Route::resource('usuarios',App\Http\Controllers\usuariosController::class)->only(['index','store','update','show','destroy']);
 

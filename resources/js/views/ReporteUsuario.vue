@@ -27,7 +27,7 @@
                         <th >{{user.telefono}}</th>
                         <th >{{user.ciudad}}</th>
                         <th><button type="button" class="btn btn-success" style="margin-right: 10px;"><i class="fa-regular fa-pen-to-square"></i></button>
-                        <button type="button" class="btn btn-danger" @click="borrarusuario(usuario.rut_usuario)"><i class="fa-solid fa-trash"></i></button></th>
+                        <button type="button" class="btn btn-danger" @click="borrarusuario(user.rut_usuario)"><i class="fa-solid fa-trash"></i></button></th>
                     </tr>
                 </tbody>
             </table>
@@ -56,7 +56,7 @@
                 .catch(err=>console.log(err))
             },
             borrarusuario(rut_usuario){
-                    this.axios.delete('/api/usuarios/${rut_usuario}')
+                    this.axios.delete('/api/usuarios/',rut_usuario)
                     .then(response=>{
                         this.listarusuarios()
                     })
