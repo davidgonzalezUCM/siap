@@ -24,6 +24,11 @@ const ReporteAgenda = () => import("./views/ReporteAgenda");
 const ReporteAdministrador = () => import("./views/ReporteAdministrador");
 const ReporteListaEspera = () => import("./views/ReporteListaEspera");
 
+const EditarUsuario = () => import("./views/EditarUsuario");
+const EditarAgenda = () => import("./views/EditarAgenda");
+const EditarAdmin = () => import("./views/EditarAdmin");
+const EditarLista = () => import("./views/EditarLista");
+
 const routes = [
     {
         path: "/",
@@ -121,10 +126,29 @@ const routes = [
     },
     {
         path: "/reporte_fila_de_espera",
-        name: "Reportelistaespera",
+        name: "reportelistaespera",
         component: ReporteListaEspera,
     },
-
+    {
+        path: "/editar_usuario/:rut_usuario",
+        name: "editarusuario",
+        component: EditarUsuario,
+    },
+    {
+        path: "/editar_agenda/:id_agenda",
+        name: "editaragenda",
+        component: EditarAgenda,
+    },
+    {
+        path: "/editar_admin/:rut_admin",
+        name: "editaradmin",
+        component: EditarAdmin,
+    },
+    {
+        path: "/editar_lista/:id_espera",
+        name: "editarlista",
+        component: EditarLista,
+    },
 
 ];
 

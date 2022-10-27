@@ -20,8 +20,8 @@
                         <th >{{data.apellido_pat}}</th>
                         <th >{{data.apellido_mat}}</th>
                         <th >{{data.tipo_admin}}</th>
-                        <th><button type="button" class="btn btn-success" style="margin-right: 10px;"><i class="fa-regular fa-pen-to-square"></i></button>
-                        <button type="button" class="btn btn-danger" @click="borraradmin(admin.rut_admin)"><i class="fa-solid fa-trash"></i></button></th>
+                        <th><RouterLink :to="{ name: `editaradmin`, params: {rut_admin: data.rut_admin}}" type="button" class="btn btn-success" style="margin-right: 10px;"><i class="fa-regular fa-pen-to-square"></i></RouterLink>
+                        <button type="button" class="btn btn-danger" @click="borraradmin(data.rut_admin)"><i class="fa-solid fa-trash"></i></button></th>
                     </tr>
                 </tbody>
             </table>
@@ -49,10 +49,10 @@
                 })
                 .catch(err=>console.log(err))
             },
-            borraragenda(rut_usuario){
-                    this.axios.delete('/api/administrador/${rut_usuario}')
+            borraradmin(rut_admin){
+                    this.axios.delete(`/api/administrador/`+rut_admin)
                     .then(response=>{
-                        this.listarusuarios()
+                        this.listaradministradore()
                     })
                     .catch(err=>console.log(err))
                 

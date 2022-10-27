@@ -20,8 +20,8 @@
                         <th >{{data.fecha}}</th>
                         <th >{{data.hora}}</th>
                         <th >{{data.disponibilidad}}</th>
-                        <th><button type="button" class="btn btn-success" style="margin-right: 10px;"><i class="fa-regular fa-pen-to-square"></i></button>
-                        <button type="button" class="btn btn-danger" @click="borraragenda(agenda.id_agenda)"><i class="fa-solid fa-trash"></i></button></th>
+                        <th><RouterLink :to="{ name: `editaragenda`, params: {id_agenda: data.id_agenda}}" type="button" class="btn btn-success" style="margin-right: 10px;"><i class="fa-regular fa-pen-to-square"></i></RouterLink>
+                        <button type="button" class="btn btn-danger" @click="borraragenda(data.id_agenda)"><i class="fa-solid fa-trash"></i></button></th>
                     </tr>
                 </tbody>
             </table>
@@ -49,10 +49,10 @@
                 })
                 .catch(err=>console.log(err))
             },
-            borraragenda(rut_usuario){
-                    this.axios.delete('/api/agenda/${rut_usuario}')
+            borraragenda(id_agenda){
+                    this.axios.delete(`/api/agenda/`+id_agenda)
                     .then(response=>{
-                        this.listarusuarios()
+                        this.listaragenda()
                     })
                     .catch(err=>console.log(err))
                 

@@ -25,8 +25,8 @@
                         <th >{{data.correo}}</th>
                         <th >{{data.telefono}}</th>
                         <th >{{data.ciudad}}</th>
-                        <th><button type="button" class="btn btn-success" style="margin-right: 10px;"><i class="fa-regular fa-pen-to-square"></i></button>
-                        <button type="button" class="btn btn-danger" @click="borrarfila(fila.rut_usuario)"><i class="fa-solid fa-trash"></i></button></th>
+                        <th><RouterLink :to="{ name: `editarlista`, params: {id_espera: data.id_espera}}" type="button" class="btn btn-success" style="margin-right: 10px;"><i class="fa-regular fa-pen-to-square"></i></RouterLink>
+                        <button type="button" class="btn btn-danger" @click="borrarfila(data.id_espera)"><i class="fa-solid fa-trash"></i></button></th>
                     </tr>
                 </tbody>
             </table>
@@ -54,10 +54,10 @@
                 })
                 .catch(err=>console.log(err))
             },
-            borrarusuario(rut_usuario){
-                    this.axios.delete('/api/usuarios/${rut_usuario}')
+            borrarfila(id_espera){
+                    this.axios.delete(`/api/fila_espera/`+id_espera)
                     .then(response=>{
-                        this.listarusuarios()
+                        this.listarfilas()
                     })
                     .catch(err=>console.log(err))
                 

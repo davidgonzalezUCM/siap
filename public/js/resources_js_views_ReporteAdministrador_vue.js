@@ -30,11 +30,11 @@ __webpack_require__.r(__webpack_exports__);
         return console.log(err);
       });
     },
-    borraragenda: function borraragenda(rut_usuario) {
+    borraradmin: function borraradmin(rut_admin) {
       var _this2 = this;
 
-      this.axios["delete"]('/api/administrador/${rut_usuario}').then(function (response) {
-        _this2.listarusuarios();
+      this.axios["delete"]("/api/administrador/" + rut_admin).then(function (response) {
+        _this2.listaradministradore();
       })["catch"](function (err) {
         return console.log(err);
       });
@@ -91,25 +91,21 @@ var _hoisted_6 = {
   scope: "row"
 };
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-success",
-  style: {
-    "margin-right": "10px"
-  }
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fa-regular fa-pen-to-square"
-})], -1
+}, null, -1
 /* HOISTED */
 );
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_8 = ["onClick"];
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fa-solid fa-trash"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_9 = [_hoisted_8];
+var _hoisted_10 = [_hoisted_9];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_RouterLink = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("RouterLink");
 
@@ -137,13 +133,36 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(data.tipo_admin), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RouterLink, {
+      to: {
+        name: "editaradmin",
+        params: {
+          rut_admin: data.rut_admin
+        }
+      },
+      type: "button",
+      "class": "btn btn-success",
+      style: {
+        "margin-right": "10px"
+      }
+    }, {
+      "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+        return [_hoisted_7];
+      }),
+      _: 2
+      /* DYNAMIC */
+
+    }, 1032
+    /* PROPS, DYNAMIC_SLOTS */
+    , ["to"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       type: "button",
       "class": "btn btn-danger",
-      onClick: _cache[0] || (_cache[0] = function ($event) {
-        return _ctx.borraradmin($data.admin.rut_admin);
-      })
-    }, _hoisted_9)])]);
+      onClick: function onClick($event) {
+        return $options.borraradmin(data.rut_admin);
+      }
+    }, _hoisted_10, 8
+    /* PROPS */
+    , _hoisted_8)])]);
   }), 128
   /* KEYED_FRAGMENT */
   ))])])])]);

@@ -10,6 +10,8 @@ class administrador extends Model
     use HasFactory;
     protected $table = 'administrador';
     public $timestamps = false;
+    protected $primaryKey = 'rut_admin';
+    public $incrementing = false;
     protected $fillable = [
         'rut_admin',
         'contrasena',

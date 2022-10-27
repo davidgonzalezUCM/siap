@@ -10,6 +10,8 @@ class agenda extends Model
     use HasFactory;
     protected $table = 'agenda';
     public $timestamps = false;
+    protected $primaryKey = 'id_agenda';
+    public $incrementing = false;
     protected $fillable =[
         'rut_usuario_fk',
         'fecha',

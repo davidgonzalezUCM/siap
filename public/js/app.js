@@ -23878,6 +23878,22 @@ var ReporteListaEspera = function ReporteListaEspera() {
   return __webpack_require__.e(/*! import() */ "resources_js_views_ReporteListaEspera_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/ReporteListaEspera */ "./resources/js/views/ReporteListaEspera.vue"));
 };
 
+var EditarUsuario = function EditarUsuario() {
+  return __webpack_require__.e(/*! import() */ "resources_js_views_EditarUsuario_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/EditarUsuario */ "./resources/js/views/EditarUsuario.vue"));
+};
+
+var EditarAgenda = function EditarAgenda() {
+  return __webpack_require__.e(/*! import() */ "resources_js_views_EditarAgenda_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/EditarAgenda */ "./resources/js/views/EditarAgenda.vue"));
+};
+
+var EditarAdmin = function EditarAdmin() {
+  return __webpack_require__.e(/*! import() */ "resources_js_views_EditarAdmin_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/EditarAdmin */ "./resources/js/views/EditarAdmin.vue"));
+};
+
+var EditarLista = function EditarLista() {
+  return __webpack_require__.e(/*! import() */ "resources_js_views_EditarLista_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/EditarLista */ "./resources/js/views/EditarLista.vue"));
+};
+
 var routes = [{
   path: "/",
   name: "welcome",
@@ -23956,8 +23972,24 @@ var routes = [{
   component: ReporteAdministrador
 }, {
   path: "/reporte_fila_de_espera",
-  name: "Reportelistaespera",
+  name: "reportelistaespera",
   component: ReporteListaEspera
+}, {
+  path: "/editar_usuario/:rut_usuario",
+  name: "editarusuario",
+  component: EditarUsuario
+}, {
+  path: "/editar_agenda/:id_agenda",
+  name: "editaragenda",
+  component: EditarAgenda
+}, {
+  path: "/editar_admin/:rut_admin",
+  name: "editaradmin",
+  component: EditarAdmin
+}, {
+  path: "/editar_lista/:id_espera",
+  name: "editarlista",
+  component: EditarLista
 }];
 var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({
   history: (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createWebHashHistory)(),
@@ -38931,7 +38963,7 @@ function useRoute() {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_views_Contacto_vue":1,"resources_js_views_Servicios_vue":1,"resources_js_views_AgendarHora_vue":1,"resources_js_views_IniciarSesion_vue":1,"resources_js_views_MetodoPago_vue":1,"resources_js_views_MetodoAtencion_vue":1,"resources_js_views_ComoIngresarSesion_vue":1,"resources_js_views_ComoAgendarHora_vue":1,"resources_js_views_Registro_vue":1,"resources_js_views_RecuperarPass_vue":1,"resources_js_views_ListaEspera_vue":1,"resources_js_views_Perfil_vue":1,"resources_js_views_Admin_vue":1,"resources_js_views_OpcionesAdministrador_vue":1,"resources_js_views_ReporteUsuario_vue":1,"resources_js_views_ReporteSuscriptor_vue":1,"resources_js_views_ReporteAgenda_vue":1,"resources_js_views_ReporteAdministrador_vue":1,"resources_js_views_ReporteListaEspera_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_views_Contacto_vue":1,"resources_js_views_Servicios_vue":1,"resources_js_views_AgendarHora_vue":1,"resources_js_views_IniciarSesion_vue":1,"resources_js_views_MetodoPago_vue":1,"resources_js_views_MetodoAtencion_vue":1,"resources_js_views_ComoIngresarSesion_vue":1,"resources_js_views_ComoAgendarHora_vue":1,"resources_js_views_Registro_vue":1,"resources_js_views_RecuperarPass_vue":1,"resources_js_views_ListaEspera_vue":1,"resources_js_views_Perfil_vue":1,"resources_js_views_Admin_vue":1,"resources_js_views_OpcionesAdministrador_vue":1,"resources_js_views_ReporteUsuario_vue":1,"resources_js_views_ReporteSuscriptor_vue":1,"resources_js_views_ReporteAgenda_vue":1,"resources_js_views_ReporteAdministrador_vue":1,"resources_js_views_ReporteListaEspera_vue":1,"resources_js_views_EditarUsuario_vue":1,"resources_js_views_EditarAgenda_vue":1,"resources_js_views_EditarAdmin_vue":1,"resources_js_views_EditarLista_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

@@ -10,6 +10,8 @@ class fila_espera extends Model
     use HasFactory;
     protected $table = 'fila_espera';
     public $timestamps = false;
+    protected $primaryKey = 'id_espera';
+    public $incrementing = false;
     protected $fillable = [
         'rut_usuario_fk',
         'nombre',

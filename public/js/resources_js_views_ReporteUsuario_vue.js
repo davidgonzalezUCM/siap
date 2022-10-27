@@ -33,7 +33,7 @@ __webpack_require__.r(__webpack_exports__);
     borrarusuario: function borrarusuario(rut_usuario) {
       var _this2 = this;
 
-      this.axios["delete"]('/api/usuarios/', rut_usuario).then(function (response) {
+      this.axios["delete"]("/api/usuarios/" + rut_usuario).then(function (response) {
         _this2.listarusuarios();
       })["catch"](function (err) {
         return console.log(err);
@@ -97,15 +97,9 @@ var _hoisted_6 = {
   scope: "row"
 };
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-success",
-  style: {
-    "margin-right": "10px"
-  }
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fa-regular fa-pen-to-square"
-})], -1
+}, null, -1
 /* HOISTED */
 );
 
@@ -151,7 +145,28 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(user.ciudad), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RouterLink, {
+      to: {
+        name: "editarusuario",
+        params: {
+          rut_usuario: user.rut_usuario
+        }
+      },
+      type: "button",
+      "class": "btn btn-success",
+      style: {
+        "margin-right": "10px"
+      }
+    }, {
+      "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+        return [_hoisted_7];
+      }),
+      _: 2
+      /* DYNAMIC */
+
+    }, 1032
+    /* PROPS, DYNAMIC_SLOTS */
+    , ["to"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       type: "button",
       "class": "btn btn-danger",
       onClick: function onClick($event) {
