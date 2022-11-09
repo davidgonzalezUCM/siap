@@ -1,7 +1,7 @@
 <template>
     <section class="our-services">
         <div class="container">
-            <RouterLink to="" type="button" class="btn btn-success mb-2" >Enviar información</RouterLink>
+            <RouterLink to="/enviar_correo" type="button" class="btn btn-success mb-2" >Enviar información</RouterLink>
             <table class="table table-hover table-bordered border-primary">
                 <thead class="table-dark">
                     <tr>
@@ -10,7 +10,7 @@
                 </thead>
                 <tbody class="table-secondary">
                     <tr v-for="data in suscriptor" :key="data.id_suscriptor" >
-                        <th scope="row">{{data.correo}}</th>
+                        <th scope="row">{{data.email}}</th>
                     </tr>
                 </tbody>
             </table>

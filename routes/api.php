@@ -32,4 +32,10 @@ Route::middleware('api')->group(function(){
 
 });
 
-
+Route::post(
+    'email/send', 
+    [
+        \App\Http\Controllers\suscriptorsController::class, 
+        'sendEMail'
+    ]
+);

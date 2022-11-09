@@ -28,6 +28,7 @@ const EditarUsuario = () => import("./views/EditarUsuario");
 const EditarAgenda = () => import("./views/EditarAgenda");
 const EditarAdmin = () => import("./views/EditarAdmin");
 const EditarLista = () => import("./views/EditarLista");
+const EnviarCorreo = () => import("./views/EnviarCorreo");
 
 const routes = [
     {
@@ -149,7 +150,11 @@ const routes = [
         name: "editarlista",
         component: EditarLista,
     },
-
+    {
+        path: "/enviar_correo",
+        name: "enviarcorreo",
+        component: EnviarCorreo,
+    },
 ];
 
 export const router = createRouter({

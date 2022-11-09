@@ -73,7 +73,7 @@
                                     id="textcorreosub"
                                     class="form-control"
                                     placeholder="Correo electrónico"
-                                    v-model="suscriptor.correo"
+                                    v-model="suscriptor.email"
                                 /></div>
                                 
                                 <input

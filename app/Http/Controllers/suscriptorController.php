@@ -21,7 +21,7 @@ class suscriptorController extends Controller
     public function store(Request $request)
     {
         $suscriptor = new suscriptor([
-            'correo' => $request->input('correo')
+            'email' => $request->input('email')
         ]);
         $suscriptor -> save();
         return response()->json('suscriptor agregado');

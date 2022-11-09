@@ -13,9 +13,10 @@ class CreateSuscriptorTable extends Migration
      */
     public function up()
     {
-        Schema::create('suscriptor', function (Blueprint $table) {
+        Schema::create('suscriptors', function (Blueprint $table) {
             $table->bigInteger('id_suscriptor', true);
-            $table->string('correo', 30)->unique('UNIQUE');
+            $table->string('email', 30)->unique('UNIQUE');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +27,6 @@ class CreateSuscriptorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('suscriptor');
+        Schema::dropIfExists('suscriptors');
     }
 }

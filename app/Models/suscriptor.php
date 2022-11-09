@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class suscriptor extends Model
 {
     use HasFactory;
-    public $timestamps = false;
-    protected $table = 'suscriptor';
     protected $fillable = [
-        'correo'
+        'email'
     ];
 }
