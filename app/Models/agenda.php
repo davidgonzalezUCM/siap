@@ -14,6 +14,14 @@ class agenda extends Model
     public $incrementing = false;
     protected $fillable =[
         'rut_usuario_fk',
+        'nombre',
+        'apellido_pat',
+        'apellido_mat',
+        'fecha_nacimiento',
+        'correo',
+        'telefono',
+        'ciudad',
+        'motivo_consulta',
         'fecha',
         'hora'
     ];

@@ -38,6 +38,14 @@ class agendaController extends Controller
     {
         $agenda = new agenda([
             'rut_usuario_fk'=> $request->input('rut_usuario_fk'),
+            'nombre' => $request ->input('nombre'),
+            'apellido_pat' => $request ->input('apellido_pat'),
+            'apellido_mat' => $request ->input('apellido_mat'),
+            'fecha_nacimiento' => $request ->input('fecha_nacimiento'),
+            'correo' => $request ->input('correo'),
+            'telefono' => $request ->input('telefono'),
+            'ciudad' => $request ->input('ciudad'),
+            'motivo_consulta' => $request ->input('motivo_consulta'),
             'fecha'=> $request->input('fecha'),
             'hora'=> $request->input('hora')
         ]);
