@@ -1,7 +1,7 @@
 <template>
     <section class="our-services">
         <div class="container">
-            <form class="mx-auto" id="formsesion">
+            <form class="mx-auto" id="formsesion"  @submit.prevent="login">
                 <div class=" mb-3">
                     <label class="form-label">Rut:</label>
                         <input 
@@ -11,6 +11,7 @@
                             xx.xxx.xxx-x" 
                             name="Rut" 
                             id="" 
+                            v-model="data.email"
                         />
                 </div>
 
@@ -22,6 +23,7 @@
                             placeholder="Contraseña" 
                             name="Contraseña" 
                             id="" 
+                            v-model="data.password"
                         />
                 </div>
                 
@@ -35,3 +37,29 @@
         </div>
     </section>
 </template>
+<script>
+export default {
+    
+    components: {
+    },
+    data() {
+        return {
+            data:{
+
+            },
+
+        };
+    },
+
+    methods:{
+        login(){
+            this.axios
+            .post('api/login',this.data).then(()=>{
+                this.$router.push({name:"welcome"});
+            })
+            
+            .catch(err=>console.log(err))
+        }
+    }
+};
+</script>

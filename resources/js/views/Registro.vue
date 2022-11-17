@@ -12,7 +12,7 @@
                                 placeholder="Nombres"
                                 name="Nombre"
                                 id=""
-                                v-model="usuarios.nombre"
+                                v-model="usuarios.name"
                             />
                         </div>
                         <div class="col">
@@ -22,7 +22,6 @@
                                 placeholder="Apellido Paterno"
                                 name="Apellido Paterno"
                                 id=""
-                                v-model="usuarios.apellido_pat"
                             />
                         </div>
                         <div class="col">
@@ -32,7 +31,6 @@
                                 placeholder="Apellio Materno"
                                 name="Apellido Materno"
                                 id=""
-                                v-model="usuarios.apellido_mat"
                             />
                         </div>
                     </div>
@@ -46,7 +44,7 @@
                                 name="Contraseña"
                                 placeholder="Contraseña"
                                 id=""
-                                v-model="usuarios.contrasena"
+                                v-model="usuarios.password"
                             />
                         </div>
 
@@ -58,6 +56,7 @@
                                 name="ConfContraseña"
                                 placeholder="Vuelva a ingresar su contraseña"
                                 id=""
+                                v-model="usuarios.password_confirmation"
                             />
                         </div>
                     </div>
@@ -71,7 +70,6 @@
                                 placeholder="Rut"
                                 name="Rut"
                                 id=""
-                                v-model="usuarios.rut_usuario"
                             />
                         </div>
 
@@ -83,7 +81,6 @@
                                 placeholder="Teléfono"
                                 name="telefono"
                                 id=""
-                                v-model="usuarios.telefono"
                             />
                         </div>
                     </div>
@@ -99,7 +96,7 @@
                                 placeholder="Correo electrónico"
                                 name="correo"
                                 id=""
-                                v-model="usuarios.correo"
+                                v-model="usuarios.email"
                             />
                         </div>
                         <div class="col">
@@ -107,7 +104,6 @@
                                 >Fecha de nacimento:</label
                             >
                             <datepicker
-                                v-model:value="fechaN"
                                 :editable="false"
                                 :clearable="false"
                                 value-type="format"
@@ -127,7 +123,6 @@
                                 placeholder="Ciudad"
                                 name="ciudad"
                                 id=""
-                                v-model="usuarios.ciudad"
                             />
                         </div>
                     </div>
@@ -142,7 +137,6 @@
                                 id=""
                                 rows="3"
                                 placeholder="Motivo de consulta"
-                                v-model="usuarios.motivo_consulta"
                             ></textarea>
                         </div>
                     </div>
@@ -197,12 +191,20 @@ export default {
 
     methods:{
         crearusuario(){
+            this.axios
+            .post('api/registro',this.usuarios)
+            .catch(err=>console.log(err))
+            .finally(() => this.loading = false)
+        }
+        /*
+        crearusuario(){
             this.usuarios.fecha_nacimiento = this.fechaN;
             this.axios
             .post('api/usuarios',this.usuarios)
             .catch(err=>console.log(err))
             .finally(() => this.loading = false)
         }
+};*/
     }
 };
 </script>

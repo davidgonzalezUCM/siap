@@ -39,3 +39,6 @@ Route::post(
         'sendEMail'
     ]
 );
+
+Route::post('registro', [\App\Http\Controllers\registroController::class, 'registro']);
+Route::post('login', [\App\Http\Controllers\loginController::class, 'login']);

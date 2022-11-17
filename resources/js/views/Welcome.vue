@@ -62,3 +62,19 @@
         </div>
     </section>
 </template>
+<script>
+    export default{
+        data(){
+            return{
+                user:null
+            }
+        },
+        mounted(){
+            this.axios.get('/api/user').then((res)=>{
+                this.user = res.data
+            })
+            .catch(err=>console.log(err))
+
+        },
+    }
+</script>
