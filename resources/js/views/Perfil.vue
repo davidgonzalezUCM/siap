@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <form>
+                    <form @submit.prevent="editar">
                         <div class="row mb-3">
                             <label class="form-label">Nombre Completo:</label>
                             <div class="col">
@@ -248,7 +248,7 @@ export default {
             fechaN: '',
             rut_usuario:'',
             usuario:{
-            }
+            },
         };
     },
         mounted(){
@@ -263,7 +263,7 @@ export default {
         },
         methods:{
         traerdatos(rut_usuario){
-                this.axios.get(`api/intento/`+rut_usuario)
+                this.axios.get(`api/perfil/`+rut_usuario)
                 .then(response=>{
                     const {rut_usuario, contrasena, nombre, apellido_pat, apellido_mat, fecha_nacimiento, correo, telefono, ciudad, motivo_consulta} = response.data
                     this.usuario.rut_usuario = rut_usuario,
@@ -281,9 +281,9 @@ export default {
             },
 
             editar(){
-            this.fila_espera.fecha_nacimiento = this.fechaN;
+            this.usuario.fecha_nacimiento = this.fechaN;
             this.axios
-            .put(`api/fila_espera/${this.$route.params.id_espera}`, this.fila_espera)
+            .put(`api/usuarios/`+ this.usuario.rut_usuario, this.usuario)
             .catch(err=>console.log(err))
             .finally(() => this.loading = false)
             },

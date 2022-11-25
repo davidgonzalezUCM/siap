@@ -39,7 +39,7 @@ __webpack_require__.r(__webpack_exports__);
     traerdatos: function traerdatos(rut_usuario) {
       var _this2 = this;
 
-      this.axios.get("api/intento/" + rut_usuario).then(function (response) {
+      this.axios.get("api/perfil/" + rut_usuario).then(function (response) {
         var _response$data = response.data,
             rut_usuario = _response$data.rut_usuario,
             contrasena = _response$data.contrasena,
@@ -59,8 +59,8 @@ __webpack_require__.r(__webpack_exports__);
     editar: function editar() {
       var _this3 = this;
 
-      this.fila_espera.fecha_nacimiento = this.fechaN;
-      this.axios.put("api/fila_espera/".concat(this.$route.params.id_espera), this.fila_espera)["catch"](function (err) {
+      this.usuario.fecha_nacimiento = this.fechaN;
+      this.axios.put("api/usuarios/" + this.usuario.rut_usuario, this.usuario)["catch"](function (err) {
         return console.log(err);
       })["finally"](function () {
         return _this3.loading = false;
@@ -247,7 +247,11 @@ var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticV
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_datepicker = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("datepicker");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+    onSubmit: _cache[10] || (_cache[10] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return $options.editar && $options.editar.apply($options, arguments);
+    }, ["prevent"]))
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "class": "form-control",
     placeholder: "Nombres",
@@ -353,7 +357,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "Motivo de consulta"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.usuario.motivo_consulta]])])]), _hoisted_30]), _hoisted_31]), _hoisted_34])])]), _hoisted_35], 64
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.usuario.motivo_consulta]])])]), _hoisted_30], 32
+  /* HYDRATE_EVENTS */
+  ), _hoisted_31]), _hoisted_34])])]), _hoisted_35], 64
   /* STABLE_FRAGMENT */
   );
 }
