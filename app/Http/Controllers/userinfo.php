@@ -10,7 +10,7 @@ class userinfo extends Controller
     public function busca()
     {
 
-        $userId = Auth::user()->id;
+        $userId = Auth::user()->name;
         return response()->json($userId);
     }
 }

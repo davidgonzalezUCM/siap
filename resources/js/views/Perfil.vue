@@ -12,7 +12,7 @@
                                     class="form-control"
                                     placeholder="Nombres"
                                     name="Nombre"
-                                    id=""
+                                    v-model="usuario.nombre"
                                 />
                             </div>
                             <div class="col">
@@ -21,7 +21,7 @@
                                     class="form-control"
                                     placeholder="Apellido Paterno"
                                     name="Apellido Paterno"
-                                    id=""
+                                    v-model="usuario.apellido_pat"
                                 />
                             </div>
                             <div class="col">
@@ -30,7 +30,7 @@
                                     class="form-control"
                                     placeholder="Apellio Materno"
                                     name="Apellido Materno"
-                                    id=""
+                                    v-model="usuario.apellido_mat"
                                 />
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                                     type="text"
                                     name="Contraseña"
                                     placeholder="Contraseña"
-                                    id=""
+                                    v-model="usuario.contrasena"
                                 />
                             </div>
 
@@ -69,7 +69,7 @@
                                     type="text"
                                     placeholder="Rut"
                                     name="Rut"
-                                    id=""
+                                    v-model="usuario.rut_usuario"
                                 />
                             </div>
 
@@ -80,7 +80,7 @@
                                     type="text"
                                     placeholder="Teléfono"
                                     name="telefono"
-                                    id=""
+                                    v-model="usuario.telefono"
                                 />
                             </div>
                         </div>
@@ -95,10 +95,10 @@
                                     type="email"
                                     placeholder="Correo electrónico"
                                     name="correo"
-                                    id=""
+                                    v-model="usuario.correo"
                                 />
                             </div>
-                            <div id="calendario" class="col">
+                            <div class="col">
                                 <label class="form-label"
                                     >Fecha de nacimento:</label
                                 >
@@ -106,8 +106,9 @@
                                     v-model:value="fechaN"
                                     :editable="false"
                                     :clearable="false"
+                                    value-type="format"
                                     type="date"
-                                    format="DD-MM-YYYY"
+                                    format="DD-MMM-YYYY"
                                     placeholder="Fecha de nacimiento"
                                 ></datepicker>
                             </div>
@@ -121,7 +122,7 @@
                                     type="text"
                                     placeholder="Ciudad"
                                     name="ciudad"
-                                    id=""
+                                    v-model="usuario.ciudad"
                                 />
                             </div>
                         </div>
@@ -135,7 +136,7 @@
                                     class="form-control"
                                     style="resize: none"
                                     name="motivo"
-                                    id=""
+                                    v-model="usuario.motivo_consulta"
                                     rows="3"
                                     placeholder="Motivo de consulta"
                                 ></textarea>
@@ -237,16 +238,55 @@
 </template>
 
 <script>
-import Datepicker from "vue-datepicker-next";
+    import Datepicker from "vue-datepicker-next";
 export default {
-    name: "calendario",
     components: {
         Datepicker,
     },
     data() {
         return {
-            fechaN: "",
+            fechaN: '',
+            rut_usuario:'',
+            usuario:{
+            }
         };
     },
-};
+        mounted(){
+            this.axios.get('api/busca').then((res)=>{
+                this.rut_usuario = res.data
+                this.traerdatos(this.rut_usuario)
+            })
+            .catch(err=>console.log(err))
+
+
+
+        },
+        methods:{
+        traerdatos(rut_usuario){
+                this.axios.get(`api/intento/`+rut_usuario)
+                .then(response=>{
+                    const {rut_usuario, contrasena, nombre, apellido_pat, apellido_mat, fecha_nacimiento, correo, telefono, ciudad, motivo_consulta} = response.data
+                    this.usuario.rut_usuario = rut_usuario,
+                    this.usuario.nombre = nombre,
+                    this.usuario.apellido_pat = apellido_pat,
+                    this.usuario.apellido_mat = apellido_mat,
+                    this.usuario.contrasena = contrasena,
+                    this.usuario.telefono = telefono,
+                    this.usuario.correo = correo,
+                    this.fechaN = fecha_nacimiento,
+                    this.usuario.ciudad = ciudad,
+                    this.usuario.motivo_consulta = motivo_consulta
+                })
+                .catch(err=>console.log(err))
+            },
+
+            editar(){
+            this.fila_espera.fecha_nacimiento = this.fechaN;
+            this.axios
+            .put(`api/fila_espera/${this.$route.params.id_espera}`, this.fila_espera)
+            .catch(err=>console.log(err))
+            .finally(() => this.loading = false)
+            },
+        }
+    }
 </script>

@@ -42,3 +42,4 @@ Route::post(
 
 Route::post('registro', [\App\Http\Controllers\registroController::class, 'registro']);
 Route::get('busca', [\App\Http\Controllers\userinfo::class, 'busca']);
+Route::get('intento/{rut_usuario}', [usuariosController::class, 'show']);

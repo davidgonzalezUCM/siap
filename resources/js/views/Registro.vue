@@ -11,8 +11,7 @@
                                 class="form-control"
                                 placeholder="Nombres"
                                 name="Nombre"
-                                id=""
-                                v-model="usuarios.name"
+                                v-model="vnombre"
                             />
                         </div>
                         <div class="col">
@@ -21,7 +20,7 @@
                                 class="form-control"
                                 placeholder="Apellido Paterno"
                                 name="Apellido Paterno"
-                                id=""
+                                v-model="vapepat"
                             />
                         </div>
                         <div class="col">
@@ -30,7 +29,7 @@
                                 class="form-control"
                                 placeholder="Apellio Materno"
                                 name="Apellido Materno"
-                                id=""
+                                v-model="vapemat"
                             />
                         </div>
                     </div>
@@ -44,7 +43,7 @@
                                 name="Contraseña"
                                 placeholder="Contraseña"
                                 id=""
-                                v-model="usuarios.password"
+                                v-model="vpass"
                             />
                         </div>
 
@@ -56,7 +55,7 @@
                                 name="ConfContraseña"
                                 placeholder="Vuelva a ingresar su contraseña"
                                 id=""
-                                v-model="usuarios.password_confirmation"
+                                v-model="vconpass"
                             />
                         </div>
                     </div>
@@ -69,7 +68,7 @@
                                 type="text"
                                 placeholder="Rut"
                                 name="Rut"
-                                id=""
+                                v-model="vrut"
                             />
                         </div>
 
@@ -80,7 +79,7 @@
                                 type="text"
                                 placeholder="Teléfono"
                                 name="telefono"
-                                id=""
+                                v-model="vtelefono"
                             />
                         </div>
                     </div>
@@ -96,7 +95,7 @@
                                 placeholder="Correo electrónico"
                                 name="correo"
                                 id=""
-                                v-model="usuarios.email"
+                                v-model="vcorreo"
                             />
                         </div>
                         <div class="col">
@@ -104,6 +103,7 @@
                                 >Fecha de nacimento:</label
                             >
                             <datepicker
+                                v-model:value="vfecha"
                                 :editable="false"
                                 :clearable="false"
                                 value-type="format"
@@ -122,7 +122,7 @@
                                 type="text"
                                 placeholder="Ciudad"
                                 name="ciudad"
-                                id=""
+                                v-model="vciudad"
                             />
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                                 class="form-control"
                                 style="resize: none"
                                 name="motivo"
-                                id=""
+                                v-model="vmotivo"
                                 rows="3"
                                 placeholder="Motivo de consulta"
                             ></textarea>
@@ -181,9 +181,22 @@ export default {
     },
     data() {
         return {
-            fechaN: '',
-            usuarios:{
+            vnombre:'',
+            vapepat:'',
+            vapemat:'',
+            vpass:'',
+            vconpass:'',
+            vrut:'',
+            vtelefono:'',
+            vcorreo:'',
+            vfecha: '',
+            vciudad:'',
+            vmotivo:'',
 
+            usuarios:{
+            },
+            
+            user:{
             },
 
         };
@@ -191,20 +204,36 @@ export default {
 
     methods:{
         crearusuario(){
-            this.axios
-            .post('api/registro',this.usuarios)
-            .catch(err=>console.log(err))
-            .finally(() => this.loading = false)
-        }
-        /*
-        crearusuario(){
-            this.usuarios.fecha_nacimiento = this.fechaN;
+            this.usuarios.rut_usuario = this.vrut,
+            this.usuarios.contrasena = this.vpass,
+            this.usuarios.nombre = this.vnombre,
+            this.usuarios.apellido_pat = this.vapepat,
+            this.usuarios.apellido_mat = this.vapemat,
+            this.usuarios.fecha_nacimiento = this.vfecha,
+            this.usuarios.correo = this.vcorreo,
+            this.usuarios.telefono = this.vtelefono,
+            this.usuarios.ciudad = this.vciudad,
+            this.usuarios.motivo_consulta = this.vmotivo
+            
             this.axios
             .post('api/usuarios',this.usuarios)
             .catch(err=>console.log(err))
             .finally(() => this.loading = false)
+
+            this.crearuser();
+            
+        },
+        crearuser(){
+            this.user.name = this.vrut,
+            this.user.email = this.vcorreo,
+            this.user.password = this.vpass,
+            this.user.password_confirmation = this.vconpass,
+
+            this.axios
+            .post('api/registro',this.user)
+            .catch(err=>console.log(err))
+            .finally(() => this.loading = false)
         }
-};*/
     }
 };
 </script>
