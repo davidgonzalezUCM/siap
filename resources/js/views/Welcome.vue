@@ -10,6 +10,7 @@
                         <br />
                         <h4>Sobre mí:</h4>
                         <p>
+                            
                             Decidir comenzar un proceso de terapia no es fácil,
                             pero a la vez es una de las decisiones más
                             importantes que se pueden tomar por uno mismo.
@@ -66,11 +67,11 @@
     export default{
         data(){
             return{
-                user:null
+                user:''
             }
         },
         mounted(){
-            this.axios.get('/api/user').then((res)=>{
+            this.axios.get('api/busca').then((res)=>{
                 this.user = res.data
             })
             .catch(err=>console.log(err))

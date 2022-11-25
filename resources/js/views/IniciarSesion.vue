@@ -45,7 +45,9 @@ export default {
     data() {
         return {
             data:{
-
+                email: '',
+                password: '',
+                remember: false
             },
 
         };
@@ -54,8 +56,8 @@ export default {
     methods:{
         login(){
             this.axios
-            .post('api/login',this.data).then(()=>{
-                this.$router.push({name:"welcome"});
+            .post('login',this.data).then(()=>{
+                this.$router.push({name:"perfil"});
             })
             
             .catch(err=>console.log(err))

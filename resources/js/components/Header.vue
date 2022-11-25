@@ -21,6 +21,7 @@
                             <li><router-link to="/contacto">Contacto</router-link></li>
 
                             <li><router-link to="/iniciar_sesion">Iniciar sesión</router-link></li>
+                            <li type="button" @click="logout()">logout</li>
                         </ul>
                     </nav>
                 </div>
@@ -28,3 +29,13 @@
         </div>
     </header>
 </template>
+<script>
+    export default{
+        methods:{
+            logout(){
+                this.axios.post('logout')
+            }
+            
+        }
+    }
+</script>

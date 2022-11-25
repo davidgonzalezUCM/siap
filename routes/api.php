@@ -19,7 +19,7 @@ use App\Http\Controllers\usuariosController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
@@ -41,4 +41,4 @@ Route::post(
 );
 
 Route::post('registro', [\App\Http\Controllers\registroController::class, 'registro']);
-Route::post('login', [\App\Http\Controllers\loginController::class, 'login']);
+Route::get('busca', [\App\Http\Controllers\userinfo::class, 'busca']);

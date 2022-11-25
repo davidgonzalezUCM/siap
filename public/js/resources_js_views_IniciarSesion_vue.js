@@ -15,16 +15,20 @@ __webpack_require__.r(__webpack_exports__);
   components: {},
   data: function data() {
     return {
-      data: {}
+      data: {
+        email: '',
+        password: '',
+        remember: false
+      }
     };
   },
   methods: {
     login: function login() {
       var _this = this;
 
-      this.axios.post('api/login', this.data).then(function () {
+      this.axios.post('login', this.data).then(function () {
         _this.$router.push({
-          name: "welcome"
+          name: "perfil"
         });
       })["catch"](function (err) {
         return console.log(err);

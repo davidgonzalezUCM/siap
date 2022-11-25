@@ -1,20 +1,20 @@
+import { createApp } from "vue";
+
+import App from "./App.vue";
+import { router } from "./router";
+import welcome from "./views/Welcome.vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap";
-import { createApp, h } from 'vue';
-import { createInertiaApp } from '@inertiajs/inertia-vue3';
-import { InertiaProgress } from '@inertiajs/progress';
+import Datepicker from 'vue-datepicker-next';
+import 'vue-datepicker-next/index.css';
+import VueAxios from "vue-axios";
+import axios from "axios";
 
-const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
+const app = createApp(App);
 
-createInertiaApp({
-    title: (title) => `${title} - ${appName}`,
-    resolve: (name) => require(`./Pages/${name}.vue`),
-    setup({ el, app, props, plugin }) {
-        return createApp({ render: () => h(app, props) })
-            .use(plugin)
-            .mixin({ methods: { route } })
-            .mount(el);
-    },
-});
+app.component("welcome", welcome);
+app.component('Datepicker', Datepicker);
 
-InertiaProgress.init({ color: '#4B5563' });
+app.use(VueAxios, axios);
+app.use(router);
+app.mount("#app");
