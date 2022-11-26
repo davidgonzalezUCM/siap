@@ -11,7 +11,7 @@
                             xx.xxx.xxx-x" 
                             name="Rut" 
                             id="" 
-                            v-model="data.email"
+                            v-model="data.name"
                         />
                 </div>
 
@@ -45,7 +45,7 @@ export default {
     data() {
         return {
             data:{
-                email: '',
+                name: '',
                 password: '',
                 remember: false
             },
