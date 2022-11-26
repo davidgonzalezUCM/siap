@@ -19,6 +19,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      id: 0,
       fechaN: '',
       rut_usuario: '',
       usuario: {},
@@ -59,8 +60,8 @@ __webpack_require__.r(__webpack_exports__);
     editar: function editar() {
       var _this3 = this;
 
-      this.fila_espera.fecha_nacimiento = this.fechaN;
-      this.axios.put("api/fila_espera/".concat(this.$route.params.id_espera), this.fila_espera)["catch"](function (err) {
+      this.usuario.fecha_nacimiento = this.fechaN;
+      this.axios.put("api/usuarios/" + this.usuario.rut_usuario, this.usuario)["catch"](function (err) {
         return console.log(err);
       })["finally"](function () {
         return _this3.loading = false;
@@ -71,9 +72,17 @@ __webpack_require__.r(__webpack_exports__);
 
       this.axios.get("api/agendada/" + rut_usuario).then(function (response) {
         var _response$data2 = response.data,
+            id_agenda = _response$data2.id_agenda,
             fecha = _response$data2.fecha,
             hora = _response$data2.hora;
-        _this4.agenda.fecha = fecha, _this4.agenda.hora = hora;
+        _this4.agenda.id_agenda = id_agenda, _this4.agenda.fecha = fecha, _this4.agenda.hora = hora, _this4.id = id_agenda;
+      })["catch"](function (err) {
+        return console.log(err);
+      });
+    },
+    borraragenda: function borraragenda(id) {
+      this.axios["delete"]("/api/agenda/" + id)["finally"](function () {
+        return window.location.reload();
       })["catch"](function (err) {
         return console.log(err);
       });
@@ -231,16 +240,45 @@ var _hoisted_29 = {
 var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   type: "submit",
   value: "Editar",
-  "class": "modal-btn",
-  "data-bs-toggle": "modal",
-  "data-bs-target": "#hola"
+  "class": "modal-btn"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row mt-3\"><div class=\"col\"><p>Usted tiene una hora agendada para:</p></div><div class=\"col-sm-3\"><button type=\"button\" class=\"btn btn-success\" style=\"margin-right:10px;\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" class=\"btn btn-danger\"><i class=\"fa-solid fa-trash\"></i></button></div></div><div class=\"row mt-2\"><div class=\"col\"><p>Usted está en fila de espera:</p></div><div class=\"col-sm-3\"><button type=\"button\" class=\"btn btn-success\" style=\"margin-right:10px;\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" class=\"btn btn-danger\"><i class=\"fa-solid fa-trash\"></i></button></div></div><div class=\"row mt-2\"><div class=\"col\"><p>Usted está suscrito a nuestro boletín:</p></div><div class=\"col-sm-3\"><button type=\"button\" class=\"btn btn-danger\"><i class=\"fa-solid fa-trash\"></i></button></div></div>", 3);
+var _hoisted_31 = {
+  "class": "row mt-3"
+};
+var _hoisted_32 = {
+  "class": "col"
+};
+var _hoisted_33 = {
+  key: 0
+};
+var _hoisted_34 = {
+  key: 1
+};
+var _hoisted_35 = {
+  key: 0,
+  "class": "col-sm-3"
+};
 
-var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa-regular fa-pen-to-square"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa-solid fa-trash"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_38 = [_hoisted_37];
+
+var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row mt-2\"><div class=\"col\"><p>Usted está en fila de espera:</p></div><div class=\"col-sm-3\"><button type=\"button\" class=\"btn btn-success\" style=\"margin-right:10px;\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" class=\"btn btn-danger\"><i class=\"fa-solid fa-trash\"></i></button></div></div><div class=\"row mt-2\"><div class=\"col\"><p>Usted está suscrito a nuestro boletín:</p></div><div class=\"col-sm-3\"><button type=\"button\" class=\"btn btn-danger\"><i class=\"fa-solid fa-trash\"></i></button></div></div>", 2);
+
+var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "col-md-5"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   style: {
@@ -254,12 +292,16 @@ var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"modal\" tabindex=\"-1\" id=\"hola\"><div class=\"modal-dialog modal-dialog-centered\"><div class=\"modal-content\"><div class=\"modal-header\" style=\"background-color:#ced4da;\"><h5 class=\"modal-title\">Aviso</h5><button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button></div><div class=\"modal-body\"><p>Cambios guardados con exito.</p></div><div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-primary\" data-bs-dismiss=\"modal\"> Aceptar </button></div></div></div></div>", 1);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_datepicker = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("datepicker");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  var _component_RouterLink = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("RouterLink");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+    onSubmit: _cache[10] || (_cache[10] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return $options.editar && $options.editar.apply($options, arguments);
+    }, ["prevent"]))
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "class": "form-control",
     placeholder: "Nombres",
@@ -365,9 +407,38 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "Motivo de consulta"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.usuario.motivo_consulta]])])]), _hoisted_30]), _hoisted_31]), _hoisted_34])])]), _hoisted_35], 64
-  /* STABLE_FRAGMENT */
-  );
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.usuario.motivo_consulta]])])]), _hoisted_30], 32
+  /* HYDRATE_EVENTS */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [$data.agenda.fecha != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_33, "Usted tiene una hora agendada para: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.agenda.fecha) + " a las " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.agenda.hora) + ".", 1
+  /* TEXT */
+  )) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_34, "Usted no tiene una hora agendada."))]), $data.agenda.fecha != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RouterLink, {
+    to: {
+      name: "editaragenda",
+      params: {
+        id_agenda: $data.id
+      }
+    },
+    type: "button",
+    "class": "btn btn-success",
+    style: {
+      "margin-right": "10px"
+    }
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_36];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["to"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    type: "button",
+    "class": "btn btn-danger",
+    onClick: _cache[11] || (_cache[11] = function ($event) {
+      return $options.borraragenda($data.id);
+    })
+  }, _hoisted_38)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), _hoisted_39]), _hoisted_41])])]);
 }
 
 /***/ }),

@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <form>
+                    <form  @submit.prevent="editar">
                         <div class="row mb-3">
                             <label class="form-label">Nombre Completo:</label>
                             <div class="col">
@@ -147,26 +147,17 @@
                             type="submit"
                             value="Editar"
                             class="modal-btn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#hola"
                         />
                     </form>
 
                     <div class="row mt-3">
                         <div class="col">
-                            <p>Usted tiene una hora agendada para:</p>
+                            <p v-if="agenda.fecha!=null">Usted tiene una hora agendada para: {{agenda.fecha}} a las {{agenda.hora}}.</p>
+                            <p v-else>Usted no tiene una hora agendada.</p>
                         </div>
-                        <div class="col-sm-3">
-                            <button
-                                type="button"
-                                class="btn btn-success"
-                                style="margin-right: 10px"
-                            >
-                                <i class="fa-regular fa-pen-to-square"></i>
-                            </button>
-                            <button type="button" class="btn btn-danger">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
+                        <div class="col-sm-3" v-if="agenda.fecha!=null" >
+                            <RouterLink :to="{ name: `editaragenda`, params: {id_agenda: id}}" type="button" class="btn btn-success" style="margin-right: 10px;"><i class="fa-regular fa-pen-to-square"></i></RouterLink>
+                            <button type="button" class="btn btn-danger" @click="borraragenda(id)"><i class="fa-solid fa-trash"></i></button>
                         </div>
                     </div>
                     <div class="row mt-2">
@@ -207,34 +198,6 @@
             </div>
         </div>
     </section>
-
-    <div class="modal" tabindex="-1" id="hola">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: #ced4da">
-                    <h5 class="modal-title">Aviso</h5>
-                    <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                    ></button>
-                </div>
-                <div class="modal-body">
-                    <p>Cambios guardados con exito.</p>
-                </div>
-                <div class="modal-footer">
-                    <button
-                        type="button"
-                        class="btn btn-primary"
-                        data-bs-dismiss="modal"
-                    >
-                        Aceptar
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
 </template>
 
 <script>
@@ -245,6 +208,7 @@ export default {
     },
     data() {
         return {
+            id:0,
             fechaN: '',
             rut_usuario:'',
             usuario:{
@@ -284,9 +248,9 @@ export default {
             },
 
         editar(){
-            this.fila_espera.fecha_nacimiento = this.fechaN;
+            this.usuario.fecha_nacimiento = this.fechaN;
             this.axios
-            .put(`api/fila_espera/${this.$route.params.id_espera}`, this.fila_espera)
+            .put(`api/usuarios/`+ this.usuario.rut_usuario, this.usuario)
             .catch(err=>console.log(err))
             .finally(() => this.loading = false)
         },
@@ -294,12 +258,21 @@ export default {
         hora_tomada(rut_usuario){
             this.axios.get(`api/agendada/`+rut_usuario)
             .then(response=>{
-                const {fecha, hora} = response.data
-                this.agenda.fecha = fecha,
-                this.agenda.hora = hora
+                const {id_agenda, fecha, hora} = response.data
+                    this.agenda.id_agenda = id_agenda,
+                    this.agenda.fecha = fecha,
+                    this.agenda.hora = hora,
+                    this.id = id_agenda
             })
             .catch(err=>console.log(err))
-        }
+        },
+
+        borraragenda(id){
+                    this.axios.delete(`/api/agenda/`+id)
+                    .finally(() => window.location.reload())
+                    .catch(err=>console.log(err))
+                
+            }
         }
     }
 </script>
