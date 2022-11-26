@@ -35,6 +35,6 @@ class agenda extends Model
         return $this->belongsTo(administrador::class);
     }
     public function usuarios(){
-        return $this->belongsTo(usuarios::class);
+        return $this->belongsTo(usuarios::class, 'rut_usuario_fk');
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\agenda;
+use Illuminate\Support\Facades\DB;
 
 class agendaController extends Controller
 {
@@ -62,6 +63,12 @@ class agendaController extends Controller
     public function show($id_agenda)
     {
         $agenda = agenda::find($id_agenda);
+        return response()->json($agenda);
+    }
+
+    public function agendada($rut_usuario_fk)
+    {
+        $agenda = agenda::where('rut_usuario_fk',$rut_usuario_fk)->first();
         return response()->json($agenda);
     }
 

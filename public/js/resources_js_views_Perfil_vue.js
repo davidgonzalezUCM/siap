@@ -21,7 +21,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       fechaN: '',
       rut_usuario: '',
-      usuario: {}
+      usuario: {},
+      agenda: {}
     };
   },
   mounted: function mounted() {
@@ -29,8 +30,7 @@ __webpack_require__.r(__webpack_exports__);
 
     this.axios.get('api/busca').then(function (res) {
       _this.rut_usuario = res.data;
-
-      _this.traerdatos(_this.rut_usuario);
+      _this.traerdatos(_this.rut_usuario), _this.hora_tomada(_this.rut_usuario);
     })["catch"](function (err) {
       return console.log(err);
     });
@@ -59,11 +59,23 @@ __webpack_require__.r(__webpack_exports__);
     editar: function editar() {
       var _this3 = this;
 
-      this.usuario.fecha_nacimiento = this.fechaN;
-      this.axios.put("api/usuarios/" + this.usuario.rut_usuario, this.usuario)["catch"](function (err) {
+      this.fila_espera.fecha_nacimiento = this.fechaN;
+      this.axios.put("api/fila_espera/".concat(this.$route.params.id_espera), this.fila_espera)["catch"](function (err) {
         return console.log(err);
       })["finally"](function () {
         return _this3.loading = false;
+      });
+    },
+    hora_tomada: function hora_tomada(rut_usuario) {
+      var _this4 = this;
+
+      this.axios.get("api/agendada/" + rut_usuario).then(function (response) {
+        var _response$data2 = response.data,
+            fecha = _response$data2.fecha,
+            hora = _response$data2.hora;
+        _this4.agenda.fecha = fecha, _this4.agenda.hora = hora;
+      })["catch"](function (err) {
+        return console.log(err);
       });
     }
   }
@@ -247,11 +259,7 @@ var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticV
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_datepicker = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("datepicker");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-    onSubmit: _cache[10] || (_cache[10] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
-      return $options.editar && $options.editar.apply($options, arguments);
-    }, ["prevent"]))
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "class": "form-control",
     placeholder: "Nombres",
@@ -357,9 +365,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "Motivo de consulta"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.usuario.motivo_consulta]])])]), _hoisted_30], 32
-  /* HYDRATE_EVENTS */
-  ), _hoisted_31]), _hoisted_34])])]), _hoisted_35], 64
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.usuario.motivo_consulta]])])]), _hoisted_30]), _hoisted_31]), _hoisted_34])])]), _hoisted_35], 64
   /* STABLE_FRAGMENT */
   );
 }

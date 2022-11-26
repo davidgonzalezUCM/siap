@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <form @submit.prevent="editar">
+                    <form>
                         <div class="row mb-3">
                             <label class="form-label">Nombre Completo:</label>
                             <div class="col">
@@ -249,12 +249,15 @@ export default {
             rut_usuario:'',
             usuario:{
             },
+            agenda:{
+            }
         };
     },
         mounted(){
             this.axios.get('api/busca').then((res)=>{
                 this.rut_usuario = res.data
-                this.traerdatos(this.rut_usuario)
+                this.traerdatos(this.rut_usuario),
+                this.hora_tomada(this.rut_usuario)
             })
             .catch(err=>console.log(err))
 
@@ -280,13 +283,23 @@ export default {
                 .catch(err=>console.log(err))
             },
 
-            editar(){
-            this.usuario.fecha_nacimiento = this.fechaN;
+        editar(){
+            this.fila_espera.fecha_nacimiento = this.fechaN;
             this.axios
-            .put(`api/usuarios/`+ this.usuario.rut_usuario, this.usuario)
+            .put(`api/fila_espera/${this.$route.params.id_espera}`, this.fila_espera)
             .catch(err=>console.log(err))
             .finally(() => this.loading = false)
-            },
+        },
+
+        hora_tomada(rut_usuario){
+            this.axios.get(`api/agendada/`+rut_usuario)
+            .then(response=>{
+                const {fecha, hora} = response.data
+                this.agenda.fecha = fecha,
+                this.agenda.hora = hora
+            })
+            .catch(err=>console.log(err))
+        }
         }
     }
 </script>
