@@ -23470,9 +23470,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      rut_usuario: "",
+      usuario: {}
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.axios.get('api/busca').then(function (res) {
+      _this.rut_usuario = res.data;
+
+      _this.traerdatos(_this.rut_usuario);
+    })["catch"](function (err) {
+      return console.log(err);
+    });
+  },
   methods: {
+    traerdatos: function traerdatos(rut_usuario) {
+      var _this2 = this;
+
+      this.axios.get("api/perfil/" + rut_usuario).then(function (response) {
+        var _response$data = response.data,
+            rut_usuario = _response$data.rut_usuario,
+            contrasena = _response$data.contrasena,
+            nombre = _response$data.nombre,
+            apellido_pat = _response$data.apellido_pat,
+            apellido_mat = _response$data.apellido_mat,
+            fecha_nacimiento = _response$data.fecha_nacimiento,
+            correo = _response$data.correo,
+            telefono = _response$data.telefono,
+            ciudad = _response$data.ciudad,
+            motivo_consulta = _response$data.motivo_consulta;
+        _this2.usuario.rut_usuario = rut_usuario, _this2.usuario.nombre = nombre, _this2.usuario.apellido_pat = apellido_pat, _this2.usuario.apellido_mat = apellido_mat, _this2.usuario.contrasena = contrasena, _this2.usuario.telefono = telefono, _this2.usuario.correo = correo, _this2.fechaN = fecha_nacimiento, _this2.usuario.ciudad = ciudad, _this2.usuario.motivo_consulta = motivo_consulta;
+      })["catch"](function (err) {
+        return console.log(err);
+      });
+    },
     logout: function logout() {
-      this.axios.post('logout');
+      this.axios.post('logout').then(function () {
+        return window.location.replace('http://127.0.0.1:8000/#/');
+      }).then(function () {
+        return window.location.reload();
+      });
     }
   }
 });
@@ -23707,6 +23748,12 @@ var _hoisted_6 = {
 var _hoisted_7 = {
   "class": "dropdown menu"
 };
+var _hoisted_8 = {
+  key: 0
+};
+var _hoisted_9 = {
+  key: 1
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
@@ -23755,7 +23802,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  })]), $data.rut_usuario != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/perfil"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.usuario.nombre), 1
+      /* TEXT */
+      )];
+    }),
+    _: 1
+    /* STABLE */
+
+  })])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/iniciar_sesion"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -23764,12 +23822,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+  })])), $data.rut_usuario != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
+    key: 2,
     type: "button",
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $options.logout();
     })
-  }, "logout")])])])])])]);
+  }, "Cerrar sesión")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])])]);
 }
 
 /***/ }),

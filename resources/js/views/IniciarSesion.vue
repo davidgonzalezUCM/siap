@@ -56,9 +56,9 @@ export default {
     methods:{
         login(){
             this.axios
-            .post('login',this.data).then(()=>{
-                this.$router.push({name:"perfil"});
-            })
+            .post('login',this.data)
+                .then(() => window.location.replace('http://127.0.0.1:8000/#/perfil'))
+                .then(() => window.location.reload())
             
             .catch(err=>console.log(err))
         }

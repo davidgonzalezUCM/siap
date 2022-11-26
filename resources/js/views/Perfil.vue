@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <form  @submit.prevent="editar">
+                    <form @submit.prevent="editar">
                         <div class="row mb-3">
                             <label class="form-label">Nombre Completo:</label>
                             <div class="col">
@@ -143,46 +143,64 @@
                             </div>
                         </div>
 
-                        <input
-                            type="submit"
-                            value="Editar"
-                            class="modal-btn"
-                        />
+                        <input type="submit" value="Editar" class="modal-btn" />
                     </form>
 
                     <div class="row mt-3">
                         <div class="col">
-                            <p v-if="agenda.fecha!=null">Usted tiene una hora agendada para: {{agenda.fecha}} a las {{agenda.hora}}.</p>
+                            <p v-if="agenda.fecha != null">
+                                Usted tiene una hora agendada para:
+                                {{ agenda.fecha }} a las {{ agenda.hora }}.
+                            </p>
                             <p v-else>Usted no tiene una hora agendada.</p>
                         </div>
-                        <div class="col-sm-3" v-if="agenda.fecha!=null" >
-                            <RouterLink :to="{ name: `editaragenda`, params: {id_agenda: id}}" type="button" class="btn btn-success" style="margin-right: 10px;"><i class="fa-regular fa-pen-to-square"></i></RouterLink>
-                            <button type="button" class="btn btn-danger" @click="borraragenda(id)"><i class="fa-solid fa-trash"></i></button>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col">
-                            <p v-if="fila_espera.motivo_espera!=null">Usted está en fila de espera: Si</p>
-                            <p v-else>Usted está en fila de espera: No</p>
-                        </div>
-                        <div class="col-sm-3" v-if="fila_espera.motivo_espera!=null">
-                            <RouterLink :to="{ name: `editarlista`, params: {id_espera: id_espera}}"
-                            type="button"
+                        <div class="col-sm-3" v-if="agenda.fecha != null">
+                            <RouterLink
+                                :to="{
+                                    name: `editaragenda`,
+                                    params: { id_agenda: id },
+                                }"
+                                type="button"
                                 class="btn btn-success"
                                 style="margin-right: 10px"
+                                ><i class="fa-regular fa-pen-to-square"></i
+                            ></RouterLink>
+                            <button
+                                type="button"
+                                class="btn btn-danger"
+                                @click="borraragenda(id)"
                             >
-                                <i class="fa-regular fa-pen-to-square"></i></RouterLink>
-                            <button type="button" class="btn btn-danger" @click="borrarfila(id_espera)">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </div>
                     </div>
                     <div class="row mt-2">
                         <div class="col">
-                            <p>Usted está suscrito a nuestro boletín:</p>
+                            <p v-if="fila_espera.motivo_espera != null">
+                                Usted está en fila de espera: Si
+                            </p>
+                            <p v-else>Usted está en fila de espera: No</p>
                         </div>
-                        <div class="col-sm-3">
-                            <button type="button" class="btn btn-danger">
+                        <div
+                            class="col-sm-3"
+                            v-if="fila_espera.motivo_espera != null"
+                        >
+                            <RouterLink
+                                :to="{
+                                    name: `editarlista`,
+                                    params: { id_espera: id_espera },
+                                }"
+                                type="button"
+                                class="btn btn-success"
+                                style="margin-right: 10px"
+                            >
+                                <i class="fa-regular fa-pen-to-square"></i
+                            ></RouterLink>
+                            <button
+                                type="button"
+                                class="btn btn-danger"
+                                @click="borrarfila(id_espera)"
+                            >
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </div>
@@ -201,125 +219,129 @@
 </template>
 
 <script>
-    import Datepicker from "vue-datepicker-next";
+import Datepicker from "vue-datepicker-next";
 export default {
     components: {
         Datepicker,
     },
     data() {
         return {
-            id:0,
-            id_espera:0,
-            id_suscriptor:0,
-            fechaN: '',
-            rut_usuario:'',
-            email:'',
-            usuario:{
-            },
-            agenda:{
-            },
-            fila_espera:{
-            },
-            suscriptor:{
-            }
+            id: 0,
+            id_espera: 0,
+            id_suscriptor: 0,
+            fechaN: "",
+            rut_usuario: "",
+            usuario: {},
+            agenda: {},
+            fila_espera: {},
         };
     },
-        mounted(){
-            this.axios.get('api/busca').then((res)=>{
-                this.rut_usuario = res.data
+    mounted() {
+        this.axios
+            .get("api/busca")
+            .then((res) => {
+                this.rut_usuario = res.data;
                 this.traerdatos(this.rut_usuario),
-                this.hora_tomada(this.rut_usuario),
-                this.fila_tomada(this.rut_usuario),
-                this.suscrito('test@test.cl')
+                    this.hora_tomada(this.rut_usuario),
+                    this.fila_tomada(this.rut_usuario);
             })
-            .catch(err=>console.log(err))
-
-
-
-        },
-        methods:{
-        traerdatos(rut_usuario){
-                this.axios.get(`api/perfil/`+rut_usuario)
-                .then(response=>{
-                    const {rut_usuario, contrasena, nombre, apellido_pat, apellido_mat, fecha_nacimiento, correo, telefono, ciudad, motivo_consulta} = response.data
-                    this.usuario.rut_usuario = rut_usuario,
-                    this.usuario.nombre = nombre,
-                    this.usuario.apellido_pat = apellido_pat,
-                    this.usuario.apellido_mat = apellido_mat,
-                    this.usuario.contrasena = contrasena,
-                    this.usuario.telefono = telefono,
-                    this.usuario.correo = correo,
-                    this.fechaN = fecha_nacimiento,
-                    this.usuario.ciudad = ciudad,
-                    this.usuario.motivo_consulta = motivo_consulta,
-                    this.email = correo
+            .catch((err) => console.log(err));
+    },
+    methods: {
+        traerdatos(rut_usuario) {
+            this.axios
+                .get(`api/perfil/` + rut_usuario)
+                .then((response) => {
+                    const {
+                        rut_usuario,
+                        contrasena,
+                        nombre,
+                        apellido_pat,
+                        apellido_mat,
+                        fecha_nacimiento,
+                        correo,
+                        telefono,
+                        ciudad,
+                        motivo_consulta,
+                    } = response.data;
+                    (this.usuario.rut_usuario = rut_usuario),
+                        (this.usuario.nombre = nombre),
+                        (this.usuario.apellido_pat = apellido_pat),
+                        (this.usuario.apellido_mat = apellido_mat),
+                        (this.usuario.contrasena = contrasena),
+                        (this.usuario.telefono = telefono),
+                        (this.usuario.correo = correo),
+                        (this.fechaN = fecha_nacimiento),
+                        (this.usuario.ciudad = ciudad),
+                        (this.usuario.motivo_consulta = motivo_consulta);
                 })
-                .catch(err=>console.log(err))
-                suscrito(email)
-            },
+                .catch((err) => console.log(err));
+        },
 
-        editar(){
+        editar() {
             this.usuario.fecha_nacimiento = this.fechaN;
             this.axios
-            .put(`api/usuarios/`+ this.usuario.rut_usuario, this.usuario)
-            .catch(err=>console.log(err))
-            .finally(() => this.loading = false)
+                .put(`api/usuarios/` + this.usuario.rut_usuario, this.usuario)
+                .catch((err) => console.log(err))
+                .finally(() => (this.loading = false));
         },
 
-        hora_tomada(rut_usuario){
-            this.axios.get(`api/agendada/`+rut_usuario)
-            .then(response=>{
-                const {id_agenda, fecha, hora} = response.data
-                    this.agenda.id_agenda = id_agenda,
-                    this.agenda.fecha = fecha,
-                    this.agenda.hora = hora,
-                    this.id = id_agenda
-            })
-            .catch(err=>console.log(err))
+        hora_tomada(rut_usuario) {
+            this.axios
+                .get(`api/agendada/` + rut_usuario)
+                .then((response) => {
+                    const { id_agenda, fecha, hora } = response.data;
+                    (this.agenda.id_agenda = id_agenda),
+                        (this.agenda.fecha = fecha),
+                        (this.agenda.hora = hora),
+                        (this.id = id_agenda);
+                })
+                .catch((err) => console.log(err));
         },
 
-        borraragenda(id){
-                    this.axios.delete(`/api/agenda/`+id)
-                    .finally(() => window.location.reload())
-                    .catch(err=>console.log(err))
-                
-            },
-        
-        fila_tomada(rut_usuario){
-            this.axios.get('api/tomada/'+rut_usuario)
-            .then(response=>{
-                const {id_espera, rut_usuario_fk, nombre, apellido_pat, apellido_mat, fecha_nacimiento, correo, telefono, ciudad, motivo_espera} = response.data
-                    this.id_espera = id_espera,
-                    this.fila_espera.rut_usuario_fk = rut_usuario_fk,
-                    this.fila_espera.nombre = nombre,
-                    this.fila_espera.apellido_pat = apellido_pat,
-                    this.fila_espera.apellido_mat = apellido_mat,
-                    this.fechaN = fecha_nacimiento,
-                    this.fila_espera.correo = correo,
-                    this.fila_espera.telefono = telefono,
-                    this.fila_espera.ciudad = ciudad,
-                    this.fila_espera.motivo_espera = motivo_espera
-            })
-            .catch(err=>console.log(err))
+        borraragenda(id) {
+            this.axios
+                .delete(`/api/agenda/` + id)
+                .finally(() => window.location.reload())
+                .catch((err) => console.log(err));
         },
 
-        borrarfila(id_espera){
-            this.axios.delete('api/fila_espera/'+id_espera).
-            finally(() => window.location.reload())
-            .catch(err=>console.log(err))
+        fila_tomada(rut_usuario) {
+            this.axios
+                .get("api/tomada/" + rut_usuario)
+                .then((response) => {
+                    const {
+                        id_espera,
+                        rut_usuario_fk,
+                        nombre,
+                        apellido_pat,
+                        apellido_mat,
+                        fecha_nacimiento,
+                        correo,
+                        telefono,
+                        ciudad,
+                        motivo_espera,
+                    } = response.data;
+                    (this.id_espera = id_espera),
+                        (this.fila_espera.rut_usuario_fk = rut_usuario_fk),
+                        (this.fila_espera.nombre = nombre),
+                        (this.fila_espera.apellido_pat = apellido_pat),
+                        (this.fila_espera.apellido_mat = apellido_mat),
+                        (this.fechaN = fecha_nacimiento),
+                        (this.fila_espera.correo = correo),
+                        (this.fila_espera.telefono = telefono),
+                        (this.fila_espera.ciudad = ciudad),
+                        (this.fila_espera.motivo_espera = motivo_espera);
+                })
+                .catch((err) => console.log(err));
         },
 
-        suscrito(email){
-            this.axios.get('api/suscrito/'+email)
-            .then(response=>{
-                const {id_suscriptor} = response.data
-                this.suscriptor.id_suscriptor = id_suscriptor
-            })
+        borrarfila(id_espera) {
+            this.axios
+                .delete("api/fila_espera/" + id_espera)
+                .finally(() => window.location.reload())
+                .catch((err) => console.log(err));
         },
-
-        borrarsuscriptor(id_suscriptor){
-
-        }
-        }
-    }
+    },
+};
 </script>

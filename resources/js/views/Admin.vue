@@ -12,7 +12,7 @@
                                 placeholder="Nombres"
                                 name="Nombre"
                                 id=""
-                                v-model="administrador.nombre"
+                                v-model="vnombre"
                             />
                         </div>
                         <div class="col">
@@ -22,7 +22,7 @@
                                 placeholder="Apellido Paterno"
                                 name="Apellido Paterno"
                                 id=""
-                                v-model="administrador.apellido_pat"
+                                v-model="vapepat"
                             />
                         </div>
                         <div class="col">
@@ -32,7 +32,7 @@
                                 placeholder="Apellio Materno"
                                 name="Apellido Materno"
                                 id=""
-                                v-model="administrador.apellido_mat"
+                                v-model="vapemat"
                             />
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                                 name="Contraseña"
                                 placeholder="Contraseña"
                                 id=""
-                                v-model="administrador.contrasena"
+                                v-model="vpass"
                             />
                         </div>
 
@@ -58,7 +58,7 @@
                                 name="ConfContraseña"
                                 placeholder="Seleccione tipo de administrador"
                                 id=""
-                                v-model="administrador.tipo_admin"
+                                v-model="vtipo"
                             />
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                                 placeholder="Rut"
                                 name="Rut"
                                 id=""
-                                v-model="administrador.rut_admin"
+                                v-model="vrut"
                             />
                         </div>
                     </div>
@@ -115,17 +115,48 @@ export default {
     },
     data() {
         return {
-
+            vnombre:'',
+            vapepat:'',
+            vapemat:'',
+            vpass:'',
+            vconpass:'', //igualar a pass
+            vrut:'',
+            vcorreo:'', //correo estandar
+            vtipo: '',
             administrador:{
                 //variables
+            },
+            user:{
+
             }
         };
     },
 
     methods:{
         crearadmin(){
+            this.administrador.rut_admin = this.vrut,
+            this.administrador.contrasena = this.vpass,
+            this.administrador.nombre = this.vnombre,
+            this.administrador.apellido_pat = this.vapepat,
+            this.administrador.apellido_mat = this.vapemat,
+            this.administrador.tipo_admin = this.vtipo
+
             this.axios
             .post('api/administrador',this.administrador)
+            .catch(err=>console.log(err))
+            .finally(() => this.loading = false)
+
+            this.crearuser();
+        },
+
+        crearuser(){
+            this.user.name = this.vrut,
+            this.user.email = 'administrador@gmail.cl',
+            this.user.password = this.vpass,
+            this.user.password_confirmation = this.vpass,
+
+            this.axios
+            .post('api/registro',this.user)
             .catch(err=>console.log(err))
             .finally(() => this.loading = false)
         }

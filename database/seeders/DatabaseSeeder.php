@@ -26,5 +26,10 @@ class DatabaseSeeder extends Seeder
             'tipo_admin' => 'Administrador'
         ]);
 
+        DB::table('users')->insert([
+            'name' => 'Super',
+            'email' => 'administrador@gmail.cl',
+            'password' => Hash::make('admin')
+        ]);
     }
 }

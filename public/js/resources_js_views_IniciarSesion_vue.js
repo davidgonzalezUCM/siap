@@ -24,12 +24,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     login: function login() {
-      var _this = this;
-
       this.axios.post('login', this.data).then(function () {
-        _this.$router.push({
-          name: "perfil"
-        });
+        return window.location.replace('http://127.0.0.1:8000/#/perfil');
+      }).then(function () {
+        return window.location.reload();
       })["catch"](function (err) {
         return console.log(err);
       });

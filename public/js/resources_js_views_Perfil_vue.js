@@ -22,21 +22,19 @@ __webpack_require__.r(__webpack_exports__);
       id: 0,
       id_espera: 0,
       id_suscriptor: 0,
-      fechaN: '',
-      rut_usuario: '',
-      email: '',
+      fechaN: "",
+      rut_usuario: "",
       usuario: {},
       agenda: {},
-      fila_espera: {},
-      suscriptor: {}
+      fila_espera: {}
     };
   },
   mounted: function mounted() {
     var _this = this;
 
-    this.axios.get('api/busca').then(function (res) {
+    this.axios.get("api/busca").then(function (res) {
       _this.rut_usuario = res.data;
-      _this.traerdatos(_this.rut_usuario), _this.hora_tomada(_this.rut_usuario), _this.fila_tomada(_this.rut_usuario), _this.suscrito('test@test.cl');
+      _this.traerdatos(_this.rut_usuario), _this.hora_tomada(_this.rut_usuario), _this.fila_tomada(_this.rut_usuario);
     })["catch"](function (err) {
       return console.log(err);
     });
@@ -57,11 +55,10 @@ __webpack_require__.r(__webpack_exports__);
             telefono = _response$data.telefono,
             ciudad = _response$data.ciudad,
             motivo_consulta = _response$data.motivo_consulta;
-        _this2.usuario.rut_usuario = rut_usuario, _this2.usuario.nombre = nombre, _this2.usuario.apellido_pat = apellido_pat, _this2.usuario.apellido_mat = apellido_mat, _this2.usuario.contrasena = contrasena, _this2.usuario.telefono = telefono, _this2.usuario.correo = correo, _this2.fechaN = fecha_nacimiento, _this2.usuario.ciudad = ciudad, _this2.usuario.motivo_consulta = motivo_consulta, _this2.email = correo;
+        _this2.usuario.rut_usuario = rut_usuario, _this2.usuario.nombre = nombre, _this2.usuario.apellido_pat = apellido_pat, _this2.usuario.apellido_mat = apellido_mat, _this2.usuario.contrasena = contrasena, _this2.usuario.telefono = telefono, _this2.usuario.correo = correo, _this2.fechaN = fecha_nacimiento, _this2.usuario.ciudad = ciudad, _this2.usuario.motivo_consulta = motivo_consulta;
       })["catch"](function (err) {
         return console.log(err);
       });
-      suscrito(email);
     },
     editar: function editar() {
       var _this3 = this;
@@ -96,7 +93,7 @@ __webpack_require__.r(__webpack_exports__);
     fila_tomada: function fila_tomada(rut_usuario) {
       var _this5 = this;
 
-      this.axios.get('api/tomada/' + rut_usuario).then(function (response) {
+      this.axios.get("api/tomada/" + rut_usuario).then(function (response) {
         var _response$data3 = response.data,
             id_espera = _response$data3.id_espera,
             rut_usuario_fk = _response$data3.rut_usuario_fk,
@@ -114,21 +111,12 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     borrarfila: function borrarfila(id_espera) {
-      this.axios["delete"]('api/fila_espera/' + id_espera)["finally"](function () {
+      this.axios["delete"]("api/fila_espera/" + id_espera)["finally"](function () {
         return window.location.reload();
       })["catch"](function (err) {
         return console.log(err);
       });
-    },
-    suscrito: function suscrito(email) {
-      var _this6 = this;
-
-      this.axios.get('api/suscrito/' + email).then(function (response) {
-        var id_suscriptor = response.data.id_suscriptor;
-        _this6.suscriptor.id_suscriptor = id_suscriptor;
-      });
-    },
-    borrarsuscriptor: function borrarsuscriptor(id_suscriptor) {}
+    }
   }
 });
 
@@ -348,9 +336,7 @@ var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 
 var _hoisted_46 = [_hoisted_45];
 
-var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row mt-2\"><div class=\"col\"><p>Usted está suscrito a nuestro boletín:</p></div><div class=\"col-sm-3\"><button type=\"button\" class=\"btn btn-danger\"><i class=\"fa-solid fa-trash\"></i></button></div></div>", 1);
-
-var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "col-md-5"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   style: {
@@ -481,7 +467,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.usuario.motivo_consulta]])])]), _hoisted_30], 32
   /* HYDRATE_EVENTS */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [$data.agenda.fecha != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_33, "Usted tiene una hora agendada para: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.agenda.fecha) + " a las " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.agenda.hora) + ".", 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [$data.agenda.fecha != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_33, " Usted tiene una hora agendada para: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.agenda.fecha) + " a las " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.agenda.hora) + ". ", 1
   /* TEXT */
   )) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_34, "Usted no tiene una hora agendada."))]), $data.agenda.fecha != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RouterLink, {
     to: {
@@ -510,7 +496,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[11] || (_cache[11] = function ($event) {
       return $options.borraragenda($data.id);
     })
-  }, _hoisted_38)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [$data.fila_espera.motivo_espera != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_41, "Usted está en fila de espera: Si")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_42, "Usted está en fila de espera: No"))]), $data.fila_espera.motivo_espera != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RouterLink, {
+  }, _hoisted_38)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [$data.fila_espera.motivo_espera != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_41, " Usted está en fila de espera: Si ")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_42, "Usted está en fila de espera: No"))]), $data.fila_espera.motivo_espera != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RouterLink, {
     to: {
       name: "editarlista",
       params: {
@@ -537,7 +523,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[12] || (_cache[12] = function ($event) {
       return $options.borrarfila($data.id_espera);
     })
-  }, _hoisted_46)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), _hoisted_47]), _hoisted_48])])]);
+  }, _hoisted_46)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), _hoisted_47])])]);
 }
 
 /***/ }),

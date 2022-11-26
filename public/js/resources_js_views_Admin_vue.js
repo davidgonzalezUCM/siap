@@ -15,18 +15,40 @@ __webpack_require__.r(__webpack_exports__);
   components: {},
   data: function data() {
     return {
+      vnombre: '',
+      vapepat: '',
+      vapemat: '',
+      vpass: '',
+      vconpass: '',
+      //igualar a pass
+      vrut: '',
+      vcorreo: '',
+      //correo estandar
+      vtipo: '',
       administrador: {//variables
-      }
+      },
+      user: {}
     };
   },
   methods: {
     crearadmin: function crearadmin() {
       var _this = this;
 
+      this.administrador.rut_admin = this.vrut, this.administrador.contrasena = this.vpass, this.administrador.nombre = this.vnombre, this.administrador.apellido_pat = this.vapepat, this.administrador.apellido_mat = this.vapemat, this.administrador.tipo_admin = this.vtipo;
       this.axios.post('api/administrador', this.administrador)["catch"](function (err) {
         return console.log(err);
       })["finally"](function () {
         return _this.loading = false;
+      });
+      this.crearuser();
+    },
+    crearuser: function crearuser() {
+      var _this2 = this;
+
+      this.user.name = this.vrut, this.user.email = 'administrador@gmail.cl', this.user.password = this.vpass, this.user.password_confirmation = this.vpass, this.axios.post('api/registro', this.user)["catch"](function (err) {
+        return console.log(err);
+      })["finally"](function () {
+        return _this2.loading = false;
       });
     }
   }
@@ -151,66 +173,66 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     name: "Nombre",
     id: "",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return $data.administrador.nombre = $event;
+      return $data.vnombre = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.administrador.nombre]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.vnombre]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "class": "form-control",
     placeholder: "Apellido Paterno",
     name: "Apellido Paterno",
     id: "",
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-      return $data.administrador.apellido_pat = $event;
+      return $data.vapepat = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.administrador.apellido_pat]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.vapepat]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "class": "form-control",
     placeholder: "Apellio Materno",
     name: "Apellido Materno",
     id: "",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-      return $data.administrador.apellido_mat = $event;
+      return $data.vapemat = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.administrador.apellido_mat]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.vapemat]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "class": "form-control",
     type: "text",
     name: "Contraseña",
     placeholder: "Contraseña",
     id: "",
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
-      return $data.administrador.contrasena = $event;
+      return $data.vpass = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.administrador.contrasena]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.vpass]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "class": "form-control",
     type: "text",
     name: "ConfContraseña",
     placeholder: "Seleccione tipo de administrador",
     id: "",
     "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
-      return $data.administrador.tipo_admin = $event;
+      return $data.vtipo = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.administrador.tipo_admin]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.vtipo]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "class": "form-control",
     type: "text",
     placeholder: "Rut",
     name: "Rut",
     id: "",
     "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
-      return $data.administrador.rut_admin = $event;
+      return $data.vrut = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.administrador.rut_admin]])])]), _hoisted_17], 32
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.vrut]])])]), _hoisted_17], 32
   /* HYDRATE_EVENTS */
   ), _hoisted_18])])]), _hoisted_19], 64
   /* STABLE_FRAGMENT */
