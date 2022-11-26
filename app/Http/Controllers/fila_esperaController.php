@@ -36,12 +36,18 @@ class fila_esperaController extends Controller
         $fila_espera = fila_espera::find($rut_usuario_fk);
         return response()->json($fila_espera);
     }
+
+    public function tomada($rut_usuario_fk)
+    {
+        $fila_espera = fila_espera::where('rut_usuario_fk',$rut_usuario_fk)->first();
+        return response()->json($fila_espera);
+    }
     
     public function update(Request $request, $rut_usuario_fk)
     {
         $fila_espera = fila_espera::find($rut_usuario_fk);
         $fila_espera -> update($request->all());
-        return response()->json('fila modificado');
+        return response()->json('fila modificada');
     }
 
     

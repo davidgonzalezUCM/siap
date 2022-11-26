@@ -39,6 +39,12 @@ class suscriptorController extends Controller
         return response()->json($suscriptor);
     }
 
+    public function suscrito($email)
+    {
+        $suscriptor = suscriptor::where('email',$email)->first();
+        return response()->json($suscriptor);
+    }
+
     public function update(Request $request, $id_suscriptor)
     {
         $suscriptor = suscriptor::find($id_suscriptor);

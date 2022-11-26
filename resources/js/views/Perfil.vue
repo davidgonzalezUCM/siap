@@ -162,17 +162,17 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col">
-                            <p>Usted está en fila de espera:</p>
+                            <p v-if="fila_espera.motivo_espera!=null">Usted está en fila de espera: Si</p>
+                            <p v-else>Usted está en fila de espera: No</p>
                         </div>
-                        <div class="col-sm-3">
-                            <button
-                                type="button"
+                        <div class="col-sm-3" v-if="fila_espera.motivo_espera!=null">
+                            <RouterLink :to="{ name: `editarlista`, params: {id_espera: id_espera}}"
+                            type="button"
                                 class="btn btn-success"
                                 style="margin-right: 10px"
                             >
-                                <i class="fa-regular fa-pen-to-square"></i>
-                            </button>
-                            <button type="button" class="btn btn-danger">
+                                <i class="fa-regular fa-pen-to-square"></i></RouterLink>
+                            <button type="button" class="btn btn-danger" @click="borrarfila(id_espera)">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </div>
@@ -209,11 +209,18 @@ export default {
     data() {
         return {
             id:0,
+            id_espera:0,
+            id_suscriptor:0,
             fechaN: '',
             rut_usuario:'',
+            email:'',
             usuario:{
             },
             agenda:{
+            },
+            fila_espera:{
+            },
+            suscriptor:{
             }
         };
     },
@@ -221,7 +228,9 @@ export default {
             this.axios.get('api/busca').then((res)=>{
                 this.rut_usuario = res.data
                 this.traerdatos(this.rut_usuario),
-                this.hora_tomada(this.rut_usuario)
+                this.hora_tomada(this.rut_usuario),
+                this.fila_tomada(this.rut_usuario),
+                this.suscrito('test@test.cl')
             })
             .catch(err=>console.log(err))
 
@@ -242,9 +251,11 @@ export default {
                     this.usuario.correo = correo,
                     this.fechaN = fecha_nacimiento,
                     this.usuario.ciudad = ciudad,
-                    this.usuario.motivo_consulta = motivo_consulta
+                    this.usuario.motivo_consulta = motivo_consulta,
+                    this.email = correo
                 })
                 .catch(err=>console.log(err))
+                suscrito(email)
             },
 
         editar(){
@@ -272,7 +283,43 @@ export default {
                     .finally(() => window.location.reload())
                     .catch(err=>console.log(err))
                 
-            }
+            },
+        
+        fila_tomada(rut_usuario){
+            this.axios.get('api/tomada/'+rut_usuario)
+            .then(response=>{
+                const {id_espera, rut_usuario_fk, nombre, apellido_pat, apellido_mat, fecha_nacimiento, correo, telefono, ciudad, motivo_espera} = response.data
+                    this.id_espera = id_espera,
+                    this.fila_espera.rut_usuario_fk = rut_usuario_fk,
+                    this.fila_espera.nombre = nombre,
+                    this.fila_espera.apellido_pat = apellido_pat,
+                    this.fila_espera.apellido_mat = apellido_mat,
+                    this.fechaN = fecha_nacimiento,
+                    this.fila_espera.correo = correo,
+                    this.fila_espera.telefono = telefono,
+                    this.fila_espera.ciudad = ciudad,
+                    this.fila_espera.motivo_espera = motivo_espera
+            })
+            .catch(err=>console.log(err))
+        },
+
+        borrarfila(id_espera){
+            this.axios.delete('api/fila_espera/'+id_espera).
+            finally(() => window.location.reload())
+            .catch(err=>console.log(err))
+        },
+
+        suscrito(email){
+            this.axios.get('api/suscrito/'+email)
+            .then(response=>{
+                const {id_suscriptor} = response.data
+                this.suscriptor.id_suscriptor = id_suscriptor
+            })
+        },
+
+        borrarsuscriptor(id_suscriptor){
+
+        }
         }
     }
 </script>

@@ -20,10 +20,15 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       id: 0,
+      id_espera: 0,
+      id_suscriptor: 0,
       fechaN: '',
       rut_usuario: '',
+      email: '',
       usuario: {},
-      agenda: {}
+      agenda: {},
+      fila_espera: {},
+      suscriptor: {}
     };
   },
   mounted: function mounted() {
@@ -31,7 +36,7 @@ __webpack_require__.r(__webpack_exports__);
 
     this.axios.get('api/busca').then(function (res) {
       _this.rut_usuario = res.data;
-      _this.traerdatos(_this.rut_usuario), _this.hora_tomada(_this.rut_usuario);
+      _this.traerdatos(_this.rut_usuario), _this.hora_tomada(_this.rut_usuario), _this.fila_tomada(_this.rut_usuario), _this.suscrito('test@test.cl');
     })["catch"](function (err) {
       return console.log(err);
     });
@@ -52,10 +57,11 @@ __webpack_require__.r(__webpack_exports__);
             telefono = _response$data.telefono,
             ciudad = _response$data.ciudad,
             motivo_consulta = _response$data.motivo_consulta;
-        _this2.usuario.rut_usuario = rut_usuario, _this2.usuario.nombre = nombre, _this2.usuario.apellido_pat = apellido_pat, _this2.usuario.apellido_mat = apellido_mat, _this2.usuario.contrasena = contrasena, _this2.usuario.telefono = telefono, _this2.usuario.correo = correo, _this2.fechaN = fecha_nacimiento, _this2.usuario.ciudad = ciudad, _this2.usuario.motivo_consulta = motivo_consulta;
+        _this2.usuario.rut_usuario = rut_usuario, _this2.usuario.nombre = nombre, _this2.usuario.apellido_pat = apellido_pat, _this2.usuario.apellido_mat = apellido_mat, _this2.usuario.contrasena = contrasena, _this2.usuario.telefono = telefono, _this2.usuario.correo = correo, _this2.fechaN = fecha_nacimiento, _this2.usuario.ciudad = ciudad, _this2.usuario.motivo_consulta = motivo_consulta, _this2.email = correo;
       })["catch"](function (err) {
         return console.log(err);
       });
+      suscrito(email);
     },
     editar: function editar() {
       var _this3 = this;
@@ -86,7 +92,43 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (err) {
         return console.log(err);
       });
-    }
+    },
+    fila_tomada: function fila_tomada(rut_usuario) {
+      var _this5 = this;
+
+      this.axios.get('api/tomada/' + rut_usuario).then(function (response) {
+        var _response$data3 = response.data,
+            id_espera = _response$data3.id_espera,
+            rut_usuario_fk = _response$data3.rut_usuario_fk,
+            nombre = _response$data3.nombre,
+            apellido_pat = _response$data3.apellido_pat,
+            apellido_mat = _response$data3.apellido_mat,
+            fecha_nacimiento = _response$data3.fecha_nacimiento,
+            correo = _response$data3.correo,
+            telefono = _response$data3.telefono,
+            ciudad = _response$data3.ciudad,
+            motivo_espera = _response$data3.motivo_espera;
+        _this5.id_espera = id_espera, _this5.fila_espera.rut_usuario_fk = rut_usuario_fk, _this5.fila_espera.nombre = nombre, _this5.fila_espera.apellido_pat = apellido_pat, _this5.fila_espera.apellido_mat = apellido_mat, _this5.fechaN = fecha_nacimiento, _this5.fila_espera.correo = correo, _this5.fila_espera.telefono = telefono, _this5.fila_espera.ciudad = ciudad, _this5.fila_espera.motivo_espera = motivo_espera;
+      })["catch"](function (err) {
+        return console.log(err);
+      });
+    },
+    borrarfila: function borrarfila(id_espera) {
+      this.axios["delete"]('api/fila_espera/' + id_espera)["finally"](function () {
+        return window.location.reload();
+      })["catch"](function (err) {
+        return console.log(err);
+      });
+    },
+    suscrito: function suscrito(email) {
+      var _this6 = this;
+
+      this.axios.get('api/suscrito/' + email).then(function (response) {
+        var id_suscriptor = response.data.id_suscriptor;
+        _this6.suscriptor.id_suscriptor = id_suscriptor;
+      });
+    },
+    borrarsuscriptor: function borrarsuscriptor(id_suscriptor) {}
   }
 });
 
@@ -275,10 +317,40 @@ var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 );
 
 var _hoisted_38 = [_hoisted_37];
+var _hoisted_39 = {
+  "class": "row mt-2"
+};
+var _hoisted_40 = {
+  "class": "col"
+};
+var _hoisted_41 = {
+  key: 0
+};
+var _hoisted_42 = {
+  key: 1
+};
+var _hoisted_43 = {
+  key: 0,
+  "class": "col-sm-3"
+};
 
-var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row mt-2\"><div class=\"col\"><p>Usted está en fila de espera:</p></div><div class=\"col-sm-3\"><button type=\"button\" class=\"btn btn-success\" style=\"margin-right:10px;\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" class=\"btn btn-danger\"><i class=\"fa-solid fa-trash\"></i></button></div></div><div class=\"row mt-2\"><div class=\"col\"><p>Usted está suscrito a nuestro boletín:</p></div><div class=\"col-sm-3\"><button type=\"button\" class=\"btn btn-danger\"><i class=\"fa-solid fa-trash\"></i></button></div></div>", 2);
+var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa-regular fa-pen-to-square"
+}, null, -1
+/* HOISTED */
+);
 
-var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa-solid fa-trash"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_46 = [_hoisted_45];
+
+var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row mt-2\"><div class=\"col\"><p>Usted está suscrito a nuestro boletín:</p></div><div class=\"col-sm-3\"><button type=\"button\" class=\"btn btn-danger\"><i class=\"fa-solid fa-trash\"></i></button></div></div>", 1);
+
+var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "col-md-5"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   style: {
@@ -438,7 +510,34 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[11] || (_cache[11] = function ($event) {
       return $options.borraragenda($data.id);
     })
-  }, _hoisted_38)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), _hoisted_39]), _hoisted_41])])]);
+  }, _hoisted_38)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [$data.fila_espera.motivo_espera != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_41, "Usted está en fila de espera: Si")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_42, "Usted está en fila de espera: No"))]), $data.fila_espera.motivo_espera != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RouterLink, {
+    to: {
+      name: "editarlista",
+      params: {
+        id_espera: $data.id_espera
+      }
+    },
+    type: "button",
+    "class": "btn btn-success",
+    style: {
+      "margin-right": "10px"
+    }
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_44];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["to"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    type: "button",
+    "class": "btn btn-danger",
+    onClick: _cache[12] || (_cache[12] = function ($event) {
+      return $options.borrarfila($data.id_espera);
+    })
+  }, _hoisted_46)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), _hoisted_47]), _hoisted_48])])]);
 }
 
 /***/ }),
@@ -469,13 +568,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Perfil_vue_vue_type_template_id_24e65dab__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Perfil.vue?vue&type=template&id=24e65dab */ "./resources/js/views/Perfil.vue?vue&type=template&id=24e65dab");
 /* harmony import */ var _Perfil_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Perfil.vue?vue&type=script&lang=js */ "./resources/js/views/Perfil.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Perfil_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Perfil_vue_vue_type_template_id_24e65dab__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/Perfil.vue"]])
+const __exports__ = /*#__PURE__*/(0,D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Perfil_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Perfil_vue_vue_type_template_id_24e65dab__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/Perfil.vue"]])
 /* hot reload */
 if (false) {}
 
