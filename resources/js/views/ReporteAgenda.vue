@@ -1,6 +1,10 @@
 <template>
     <section class="our-services">
         <div class="container">
+            <div>
+                <h2>Reporte de Agenda</h2>
+            </div>
+        <br>
             <RouterLink to="/agendar_hora" type="button" class="btn btn-success mb-2" >Agendar hora</RouterLink>
             <table class="table table-hover table-bordered border-primary">
                 <thead class="table-dark">

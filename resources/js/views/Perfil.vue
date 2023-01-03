@@ -242,8 +242,8 @@ export default {
             .then((res) => {
                 this.rut_usuario = res.data;
                 this.traerdatos(this.rut_usuario),
-                    this.hora_tomada(this.rut_usuario),
-                    this.fila_tomada(this.rut_usuario);
+                this.hora_tomada(this.rut_usuario),
+                this.fila_tomada(this.rut_usuario);
             })
             .catch((err) => console.log(err));
     },

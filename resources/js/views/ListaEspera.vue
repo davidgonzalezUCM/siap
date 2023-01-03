@@ -12,6 +12,7 @@
                                 placeholder="Nombres"
                                 id="inputEmail3"
                                 v-model="fila_espera.nombre"
+                                disabled
                             />
                         </div>
                         <div class="col">
@@ -21,6 +22,7 @@
                                 placeholder="Apellido Paterno"
                                 id="inputEmail3"
                                 v-model="fila_espera.apellido_pat"
+                                disabled
                             />
                         </div>
                         <div class="col">
@@ -30,6 +32,7 @@
                                 placeholder="Apellio Materno"
                                 id="inputEmail3"
                                 v-model="fila_espera.apellido_mat"
+                                disabled
                             />
                         </div>
                     </div>
@@ -44,6 +47,7 @@
                                 placeholder="Rut"
                                 id=""
                                 v-model="fila_espera.rut_usuario_fk"
+                                disabled
                             />
                         </div>
 
@@ -56,6 +60,7 @@
                                 placeholder="Teléfono"
                                 id=""
                                 v-model="fila_espera.telefono"
+                                
                             />
                         </div>
                     </div>
@@ -86,6 +91,7 @@
                                 type="date"
                                 format="DD-MMM-YYYY"
                                 placeholder="Fecha de nacimiento"
+                                disabled
                             />
                         </div>
                     </div>
@@ -100,6 +106,7 @@
                                 placeholder="Ciudad"
                                 id=""
                                 v-model="fila_espera.ciudad"
+                                disabled
                             />
                         </div>
 
@@ -114,7 +121,7 @@
                                 name="motivo"
                                 id=""
                                 rows="3"
-                                placeholder="Motivo de espera"
+                                placeholder="Motivo de espera (agregar fecha tentativa de atención)"
                                 v-model="fila_espera.motivo_espera"
                             ></textarea>
                         </div>
@@ -166,7 +173,41 @@
               },
             };
         },
+        mounted() {
+        this.axios
+            .get("api/busca")
+            .then((res) => {
+                this.rut_usuario = res.data;
+                this.traerdatos(this.rut_usuario)
+            })
+            .catch((err) => console.log(err));
+    },
         methods: {
+            traerdatos(rut_usuario) {
+            this.axios
+                .get(`api/perfil/` + rut_usuario)
+                .then((response) => {
+                    const {
+                        rut_usuario,
+                        nombre,
+                        apellido_pat,
+                        apellido_mat,
+                        fecha_nacimiento,
+                        correo,
+                        telefono,
+                        ciudad
+                    } = response.data;
+                    (this.fila_espera.rut_usuario_fk = rut_usuario),
+                        (this.fila_espera.nombre = nombre),
+                        (this.fila_espera.apellido_pat = apellido_pat),
+                        (this.fila_espera.apellido_mat = apellido_mat),
+                        (this.fila_espera.telefono = telefono),
+                        (this.fila_espera.correo = correo),
+                        (this.fechaN = fecha_nacimiento),
+                        (this.fila_espera.ciudad = ciudad)
+                })
+                .catch((err) => console.log(err));
+        },
             agregarfila(){
             this.fila_espera.fecha_nacimiento = this.fechaN;
             this.axios

@@ -12,6 +12,7 @@
                                 placeholder="Nombres"
                                 id="inputEmail3"
                                 v-model="agenda.nombre"
+                                disabled
                             />
                         </div>
                         <div class="col">
@@ -21,6 +22,7 @@
                                 placeholder="Apellido Paterno"
                                 id="inputEmail3"
                                 v-model="agenda.apellido_pat"
+                                disabled
                             />
                         </div>
                         <div class="col">
@@ -30,6 +32,7 @@
                                 placeholder="Apellio Materno"
                                 id="inputEmail3"
                                 v-model="agenda.apellido_mat"
+                                disabled
                             />
                         </div>
                     </div>
@@ -44,6 +47,7 @@
                                 placeholder="Rut"
                                 id=""
                                 v-model="agenda.rut_usuario_fk"
+                                disabled
                             />
                         </div>
 
@@ -56,7 +60,7 @@
                                 placeholder="Teléfono"
                                 id=""
                                 v-model="agenda.telefono"
-                            />
+                                />
                         </div>
                     </div>
 
@@ -86,6 +90,7 @@
                                 type="date"
                                 format="DD-MMM-YYYY"
                                 placeholder="Fecha de nacimiento"
+                                disabled
                             />
                         </div>
                     </div>
@@ -100,6 +105,7 @@
                                 placeholder="Ciudad"
                                 id=""
                                 v-model="agenda.ciudad"
+                                disabled
                             />
                         </div>
 
@@ -202,12 +208,47 @@ export default {
             date: "",
             hora: "",
             hours: Array.from({ length: 9 }).map((_, i) => i + 9),
+            rut_usuario: "",
             agenda:{
 
             }
         };
     },
+    mounted() {
+        this.axios
+            .get("api/busca")
+            .then((res) => {
+                this.rut_usuario = res.data;
+                this.traerdatos(this.rut_usuario)
+            })
+            .catch((err) => console.log(err));
+    },
     methods: {
+        traerdatos(rut_usuario) {
+            this.axios
+                .get(`api/perfil/` + rut_usuario)
+                .then((response) => {
+                    const {
+                        rut_usuario,
+                        nombre,
+                        apellido_pat,
+                        apellido_mat,
+                        fecha_nacimiento,
+                        correo,
+                        telefono,
+                        ciudad
+                    } = response.data;
+                    (this.agenda.rut_usuario_fk = rut_usuario),
+                        (this.agenda.nombre = nombre),
+                        (this.agenda.apellido_pat = apellido_pat),
+                        (this.agenda.apellido_mat = apellido_mat),
+                        (this.agenda.telefono = telefono),
+                        (this.agenda.correo = correo),
+                        (this.fechaN = fecha_nacimiento),
+                        (this.agenda.ciudad = ciudad)
+                })
+                .catch((err) => console.log(err));
+        },
         disabledBeforeTodayAndAfterAWeek(date) {
             const today = new Date();
             today.setHours(0, 0, 0, 0);

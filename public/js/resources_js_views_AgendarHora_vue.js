@@ -27,17 +27,47 @@ __webpack_require__.r(__webpack_exports__);
       }).map(function (_, i) {
         return i + 9;
       }),
+      rut_usuario: "",
       agenda: {}
     };
   },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.axios.get("api/busca").then(function (res) {
+      _this.rut_usuario = res.data;
+
+      _this.traerdatos(_this.rut_usuario);
+    })["catch"](function (err) {
+      return console.log(err);
+    });
+  },
   methods: {
+    traerdatos: function traerdatos(rut_usuario) {
+      var _this2 = this;
+
+      this.axios.get("api/perfil/" + rut_usuario).then(function (response) {
+        var _response$data = response.data,
+            rut_usuario = _response$data.rut_usuario,
+            nombre = _response$data.nombre,
+            apellido_pat = _response$data.apellido_pat,
+            apellido_mat = _response$data.apellido_mat,
+            fecha_nacimiento = _response$data.fecha_nacimiento,
+            correo = _response$data.correo,
+            telefono = _response$data.telefono,
+            ciudad = _response$data.ciudad;
+        _this2.agenda.rut_usuario_fk = rut_usuario, _this2.agenda.nombre = nombre, _this2.agenda.apellido_pat = apellido_pat, _this2.agenda.apellido_mat = apellido_mat, _this2.agenda.telefono = telefono, _this2.agenda.correo = correo, _this2.fechaN = fecha_nacimiento, _this2.agenda.ciudad = ciudad;
+      })["catch"](function (err) {
+        return console.log(err);
+      });
+    },
     disabledBeforeTodayAndAfterAWeek: function disabledBeforeTodayAndAfterAWeek(date) {
       var today = new Date();
       today.setHours(0, 0, 0, 0);
       return date < today || date > new Date(today.getTime() + 14 * 24 * 3600 * 1000);
     },
     agregaragenda: function agregaragenda() {
-      var _this = this;
+      var _this3 = this;
 
       this.agenda.fecha_nacimiento = this.fechaN;
       this.agenda.fecha = this.date;
@@ -45,7 +75,7 @@ __webpack_require__.r(__webpack_exports__);
       this.axios.post('api/agenda', this.agenda)["catch"](function (err) {
         return console.log(err);
       })["finally"](function () {
-        return _this.loading = false;
+        return _this3.loading = false;
       });
     }
   }
@@ -243,7 +273,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "inputEmail3",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $data.agenda.nombre = $event;
-    })
+    }),
+    disabled: ""
   }, null, 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.agenda.nombre]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -253,7 +284,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "inputEmail3",
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $data.agenda.apellido_pat = $event;
-    })
+    }),
+    disabled: ""
   }, null, 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.agenda.apellido_pat]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -263,7 +295,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "inputEmail3",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $data.agenda.apellido_mat = $event;
-    })
+    }),
+    disabled: ""
   }, null, 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.agenda.apellido_mat]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -274,7 +307,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "",
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
       return $data.agenda.rut_usuario_fk = $event;
-    })
+    }),
+    disabled: ""
   }, null, 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.agenda.rut_usuario_fk]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -309,7 +343,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "value-type": "format",
     type: "date",
     format: "DD-MMM-YYYY",
-    placeholder: "Fecha de nacimiento"
+    placeholder: "Fecha de nacimiento",
+    disabled: ""
   }, null, 8
   /* PROPS */
   , ["value"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -320,7 +355,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "",
     "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
       return $data.agenda.ciudad = $event;
-    })
+    }),
+    disabled: ""
   }, null, 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.agenda.ciudad]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [_hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_datepicker, {
@@ -408,13 +444,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _AgendarHora_vue_vue_type_template_id_bf2423a6__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AgendarHora.vue?vue&type=template&id=bf2423a6 */ "./resources/js/views/AgendarHora.vue?vue&type=template&id=bf2423a6");
 /* harmony import */ var _AgendarHora_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AgendarHora.vue?vue&type=script&lang=js */ "./resources/js/views/AgendarHora.vue?vue&type=script&lang=js");
-/* harmony import */ var D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,D_UCM_Nuevo_siap_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AgendarHora_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AgendarHora_vue_vue_type_template_id_bf2423a6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/AgendarHora.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_david_Desktop_Nueva_carpeta_2_memoria_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AgendarHora_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AgendarHora_vue_vue_type_template_id_bf2423a6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/AgendarHora.vue"]])
 /* hot reload */
 if (false) {}
 

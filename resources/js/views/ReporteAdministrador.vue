@@ -1,6 +1,10 @@
 <template>
     <section class="our-services">
         <div class="container">
+            <div>
+                <h2>Reporte de Administradores</h2>
+            </div>
+        <br>
             <RouterLink to="/admin" type="button" class="btn btn-success mb-2" >Agregar administrador</RouterLink>
             <table class="table table-hover table-bordered border-primary">
                 <thead class="table-dark">
