@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\usuarios;
+use Illuminate\Support\Facades\Hash;
 
 class usuariosController extends Controller
 {
@@ -18,7 +19,7 @@ class usuariosController extends Controller
     {
         $usuarios = new usuarios([
             'rut_usuario' => $request ->input('rut_usuario'),
-            'contrasena' => $request ->input('contrasena'),
+            'contrasena' => Hash::make($request ->input('contrasena')),
             'nombre' => $request ->input('nombre'),
             'apellido_pat' => $request ->input('apellido_pat'),
             'apellido_mat' => $request ->input('apellido_mat'),

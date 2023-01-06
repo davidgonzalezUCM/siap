@@ -18,7 +18,7 @@
                 <div class="mb-3">
                     <label class="form-label">Contraseña:</label>
                         <input 
-                            type="text" 
+                            type="password" 
                             class="form-control" 
                             placeholder="Contraseña" 
                             name="Contraseña" 
@@ -57,9 +57,10 @@ export default {
         login(){
             this.axios
             .post('login',this.data)
-                .then(() => window.location.replace('http://127.0.0.1:8000/#/perfil'))
-            
+                .then(() => window.location.replace('http://127.0.0.1:8000/#/'))
+                .then(() => window.location.reload())
             .catch(err=>console.log(err))
+            
         }
     }
 };

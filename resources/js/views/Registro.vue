@@ -39,7 +39,7 @@
                             <label class="form-label">Contraseña:</label>
                             <input
                                 class="form-control"
-                                type="text"
+                                type="password"
                                 name="Contraseña"
                                 placeholder="Contraseña"
                                 id=""
@@ -51,7 +51,7 @@
                             <label class="form-label">Confirmar contraseña:</label>
                             <input
                                 class="form-control"
-                                type="text"
+                                type="password"
                                 name="ConfContraseña"
                                 placeholder="Vuelva a ingresar su contraseña"
                                 id=""
